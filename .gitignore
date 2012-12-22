@@ -1,3 +1,6 @@
 /assets
 /protected/config
 /yii_11
+/warrington_hairdressing.esproj
+
+*.log
