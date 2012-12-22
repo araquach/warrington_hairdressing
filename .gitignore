@@ -1,3 +1,11 @@
 /assets
 /protected/config
 /yii_11
+/warrington_hairdressing.esproj
+
+*.log
+.DS_Store
+
+protected/.DS_Store
+
+warrington_hairdressing.esproj/user.adamcarter.espressostorage
