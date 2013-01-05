@@ -13,3 +13,5 @@ protected/.DS_Store
 
 warrington_hairdressing.esproj/user.adamcarter.espressostorage
 >>>>>>> c5ae104e18cb58238303cc0bb27ff0713ea49ae6
+
+*.log
