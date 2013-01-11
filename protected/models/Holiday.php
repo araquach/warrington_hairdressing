@@ -107,4 +107,6 @@ class Holiday extends SalonActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+	
+	
 }

@@ -22,8 +22,14 @@ $this->menu=array(
 		'staff_id',
 		'lieu_hours',
 		'description',
-		'date_regarding',
-		'requested_on',
+		array(
+			'label'=>'date_regarding',
+			'value'=>Yii::app()->dateFormatter->formatDateTime($model->date_regarding,"full",""),		
+			),
+		array(
+			'label'=>'requested_on',
+			'value'=>Yii::app()->dateFormatter->formatDateTime($model->requested_on,"full",""),		
+			),
 		'approved',
 	),
 )); ?>

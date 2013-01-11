@@ -22,11 +22,11 @@
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('date_regarding')); ?>:</b>
-	<?php echo CHtml::encode($data->date_regarding); ?>
+	<?php echo CHtml::encode(Yii::app()->dateFormatter->formatDateTime($data->date_regarding, "full","")); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('requested_on')); ?>:</b>
-	<?php echo CHtml::encode($data->requested_on); ?>
+	<?php echo CHtml::encode(Yii::app()->dateFormatter->formatDateTime($data->requested_on, "full","")); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('approved')); ?>:</b>

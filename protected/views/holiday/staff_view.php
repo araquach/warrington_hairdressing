@@ -23,9 +23,18 @@ $this->menu=array(
 		'staff_id',
 		'hours_requested',
 		'prebooked',
-		'request_date_from',
-		'request_date_to',
+		array(
+			'label'=>'request_date_from',
+			'value'=>Yii::app()->dateFormatter->formatDateTime($model->request_date_from,"full",""),		
+			),
+		array(
+			'label'=>'request_date_to',
+			'value'=>Yii::app()->dateFormatter->formatDateTime($model->request_date_to,"full",""),
+			),
 		'approved',
-		'requested_on_date',
+		array(
+			'name'=>'requested_on_date',
+			'value'=>Yii::app()->dateFormatter->formatDateTime($model->requested_on_date,"full",""),
+			),
 	),
 )); ?>

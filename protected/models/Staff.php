@@ -145,4 +145,10 @@ class Staff extends SalonActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+	
+	public function getStaffName()
+	{
+		
+	
+	}
 }
