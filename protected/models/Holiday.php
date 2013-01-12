@@ -45,7 +45,8 @@ class Holiday extends SalonActiveRecord
 		// will receive user inputs.
 		return array(
 			array('hours_requested, request_date_from, request_date_to', 'required'),
-			array('hours_requested, prebooked',  'numerical', 'integerOnly'=>true),
+			array('prebooked',  'numerical', 'integerOnly'=>true),
+			array('hours_requested',  'numerical'),
 			//array('request_date_from, request_date_to', 'date'),
 			array('requested_on_date','default','value'=>new CDbExpression('NOW()'),'setOnEmpty'=>false,'on'=>'insert'),
 			// The following rule is used by search().
@@ -74,7 +75,7 @@ class Holiday extends SalonActiveRecord
 		return array(
 			'id' => 'ID',
 			'staff_id' => 'Staff Member',
-			'hours_requested' => 'Days Requested (in hours)',
+			'hours_requested' => 'Days Requested',
 			'prebooked' => 'Prebooked',
 			'request_date_from' => 'Request Date From',
 			'request_date_to' => 'Request Date To',
@@ -106,6 +107,22 @@ class Holiday extends SalonActiveRecord
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
+	}
+	
+	public function afterValidate()
+	{
+		$this->hours_requested=$this->hours_requested * 8;
+		
+		return parent::afterValidate();
+	}
+	
+	public function hourConverter()
+	{
+		$conversion = $this->hours_requested;
+		
+		$conversion = $conversion / 8;
+		
+		return $conversion;
 	}
 	
 	

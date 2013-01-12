@@ -14,7 +14,7 @@
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('hours_requested')); ?>:</b>
-	<?php echo CHtml::encode($data->hours_requested); ?>
+	<?php echo CHtml::encode($data->hourConverter()); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('prebooked')); ?>:</b>

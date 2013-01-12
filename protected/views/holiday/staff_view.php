@@ -19,16 +19,18 @@ $this->menu=array(
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
-		'id',
 		'staff_id',
-		'hours_requested',
+		array(
+			'name'=>'Day\'s Requested',
+			'value'=>$model->hourConverter(),
+			),
 		'prebooked',
 		array(
-			'label'=>'request_date_from',
+			'name'=>'request_date_from',
 			'value'=>Yii::app()->dateFormatter->formatDateTime($model->request_date_from,"full",""),		
 			),
 		array(
-			'label'=>'request_date_to',
+			'name'=>'request_date_to',
 			'value'=>Yii::app()->dateFormatter->formatDateTime($model->request_date_to,"full",""),
 			),
 		'approved',
