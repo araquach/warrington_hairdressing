@@ -49,7 +49,8 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		'staff_id',
 		'sick_hours',
 		'description',
-		'date_sick',
+		'date_sick_from',
+		'date_sick_from',
 		'date_deducted',
 		array(
 			'class'=>'CButtonColumn',

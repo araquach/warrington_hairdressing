@@ -23,7 +23,10 @@ $this->menu=array(
 	'attributes'=>array(
 		'id',
 		'staff_id',
-		'sick_hours',
+		array(
+		'name'=>'sick_hours',
+		'value'=>$model->hourConverter(),
+		),
 		'description',
 		'date_sick_from',
 		'date_sick_from',

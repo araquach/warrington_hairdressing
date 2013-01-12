@@ -14,7 +14,7 @@
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('sick_hours')); ?>:</b>
-	<?php echo CHtml::encode($data->sick_hours); ?>
+	<?php echo CHtml::encode($data->hourConverter()); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('description')); ?>:</b>

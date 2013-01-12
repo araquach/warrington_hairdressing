@@ -44,7 +44,7 @@ class Sick extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('sick_hours, description, date_sick_from, date_sick_to', 'required'),
-			array('staff_id, sick_hours, description', 'numerical', 'integerOnly'=>true),
+			array('staff_id, sick_hours', 'numerical', 'integerOnly'=>true),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, staff_id, sick_hours, description, date_sick_from, date_sick_to, date_deducted', 'safe', 'on'=>'search'),
@@ -71,7 +71,7 @@ class Sick extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'staff_id' => 'Staff Member',
-			'sick_hours' => 'Sick Days (in hours)',
+			'sick_hours' => 'Sick Days',
 			'description' => 'Description',
 			'date_sick_from' => 'Date Sick From',
 			'date_sick_to' => 'Date Sick To',
@@ -101,5 +101,21 @@ class Sick extends CActiveRecord
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
+	}
+	
+	public function afterValidate()
+	{
+		$this->sick_hours=$this->sick_hours * 8;
+		
+		return parent::afterValidate();
+	}
+	
+	public function hourConverter()
+	{
+		$conversion = $this->sick_hours;
+		
+		$conversion = $conversion / 8;
+		
+		return $conversion;
 	}
 }
