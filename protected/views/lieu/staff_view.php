@@ -22,13 +22,16 @@ $this->menu=array(
 		'lieu_hours',
 		'description',
 		array(
-			'label'=>'date_regarding',
+			'name'=>'date_regarding',
 			'value'=>Yii::app()->dateFormatter->formatDateTime($model->date_regarding,"full",""),		
 			),
 		array(
-			'label'=>'requested_on',
+			'name'=>'requested_on',
 			'value'=>Yii::app()->dateFormatter->formatDateTime($model->requested_on,"full",""),		
 			),
-		'approved',
+		array(
+			'name'=>'approved',
+			'value'=>$model->getApprovedText(),
+			),
 	),
 )); ?>

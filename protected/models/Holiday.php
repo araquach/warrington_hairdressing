@@ -21,6 +21,10 @@ class Holiday extends SalonActiveRecord
 
 	const APPROVED_Y = 1;
 	const APPROVED_N = 0;
+	
+	const PREBOOKED_Y = 1;
+	const PREBOOKED_N = 0;
+	
 
 	/**
 	 * Returns the static model of the specified AR class.
@@ -123,6 +127,18 @@ class Holiday extends SalonActiveRecord
 	public function getApprovedText() {
 			$approvedOptions=$this->approvedOptions;
 			return isset($approvedOptions[$this->approved]) ? $approvedOptions[$this->approved] : "unknown position ({$this->approved})";
+	}
+	
+	public function getPrebookedOptions() {
+		return array(
+			self::PREBOOKED_Y => 'Yes',
+			self::PREBOOKED_N => 'No',
+		);
+	}
+	
+	public function getPrebookedText() {
+			$prebookedOptions=$this->prebookedOptions;
+			return isset($prebookedOptions[$this->prebooked]) ? $prebookedOptions[$this->prebooked] : "unknown position ({$this->prebooked})";
 	}
 	
 	

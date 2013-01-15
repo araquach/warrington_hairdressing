@@ -24,7 +24,10 @@ $this->menu=array(
 			'name'=>'Day\'s Requested',
 			'value'=>$model->hourConverter(),
 			),
-		'prebooked',
+		array(
+			'name'=>'prebooked',
+			'value'=>$model->getPrebookedText(),
+			),
 		array(
 			'name'=>'request_date_from',
 			'value'=>Yii::app()->dateFormatter->formatDateTime($model->request_date_from,"full",""),		
