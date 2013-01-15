@@ -30,7 +30,7 @@
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('approved')); ?>:</b>
-	<?php echo CHtml::encode($data->approved); ?>
+	<?php echo CHtml::encode($data->getApprovedText()); ?>
 	<br />
 
 	<?php /*

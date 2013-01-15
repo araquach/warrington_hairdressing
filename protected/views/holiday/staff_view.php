@@ -33,7 +33,11 @@ $this->menu=array(
 			'name'=>'request_date_to',
 			'value'=>Yii::app()->dateFormatter->formatDateTime($model->request_date_to,"full",""),
 			),
-		'approved',
+		array(
+			'name'=>'approved',
+			'value'=>$model->getApprovedText(),
+			),
+		
 		array(
 			'name'=>'requested_on_date',
 			'value'=>Yii::app()->dateFormatter->formatDateTime($model->requested_on_date,"full",""),
