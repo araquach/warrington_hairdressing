@@ -76,8 +76,6 @@ class HolidayController extends Controller
 	
 	public function actionStaff_view($id)
 	{	
-		
-	
 		$this->render('staff_view',array(
 			'model'=>$this->loadModel($id),
 		));

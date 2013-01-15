@@ -146,9 +146,4 @@ class Staff extends SalonActiveRecord
 		));
 	}
 	
-	public function getStaffName()
-	{
-		
-	
-	}
 }

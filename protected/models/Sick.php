@@ -118,4 +118,5 @@ class Sick extends CActiveRecord
 		
 		return $conversion;
 	}
+		
 }
