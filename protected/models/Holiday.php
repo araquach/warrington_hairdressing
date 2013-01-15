@@ -19,6 +19,9 @@
 class Holiday extends SalonActiveRecord
 {
 
+	const APPROVED_Y = 1;
+	const APPROVED_N = 0;
+
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
@@ -109,6 +112,19 @@ class Holiday extends SalonActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+	
+	public function getApprovedOptions() {
+		return array(
+			self::APPROVED_Y => 'Yes',
+			self::APPROVED_N => 'No',
+		);
+	}
+	
+	public function getApprovedText() {
+			$approvedOptions=$this->approvedOptions;
+			return isset($approvedOptions[$this->approved]) ? $approvedOptions[$this->approved] : "unknown position ({$this->approved})";
+	}
+	
 	
 	public function afterValidate()
 	{
