@@ -5187,3 +5187,49 @@ Stack trace:
 REQUEST_URI=/~adam-macbook/warrington_hairdressing/index.php?r=site/login
 HTTP_REFERER=http://localhost/~adam-macbook/warrington_hairdressing/index.php?r=site/page&view=staff_index
 ---
+2013/01/05 21:49:36 [error] [exception.CException] exception 'CException' with message 'CAssetManager.basePath "/Users/adam-macbook/Sites/warrington_hairdressing/assets" is invalid. Please make sure the directory exists and is writable by the Web server process.' in /Users/adam-macbook/Sites/yii_11/framework/web/CAssetManager.php:128
+Stack trace:
+#0 /Users/adam-macbook/Sites/yii_11/framework/web/CAssetManager.php(113): CAssetManager->setBasePath('/Users/adam-mac...')
+#1 /Users/adam-macbook/Sites/yii_11/framework/web/CAssetManager.php(234): CAssetManager->getBasePath()
+#2 /Users/adam-macbook/Sites/yii_11/framework/web/CClientScript.php(463): CAssetManager->publish('/Users/adam-mac...')
+#3 /Users/adam-macbook/Sites/yii_11/framework/web/CClientScript.php(500): CClientScript->getCoreScriptUrl()
+#4 /Users/adam-macbook/Sites/yii_11/framework/web/CClientScript.php(316): CClientScript->getPackageBaseUrl('jquery')
+#5 /Users/adam-macbook/Sites/yii_11/framework/web/CClientScript.php(209): CClientScript->renderCoreScripts()
+#6 /Users/adam-macbook/Sites/yii_11/framework/web/CController.php(352): CClientScript->render('<!DOCTYPE HTML>...')
+#7 /Users/adam-macbook/Sites/yii_11/framework/web/CController.php(789): CController->processOutput('<!DOCTYPE HTML>...')
+#8 /Users/adam-macbook/Sites/warrington_hairdressing/protected/controllers/SiteController.php(99): CController->render('login', Array)
+#9 /Users/adam-macbook/Sites/yii_11/framework/web/actions/CInlineAction.php(50): SiteController->actionLogin()
+#10 /Users/adam-macbook/Sites/yii_11/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#11 /Users/adam-macbook/Sites/yii_11/framework/web/CController.php(287): CController->runAction(Object(CInlineAction))
+#12 /Users/adam-macbook/Sites/yii_11/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 /Users/adam-macbook/Sites/yii_11/framework/web/CWebApplication.php(283): CController->run('login')
+#14 /Users/adam-macbook/Sites/yii_11/framework/web/CWebApplication.php(142): CWebApplication->runController('site/login')
+#15 /Users/adam-macbook/Sites/yii_11/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#16 /Users/adam-macbook/Sites/warrington_hairdressing/index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/~adam-macbook/warrington_hairdressing/index.php?r=site/login
+HTTP_REFERER=http://localhost/~adam-macbook/warrington_hairdressing/index.php?r=site/page&view=staff_index
+---
+2013/01/05 21:50:51 [error] [exception.CException] exception 'CException' with message 'CAssetManager.basePath "/Users/adam-macbook/Sites/warrington_hairdressing/assets" is invalid. Please make sure the directory exists and is writable by the Web server process.' in /Users/adam-macbook/Sites/yii_11/framework/web/CAssetManager.php:128
+Stack trace:
+#0 /Users/adam-macbook/Sites/yii_11/framework/web/CAssetManager.php(113): CAssetManager->setBasePath('/Users/adam-mac...')
+#1 /Users/adam-macbook/Sites/yii_11/framework/web/CAssetManager.php(234): CAssetManager->getBasePath()
+#2 /Users/adam-macbook/Sites/yii_11/framework/web/CClientScript.php(463): CAssetManager->publish('/Users/adam-mac...')
+#3 /Users/adam-macbook/Sites/yii_11/framework/web/CClientScript.php(500): CClientScript->getCoreScriptUrl()
+#4 /Users/adam-macbook/Sites/yii_11/framework/web/CClientScript.php(316): CClientScript->getPackageBaseUrl('jquery')
+#5 /Users/adam-macbook/Sites/yii_11/framework/web/CClientScript.php(209): CClientScript->renderCoreScripts()
+#6 /Users/adam-macbook/Sites/yii_11/framework/web/CController.php(352): CClientScript->render('<!DOCTYPE HTML>...')
+#7 /Users/adam-macbook/Sites/yii_11/framework/web/CController.php(789): CController->processOutput('<!DOCTYPE HTML>...')
+#8 /Users/adam-macbook/Sites/warrington_hairdressing/protected/controllers/SiteController.php(99): CController->render('login', Array)
+#9 /Users/adam-macbook/Sites/yii_11/framework/web/actions/CInlineAction.php(50): SiteController->actionLogin()
+#10 /Users/adam-macbook/Sites/yii_11/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#11 /Users/adam-macbook/Sites/yii_11/framework/web/CController.php(287): CController->runAction(Object(CInlineAction))
+#12 /Users/adam-macbook/Sites/yii_11/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 /Users/adam-macbook/Sites/yii_11/framework/web/CWebApplication.php(283): CController->run('login')
+#14 /Users/adam-macbook/Sites/yii_11/framework/web/CWebApplication.php(142): CWebApplication->runController('site/login')
+#15 /Users/adam-macbook/Sites/yii_11/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#16 /Users/adam-macbook/Sites/warrington_hairdressing/index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/~adam-macbook/warrington_hairdressing/index.php?r=site/login
+HTTP_REFERER=http://localhost/~adam-macbook/warrington_hairdressing/index.php?r=site/page&view=staff_index
+---
