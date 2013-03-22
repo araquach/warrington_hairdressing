@@ -23,7 +23,10 @@ $this->menu=array(
 	'data'=>$model,
 	'attributes'=>array(
 		'id',
-		'staff.first_name',
+		array(
+			'name'=>'Staff Member',
+			'value'=>$model->staff->first_name . ' ' . $model->staff->last_name,
+			),
 		array(
 			'name'=>'Day\'s Requested',
 			'value'=>$model->hourConverter(),

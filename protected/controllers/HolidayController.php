@@ -208,7 +208,7 @@ class HolidayController extends Controller
 	 */
 	public function loadModel($id)
 	{
-		$model=Holiday::model()->findByPk($id);
+		$model=Holiday::model()->with('staff')->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;

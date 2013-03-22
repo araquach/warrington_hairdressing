@@ -22,11 +22,26 @@ $this->menu=array(
 	'data'=>$model,
 	'attributes'=>array(
 		'id',
-		'staff.first_name',
+		array(
+			'name'=>'Staff Member',
+			'value'=>$model->staff->first_name . ' ' . $model->staff->last_name,
+			),
 		'lieu_hours',
 		'description',
-		'date_regarding',
-		'requested_on',
-		'approved',
+		array(
+			'name'=>'date_regarding',
+			'value'=>Yii::app()->dateFormatter->formatDateTime($model->date_regarding,"full",""),		
+			),
+		array(
+			'name'=>'requested_on',
+			'value'=>Yii::app()->dateFormatter->formatDateTime($model->requested_on,"full",""),		
+			),
+		array(
+			'name'=>'approved',
+			'value'=>$model->getApprovedText(),
+			),
 	),
 )); ?>
+
+
+

@@ -7,8 +7,7 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Create Holiday', 'url'=>array('create')),
-	array('label'=>'Manage Holiday', 'url'=>array('admin')),
+	array('label'=>'Manage Holidays', 'url'=>array('admin')),
 );
 ?>
 

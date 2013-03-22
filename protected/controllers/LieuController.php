@@ -169,12 +169,17 @@ class LieuController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Lieu');
+		$criteria=new CDbCriteria();
+		$criteria->with = 'staff';
+	
+		$dataProvider=new CActiveDataProvider('Lieu', array(
+			'criteria'=>$criteria
+		));
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
 	}
-
+	
 	/**
 	 * Manages all models.
 	 */
@@ -197,7 +202,7 @@ class LieuController extends Controller
 	 */
 	public function loadModel($id)
 	{
-		$model=Lieu::model()->findByPk($id);
+		$model=Lieu::model()->with('staff')->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
