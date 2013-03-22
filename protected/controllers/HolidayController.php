@@ -58,6 +58,7 @@ class HolidayController extends Controller
 		$criteria=new CDbCriteria;
 		$criteria->with = 'staff';
 		$criteria->condition = 'staff.id=' . Yii::app()->user->id;
+		$criteria->order = 't.id DESC';
 		
 		$dataProvider=new CActiveDataProvider('Holiday', array(
 			'criteria'=>$criteria			
@@ -176,6 +177,7 @@ class HolidayController extends Controller
 	{	
 		$criteria=new CDbCriteria();
 		$criteria->with = 'staff';
+		$criteria->order = 't.id DESC';
 	
 		$dataProvider=new CActiveDataProvider('Holiday', array(
 			'criteria'=>$criteria
@@ -185,8 +187,8 @@ class HolidayController extends Controller
 			'dataProvider'=>$dataProvider,
 		));
 	}
-
-	/**
+	
+		/**
 	 * Manages all models.
 	 */
 	public function actionAdmin()
