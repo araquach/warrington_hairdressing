@@ -34,7 +34,7 @@ class LieuController extends Controller
 				'expression'=>'isset($user->role) && ($user->role==="admin")',
 			),
 			array('allow', 
-				'actions'=>array('index','view','create','update','delete','admin','staff_lieu','staff_create','staff_lieu_list','staff_view'),
+				'actions'=>array('view','create','update','delete','admin','staff_lieu','staff_create','staff_lieu_list','staff_view'),
 				'users'=>array('@'),
 				'expression'=>'isset($user->role) && ($user->role==="staff")',
 			),

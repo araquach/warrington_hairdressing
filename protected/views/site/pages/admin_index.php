@@ -13,6 +13,7 @@ $this->pageTitle=Yii::app()->name;
 		'items'=>array(
 			array('label'=>'Holidays', 'url'=>array('/holiday/index')),
 			array('label'=>'Lieu Hours', 'url'=>array('/lieu/index')),
+			array('label'=>'Add Staff', 'url'=>array('/staff/create')),
 			
 			
 		),
