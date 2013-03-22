@@ -10,15 +10,16 @@
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('staff_id')); ?>:</b>
-	<?php echo CHtml::encode($data->staff_id); ?>
+	<?php echo CHtml::encode($data->staff->first_name.' '.$data->staff->last_name); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('hours_requested')); ?>:</b>
-	<?php echo CHtml::encode($data->hours_requested); ?>
+	<?php echo CHtml::encode($data->hourConverter()); ?>
 	<br />
+	
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('prebooked')); ?>:</b>
-	<?php echo CHtml::encode($data->prebooked); ?>
+	<?php echo CHtml::encode($data->getPrebookedText()); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('request_date_from')); ?>:</b>
@@ -30,7 +31,7 @@
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('approved')); ?>:</b>
-	<?php echo CHtml::encode($data->approved); ?>
+	<?php echo CHtml::encode($data->getApprovedText()); ?>
 	<br />
 
 	<?php /*

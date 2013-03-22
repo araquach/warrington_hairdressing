@@ -18,16 +18,36 @@ $this->menu=array(
 
 <h1>View Your Holiday #<?php echo $model->id; ?></h1>
 
+
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
 		'id',
-		'staff_id',
-		'hours_requested',
-		'prebooked',
-		'request_date_from',
-		'request_date_to',
-		'approved',
-		'requested_on_date',
+		'staff.first_name',
+		array(
+			'name'=>'Day\'s Requested',
+			'value'=>$model->hourConverter(),
+			),
+		array(
+			'name'=>'prebooked',
+			'value'=>$model->getPrebookedText(),
+			),
+		array(
+			'name'=>'request_date_from',
+			'value'=>Yii::app()->dateFormatter->formatDateTime($model->request_date_from,"full",""),		
+			),
+		array(
+			'name'=>'request_date_to',
+			'value'=>Yii::app()->dateFormatter->formatDateTime($model->request_date_to,"full",""),
+			),
+		array(
+			'name'=>'approved',
+			'value'=>$model->getApprovedText(),
+			),
+		
+		array(
+			'name'=>'requested_on_date',
+			'value'=>Yii::app()->dateFormatter->formatDateTime($model->requested_on_date,"full",""),
+			),
 	),
 )); ?>

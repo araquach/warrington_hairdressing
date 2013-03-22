@@ -173,8 +173,14 @@ class HolidayController extends Controller
 	 * Lists all models.
 	 */
 	public function actionIndex()
-	{
-		$dataProvider=new CActiveDataProvider('Holiday');
+	{	
+		$criteria=new CDbCriteria();
+		$criteria->with = 'staff';
+	
+		$dataProvider=new CActiveDataProvider('Holiday', array(
+			'criteria'=>$criteria
+		));
+	
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
