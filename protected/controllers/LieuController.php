@@ -50,14 +50,20 @@ class LieuController extends Controller
 		
 	}
 	
+	
 	public function actionStaff_lieu_list()
 	{
-		$dataProvider=new CActiveDataProvider('Lieu');
+		$criteria=new CDbCriteria;
+		$criteria->with = 'staff';
+		$criteria->condition = 'staff.id=' . Yii::app()->user->id;
+		
+		$dataProvider=new CActiveDataProvider('Lieu', array(
+			'criteria'=>$criteria
+		));
+		
 		$this->render('staff_lieu_list',array(
 			'dataProvider'=>$dataProvider,
 		));
-		
-		
 	}
 
 	/**

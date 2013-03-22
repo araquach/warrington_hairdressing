@@ -19,7 +19,6 @@ $this->menu=array(
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
-		'staff.first_name',
 		array(
 			'name'=>'Day\'s Requested',
 			'value'=>$model->hourConverter(),

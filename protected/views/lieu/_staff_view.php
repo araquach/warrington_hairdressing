@@ -9,10 +9,6 @@
 	<?php echo CHtml::link(CHtml::encode($data->id), array('staff_view', 'id'=>$data->id)); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('staff_id')); ?>:</b>
-	<?php echo CHtml::encode($data->staff_id); ?>
-	<br />
-
 	<b><?php echo CHtml::encode($data->getAttributeLabel('lieu_hours')); ?>:</b>
 	<?php echo CHtml::encode($data->lieu_hours); ?>
 	<br />
