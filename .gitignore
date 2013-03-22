@@ -21,3 +21,5 @@ warrington_hairdressing.esproj/user.adamcarter.espressostorage
 *.log
 
 *.log
+
+protected/runtime/application.log
