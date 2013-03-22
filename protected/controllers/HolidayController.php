@@ -54,10 +54,18 @@ class HolidayController extends Controller
 	}
 	
 	public function actionStaff_holiday_list()
-	{
-		$dataProvider=new CActiveDataProvider('Holiday');
+	{	
+		$criteria=new CDbCriteria;
+		$criteria->with = 'staff';
+		$criteria->condition = 'staff.id=' . Yii::app()->user->id;
+		
+		$dataProvider=new CActiveDataProvider('Holiday', array(
+			'criteria'=>$criteria			
+		));
+		
 		$this->render('staff_holiday_list',array(
 			'dataProvider'=>$dataProvider,
+			
 		));
 		
 		
