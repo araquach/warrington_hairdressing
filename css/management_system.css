@@ -1,5 +1,5 @@
 
-/*------------   Group/clear fix styling   ---------------*/
+/* @group Clear/fix styling */
 
 .group:after {
 	content: ".";
@@ -18,13 +18,16 @@
 	min-height: 1px;
 }
 
+/* @end */
 
-/*------------   Main Styling   ---------------*/
 
+/* @group Main styling */
 
 body {
-	margin: 10px auto;
-	width: 950px;
+	padding: 100px;
+	width: 80%;
+	background-color: #000000;
+	min-width: 850px;
 }
 
 .mainside {
@@ -34,9 +37,6 @@ body {
 .container {
 	width: 100%;
 	position: relative;
-	position: relative;
-	border: 1px solid #333;
-	padding: 30px;
 }
 
 .bodycontent {
@@ -56,7 +56,13 @@ li {
 	margin-bottom: 20px;
 }
 
-/*------------   Nav Styling   ---------------*/
+p,h1,h2,h3,h4,h5,h6,a {
+	color: #FFF;
+}
+
+/* @end */
+
+/* @group Nav Styling */
 
 #mainmenu {
 	float: left;
@@ -80,6 +86,8 @@ li {
 #loginmenu ul li {
 	list-style: none;
 }
+
+/* @end */
 
 
 

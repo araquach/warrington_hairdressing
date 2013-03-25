@@ -6,7 +6,7 @@
 	<meta name="language" content="en" />
 
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/normalize.css" />
-	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/template.css" />
+	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/management_system.css" />
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/form.css" />
 	
 	
@@ -16,9 +16,6 @@
 			array('account'=>'**-*******-*','domainName'=>'template.com'));
 	*/?>
 	
-	
-	<script src="scripts/mootools_core.js "type="text/javascript"></script>
-	<script src="scripts/mootools_more.js "type="text/javascript"></script>
 	<script src="scripts/modernizr.js "type="text/javascript"></script>
 
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
