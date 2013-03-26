@@ -126,7 +126,7 @@ class Holiday extends SalonActiveRecord
 	
 	public function getApprovedText() {
 			$approvedOptions=$this->approvedOptions;
-			return isset($approvedOptions[$this->approved]) ? $approvedOptions[$this->approved] : "unknown position ({$this->approved})";
+			return isset($approvedOptions[$this->approved]) ? $approvedOptions[$this->approved] : "unknown ({$this->approved})";
 	}
 	
 	public function getPrebookedOptions() {
@@ -138,7 +138,7 @@ class Holiday extends SalonActiveRecord
 	
 	public function getPrebookedText() {
 			$prebookedOptions=$this->prebookedOptions;
-			return isset($prebookedOptions[$this->prebooked]) ? $prebookedOptions[$this->prebooked] : "unknown position ({$this->prebooked})";
+			return isset($prebookedOptions[$this->prebooked]) ? $prebookedOptions[$this->prebooked] : "unknown ({$this->prebooked})";
 	}
 	
 	
@@ -158,5 +158,21 @@ class Holiday extends SalonActiveRecord
 		return $conversion;
 	}
 	
+	
+	// Close - but still Not Working Properly!!
+	/*
+	public function beforeSave()
+	{
+		$prebooked = $this->prebooked;
+		$requested_date = $this->request_date_from;
+		$today = $this->requested_on_date;
+		
+		if (strtotime($requested_date) > strtotime($today)){
+			$prebooked = 1;
+		}
+		
+		return parent::beforeSave();
+	}
+	*/
 	
 }
