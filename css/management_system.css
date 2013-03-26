@@ -26,7 +26,7 @@
 body {
 	padding: 100px;
 	width: 80%;
-	background-color: #000000;
+	background-color: rgb(1,27,64);
 	min-width: 850px;
 }
 
@@ -65,7 +65,7 @@ p,h1,h2,h3,h4,h5,h6,a {
 /* @group Nav Styling */
 
 #mainmenu {
-	float: left;
+	float: right;
 }
 
 #mainmenu ul {
@@ -88,6 +88,25 @@ p,h1,h2,h3,h4,h5,h6,a {
 }
 
 /* @end */
+
+/* @group Staff Page */
+
+#staffmenu ul li {
+	width: 200px;
+	height: 200px;
+	background-color: red;
+	float: left;
+	margin: 10px;
+}
+
+#staffmenu ul li:nth-child(2) {
+	background-color: #f2f25a;
+}
+
+
+
+/* @end */
+
 
 
 
