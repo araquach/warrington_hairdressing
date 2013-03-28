@@ -37,16 +37,9 @@ class LieuController extends Controller
 				'users'=>array('*'),
 			),
 		);
-	}
+	}	
 	
 	public function actionStaff_lieu()
-	{
-		$this->render('staff_lieu');
-		
-	}
-	
-	
-	public function actionStaff_lieu_list()
 	{
 		$criteria=new CDbCriteria;
 		$criteria->with = 'staff';
@@ -57,7 +50,7 @@ class LieuController extends Controller
 			'criteria'=>$criteria
 		));
 		
-		$this->render('staff_lieu_list',array(
+		$this->render('staff_lieu',array(
 			'dataProvider'=>$dataProvider,
 		));
 	}

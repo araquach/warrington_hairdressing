@@ -65,25 +65,6 @@ class HolidayController extends Controller
 		));
 		
 	}
-	
-	public function actionStaff_holiday_list()
-	{	
-		$criteria=new CDbCriteria;
-		$criteria->with = 'staff';
-		$criteria->condition = 'staff.id=' . Yii::app()->user->id;
-		$criteria->order = 't.id DESC';
-		
-		$dataProvider=new CActiveDataProvider('Holiday', array(
-			'criteria'=>$criteria			
-		));
-		
-		$this->render('staff_holiday_list',array(
-			'dataProvider'=>$dataProvider,
-			
-		));
-		
-		
-	}
 
 	/**
 	 * Displays a particular model.
