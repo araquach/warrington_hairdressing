@@ -28,9 +28,14 @@ body {
 }
 
 .container {
+	padding: 0 20px;
 	padding-bottom: 70px;
+	min-width: 600px;
 }
 
+p,h1,h2,h3,h4,h5,h6,a,b {
+	color: #FFF;
+}
 
 ul {
 	padding-left: 0;
@@ -51,8 +56,8 @@ p,h1,h2,h3,h4,h5,h6,a {
 }
 
 header {
- padding: 10px;
-}
+	padding-top: 20px;
+ }
 
 /* @end */
 
@@ -78,7 +83,8 @@ header {
 
 
 .menuBox {
-	margin: 10px;
+	margin-right: 20px;
+	margin-bottom: 20px;
 	padding: 20px;
 	float: left;
 	position: relative;
@@ -165,7 +171,7 @@ header {
 
 #users {
 	background-color: rgb(45, 123, 232);
-	background-image: url('../images/icons/icons_users.png');
+	background-image: url('../images/icons/icons_calendar.png');
 }
 
 /* @end */
@@ -186,8 +192,9 @@ header {
 footer {
 	font-size: .8em;
 	color: #FFF;
-	padding: 10px;
+	padding: 20px;
 	margin-top: 400px;
+	margin-left: -20px;
 	position: fixed;
 	bottom: 0;
 	width: 100%;
