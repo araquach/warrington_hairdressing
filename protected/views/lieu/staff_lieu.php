@@ -5,8 +5,6 @@
 
 <div id="lieuPage">
 
-<h2>Manage Your Lieu Hours</h2>
-
 <nav id="lieuNav">
 <?php echo CHtml::link('Add/Take Lieu Hours', array('staff_create')); ?>
 </nav>

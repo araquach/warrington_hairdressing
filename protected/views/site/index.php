@@ -42,13 +42,13 @@
 	<p>&pound;3,200</p>
 </div>
 
-<div class="menuBox small" id="user">			
-	<h2>Your Info</h2>
-</div>
-
 <div class="menuBox small" id="users">			
 	<h2>Users</h2>
 	<p>12</p>
+</div>
+
+<div class="menuBox wide" id="user">			
+	<h2>Your Info</h2>
 </div>
 
 </div> <!--#staffPage-->

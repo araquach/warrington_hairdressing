@@ -26,30 +26,13 @@
 <div class="container" id="page">
 
 	<header>
-		<div id="logo"><h1><?php echo CHtml::encode(Yii::app()->name); ?></h1></div>
-		
-		<div id="mainmenu">
-			<?php $this->widget('zii.widgets.CMenu',array(
-				'items'=>array(
-					array('label'=>'Home', 'url'=>array('/site/index')),
-					array('label'=>'Staff', 'url'=>array('index')),
-					array('label'=>'Admin', 'url'=>array('/site/page', 'view'=>'admin_index')),
-					
-				),
-			)); ?>
-		</div><!-- mainmenu -->
-		
-		<div id="loginmenu">
-			<?php $this->widget('zii.widgets.CMenu',array(
-				'items'=>array(
-					array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
-					array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
-				),
-			)); ?>
-		</div> <!--loginmenu-->
-		
-	</header><!-- header -->
+		<div id="logo"><?php echo CHtml::link('<h1>Salon Manager</h1>', array('/site/index')); ?></div>
+	</header>
 
+	<?php /*echo CHtml::link('<div class="menuBox small" id="lieu">
+		<h2>Lieu Hours</h2>
+		<p>2 owed</p>
+	</div>', array('/lieu/staff_lieu')); */?>
 	
 	
 	<?php echo $content; ?>
@@ -61,7 +44,6 @@
 			<?php $this->widget('zii.widgets.CMenu',array(
 				'items'=>array(
 					array('label'=>'Home', 'url'=>array('/site/index')),
-					array('label'=>'Staff', 'url'=>array('/site/page', 'view'=>'staff_index')),
 					array('label'=>'Admin', 'url'=>array('/site/page', 'view'=>'admin_index')),
 					
 				),

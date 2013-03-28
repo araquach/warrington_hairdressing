@@ -56,8 +56,12 @@ p,h1,h2,h3,h4,h5,h6,a {
 }
 
 header {
-	padding-top: 20px;
- }
+	padding: 20px 0;
+}
+
+header a {
+	text-decoration: none;
+}
 
 /* @end */
 
@@ -191,7 +195,7 @@ header {
 footer {
 	font-size: .8em;
 	color: #FFF;
-	padding: 20px;
+	padding-left: 20px;
 	margin-top: 400px;
 	margin-left: -20px;
 	position: fixed;
