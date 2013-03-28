@@ -3,7 +3,7 @@
 /* @var $dataProvider CActiveDataProvider */
 ?>
 
-
+<div id="lieuPage">
 
 <h2>Manage Your Lieu Hours</h2>
 
@@ -12,4 +12,6 @@
 	array('label'=>'View Your Lieu Hours', 'url'=>array('staff_lieu_list')),
 );
 ?>
+
+</div> <!--#lieuPage-->
 

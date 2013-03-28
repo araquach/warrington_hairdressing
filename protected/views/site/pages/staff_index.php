@@ -2,7 +2,7 @@
 /* @var $this SiteController */
 ?>
 
-<div id="menu_container">
+<div id="staffPage" class="group">
 
 <?php echo CHtml::link('<div class="menuBox wide" id="holiday">
 	<h2>Holidays</h2>
@@ -30,7 +30,7 @@
 	<p>10</p>
 </div>
 
-<div class="menuBox small" id="products">			
+<div class="menuBox wide" id="products">			
 	<h2>Products</h2>
 	<p>&pound;134</p>
 </div>
@@ -40,12 +40,12 @@
 	<p>12</p>
 </div>
 
-<div class="menuBox wide" id="messages">			
+<div class="menuBox small" id="messages">			
 	<h2>Messages</h2>
 	<p>2 new</p>
 </div>
 
-<div class="menuBox wide" id="figures">			
+<div class="menuBox small" id="figures">			
 	<h2>Figures</h2>
 	<p>&pound;3,200</p>
 </div>
@@ -59,4 +59,4 @@
 	<p>12</p>
 </div>
 
-</div> <!--.menu_container-->
+</div> <!--#staffPage-->
