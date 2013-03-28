@@ -23,7 +23,7 @@
 
 <body>
 
-<div class="container" id="page">
+<div id="page">
 
 	<div id="header">
 		<div id="logo"><h1><?php echo CHtml::encode(Yii::app()->name); ?></h1></div>
@@ -57,6 +57,7 @@
 	<?php endif?>
 	
 	<?php echo $content; ?>
+	
 	</div> <!--bodycontent-->
 	<div class="group"></div>
 

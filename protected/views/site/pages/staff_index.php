@@ -2,7 +2,7 @@
 /* @var $this SiteController */
 ?>
 
-
+<div id="menu_container">
 
 <?php echo CHtml::link('<div class="menuBox wide" id="holiday">
 	<h2>Holidays</h2>
@@ -58,3 +58,5 @@
 	<h2>Users</h2>
 	<p>12</p>
 </div>
+
+</div> <!--.menu_container-->

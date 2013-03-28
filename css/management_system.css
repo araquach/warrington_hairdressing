@@ -24,24 +24,10 @@
 /* @group Main styling */
 
 body {
-	padding: 100px;
+	padding-left: 100px;
 	width: 80%;
 	background-color: rgb(1,27,64);
 	min-width: 850px;
-}
-
-.mainside {
-	width: 500px;
-}
-
-.container {
-	width: 100%;
-	position: relative;
-}
-
-.bodycontent {
-	float: left;
-	clear: left;
 }
 
 ul {
@@ -65,7 +51,9 @@ p,h1,h2,h3,h4,h5,h6,a {
 /* @group Nav Styling */
 
 #mainmenu {
-	float: right;
+	position: absolute;
+	right: 30px;
+	top: 10px;
 }
 
 #mainmenu ul {
@@ -79,8 +67,9 @@ p,h1,h2,h3,h4,h5,h6,a {
 }
 
 #loginmenu {
-	float: right;
-	list-style: none;
+	position: absolute;
+	right: 30px;
+	top: 50px;
 }
 
 #loginmenu ul li {
@@ -90,6 +79,10 @@ p,h1,h2,h3,h4,h5,h6,a {
 /* @end */
 
 /* @group Staff Page */
+
+#menu_container {
+	height: 300px;
+}
 
 .menuBox {
 	margin: 10px;
@@ -188,9 +181,6 @@ p,h1,h2,h3,h4,h5,h6,a {
 
 #holidayPage {
 	background-color: rgb(45, 123, 232);
-	width: 100%;
-	float: left;
-	height: 100%;
 }
 
 #holidayNav {
