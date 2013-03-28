@@ -91,19 +91,113 @@ p,h1,h2,h3,h4,h5,h6,a {
 
 /* @group Staff Page */
 
-#staffmenu ul li {
-	width: 200px;
+.menuBox {
+	margin: 10px;
+	padding: 20px;
+	float: left;
+	position: relative;
+}
+
+.menuBox p,
+.menuBox h2 {
+	margin: 0;
+	padding: 0;
+	position: absolute;
+}
+
+.menuBox h2 {
+	font-size: 1.2em;
+	bottom: 20px;
+	left: 20px;
+}
+
+.menuBox p {
+	bottom: 20px;
+	right: 20px;
+}
+
+.menuBox.small {
+	width: 210px;
+	height: 210px;
+	background-position: center 40px;
+	background-repeat: no-repeat;
+}
+
+.menuBox.wide {
+	width: 480px;
+	height: 210px;
+	background-position: center 40px;
+	background-repeat: no-repeat;
+}
+
+.menuBox.big {
+	width: 460px;
+	height: 460px;
+	background-position: 40px 40px;
+	background-repeat: no-repeat;
+}
+
+#holiday {
+	background-color: rgb(45, 123, 232);
+	background-image: url('../images/icons/icons_holiday.png');
+}
+
+#lieu {
+	background-color: rgb(94, 164, 40);
+	background-image: url('../images/icons/icons_lieu.png');
+}
+
+#sick {
+	background-color: rgb(84, 57, 172);
+	background-image: url('../images/icons/icons_sick.png');
+}
+
+#products {
+	background-color: rgb(186, 34, 46);
+	background-image: url('../images/icons/icons_products.png');
+}
+
+#blank {
+	background-color: rgb(84, 57, 172);
+	
+}
+
+#messages {
+	background-color: rgb(186, 34, 46);
+	background-image: url('../images/icons/icons_email.png');
+}
+
+#figures {
+	background-color: rgb(208, 72, 46);
+	background-image: url('../images/icons/icons_kpi.png');
+}
+
+#user {
+	background-color: rgb(94, 164, 40);
+	background-image: url('../images/icons/icons_user.png');
+}
+
+#users {
+	background-color: rgb(45, 123, 232);
+	background-image: url('../images/icons/icons_users.png');
+}
+
+/* @end */
+
+/* @group holiday */
+
+#holidayPage {
+	background-color: rgb(45, 123, 232);
+	width: 100%;
+	float: left;
+	height: 100%;
+}
+
+#holidayNav {
+	width: 400px;
 	height: 200px;
 	background-color: red;
-	float: left;
-	margin: 10px;
 }
-
-#staffmenu ul li:nth-child(2) {
-	background-color: #f2f25a;
-}
-
-
 
 /* @end */
 
