@@ -188,7 +188,21 @@ header a {
 	margin-top: 50px;
 }
 
+div.form.holiday {
+	background: url('../images/icons/icons_holiday.png') no-repeat 40px 40px rgb(45, 123, 232);
+}
+
+
+
 /* @end */
+
+div.form.lieu {
+	background: url('../images/icons/icons_lieu.png') no-repeat 40px 40px rgb(94, 164, 40);
+}
+
+div.form.user {
+	background: url('../images/icons/icons_user.png') no-repeat 40px 40px rgb(94, 164, 40);
+}
 
 /* @group footer */
 

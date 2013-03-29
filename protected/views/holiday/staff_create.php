@@ -13,6 +13,4 @@ $this->menu=array(
 );
 ?>
 
-<h1>Book Your Holiday</h1>
-
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
