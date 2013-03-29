@@ -63,13 +63,21 @@ div.form input {
 
 div.row.buttons input {
 	width: 100px;
+	height: 50px;
+	margin-top: 20px;
+	background: none;
+	border: 6px solid #FFF;
 	font-size: 1.2em;
-	color: rgb(1,27,64);
-	font-weight: bold;
+	color: #FFF;
+	font-weight: bolder;
 	text-align: center;
-	border: 1px solid #888;
-	border-radius: 10px;
-	line-height: .5em;
+	border-radius: 20px;
+	line-height: .7em;
+	opacity: .75;
+}
+
+div.row.buttons input:hover {
+	opacity: 1;
 }
 
 div.form fieldset
@@ -146,7 +154,7 @@ div.form .errorSummary
 	padding: 20px;
 	border: 3px solid #FFF;
 	font-size: 1em;
-	line-height: 1.4em;
+	line-height: 1.5em;
 	color: #FFF;
 }
 

@@ -77,10 +77,10 @@ class Lieu extends SalonActiveRecord
 		return array(
 			'id' => 'ID',
 			'staff_id' => 'Staff Member',
-			'lieu_hours' => 'Number of Lieu Hours',
+			'lieu_hours' => 'Number of Hours',
 			'description' => 'Description',
-			'date_regarding' => 'Date Regarding',
-			'requested_on' => 'Requested On',
+			'date_regarding' => 'Date',
+			'requested_on' => 'Requested',
 			'approved' => 'Approved',
 	
 		);

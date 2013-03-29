@@ -65,6 +65,26 @@ header a {
 
 /* @end */
 
+/* @group list Formatting */
+
+div.items {
+	background-color: red;
+	padding: 10px;
+	float: left;
+}
+
+div.view {
+	background-color: green;
+	width: 230px;
+	height: 230px;
+	float: left;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	padding: 20px;
+}
+
+/* @end */
+
 /* @group Nav Styling */
 
 #mainmenu ul {
