@@ -172,5 +172,18 @@ class Holiday extends SalonActiveRecord
 		
 	}
 	
+	public function preBooked()
+	{
+		$date = $this->requested_on_date;
+		$request = $this->request_date_from;
+		$pre = 'No';
+		
+		if ($date < $request) {
+			$pre = 'Yes';
+		}
+		
+		return $pre;
+	}
+	
 	
 }

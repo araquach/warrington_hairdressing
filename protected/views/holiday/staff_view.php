@@ -25,7 +25,7 @@ $this->menu=array(
 			),
 		array(
 			'name'=>'prebooked',
-			'value'=>$model->getPrebookedText(),
+			'value'=>$model->preBooked(),
 			),
 		array(
 			'name'=>'request_date_from',

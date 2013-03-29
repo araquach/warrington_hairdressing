@@ -14,7 +14,7 @@
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('prebooked')); ?>:</b>
-	<?php echo CHtml::encode($data->getPrebookedText()); ?>
+	<?php echo CHtml::encode($data->preBooked()); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('request_date_from')); ?>:</b>
