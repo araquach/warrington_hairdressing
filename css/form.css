@@ -154,6 +154,8 @@ div.form .errorMessage
 {
 	color: #FFF;
 	font-size: 0.9em;
+	margin-top: -22px;
+	margin-bottom: 30px;
 }
 
 div.form .errorSummary p
