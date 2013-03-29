@@ -68,7 +68,6 @@ header a {
 /* @group list Formatting */
 
 div.items {
-	background-color: red;
 	padding: 10px;
 	float: left;
 }
@@ -81,6 +80,7 @@ div.view {
 	margin-right: 10px;
 	margin-bottom: 10px;
 	padding: 20px;
+	line-height: 1.5em;
 }
 
 /* @end */
