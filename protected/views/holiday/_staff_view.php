@@ -28,6 +28,10 @@
 	<b><?php echo CHtml::encode($data->getAttributeLabel('approved')); ?>:</b>
 	<?php echo CHtml::encode($data->getApprovedText()); ?>
 	<br />
+	
+	
+	<?php echo CHtml::encode($data->totalHoliday()); ?>
+	
 
 	<?php /*
 	<b><?php echo CHtml::encode($data->getAttributeLabel('requested_on_date')); ?>:</b>
