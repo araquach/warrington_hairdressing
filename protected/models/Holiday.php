@@ -161,16 +161,12 @@ class Holiday extends SalonActiveRecord
 	public function totalHoliday()
 	{
 	
-		$criteria = new CDbCriteria();
-		$criteria->with = 'staff';
-		$criteria->condition = 'staff.id=' . Yii::app()->user->id;
-		$criteria->select = 'hours_requested';
-		
-		$total = Holiday::model()->count($criteria);
+		$total = Holiday::model()->with('staff')->findBySql('select sum(`hours_requested`) as `sum` from Holiday', array());
 		
 		return $total;
 		
 	}
+	
 	
 	
 }
