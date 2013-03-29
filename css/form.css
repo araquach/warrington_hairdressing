@@ -114,7 +114,7 @@ div.form div.error label:first-child,
 div.form label.error,
 div.form span.error
 {
-	color: #C00;
+	color: #FFF;
 }
 
 div.form div.error input,
@@ -124,8 +124,7 @@ div.form input.error,
 div.form textarea.error,
 div.form select.error
 {
-	background: #FEE;
-	border-color: #C00;
+	
 }
 
 div.form div.success input,
@@ -141,30 +140,36 @@ div.form select.success
 
 
 div.form .errorSummary
-{
-	border: 2px solid #C00;
-	padding: 7px 7px 12px 7px;
-	margin: 0 0 20px 0;
-	background: #FEE;
-	font-size: 0.9em;
+{	
+
+	width: 350px;
+	margin: 30px 0;
+	padding: 20px;
+	border: 3px solid #FFF;
+	font-size: 1em;
+	line-height: 1.4em;
+	color: #FFF;
 }
 
 div.form .errorMessage
 {
-	color: red;
+	color: #FFF;
 	font-size: 0.9em;
 }
 
 div.form .errorSummary p
 {
 	margin: 0;
-	padding: 5px;
+	padding: 0;
+	font-size: 1.2em;
+	font-weight: bold;
+	margin-bottom: 1em;	
 }
 
 div.form .errorSummary ul
 {
 	margin: 0;
-	padding: 0 0 0 20px;
+	padding: 0;
 }
 
 div.wide.form label
