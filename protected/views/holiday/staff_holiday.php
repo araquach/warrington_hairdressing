@@ -5,8 +5,6 @@
 
 <div id="holidayPage">
 
-<h1>Manage Your Holidays</h1>
-
 <nav id="holidayNav">
 <?php echo CHtml::link('Book a Holiday', array('staff_create')); ?>
 </nav>
