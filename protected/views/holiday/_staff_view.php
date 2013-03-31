@@ -5,9 +5,7 @@
 
 <div class="view">
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('id')); ?>:</b>
 	<?php echo CHtml::link(CHtml::encode($data->id), array('staff_view', 'id'=>$data->id)); ?>
-	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('hours_requested')); ?>:</b>
 	<?php echo CHtml::encode($data->hourConverter()); ?>
@@ -18,11 +16,11 @@
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('request_date_from')); ?>:</b>
-	<?php echo CHtml::encode(Yii::app()->dateFormatter->formatDateTime($data->request_date_from, "full","")); ?>
+	<?php echo CHtml::encode(Yii::app()->dateFormatter->formatDateTime($data->request_date_from, "short","")); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('request_date_to')); ?>:</b>
-	<?php echo CHtml::encode(Yii::app()->dateFormatter->formatDateTime($data->request_date_to, "full","")); ?>
+	<?php echo CHtml::encode(Yii::app()->dateFormatter->formatDateTime($data->request_date_to, "short","")); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('approved')); ?>:</b>

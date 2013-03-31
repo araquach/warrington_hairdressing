@@ -22,11 +22,11 @@ $this->menu=array(
 		'description',
 		array(
 			'name'=>'date_regarding',
-			'value'=>Yii::app()->dateFormatter->formatDateTime($model->date_regarding,"full",""),		
+			'value'=>Yii::app()->dateFormatter->formatDateTime($model->date_regarding,"short",""),		
 			),
 		array(
 			'name'=>'requested_on',
-			'value'=>Yii::app()->dateFormatter->formatDateTime($model->requested_on,"full",""),		
+			'value'=>Yii::app()->dateFormatter->formatDateTime($model->requested_on,"short",""),		
 			),
 		array(
 			'name'=>'approved',

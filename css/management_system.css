@@ -81,6 +81,16 @@ div.view {
 	margin-bottom: 10px;
 	padding: 20px;
 	line-height: 1.5em;
+	position: relative;
+}
+
+div.view a {
+	width: 250px;
+	height: 250px;
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	opacity: 0;
 }
 
 /* @end */
@@ -212,6 +222,10 @@ div.form.holiday {
 	background: url('../images/icons/icons_holiday.png') no-repeat 40px 40px rgb(45, 123, 232);
 }
 
+#holidayPage .view {
+	background-color: rgb(45, 123, 232);
+}
+
 
 
 /* @end */
@@ -222,6 +236,10 @@ div.form.lieu {
 
 div.form.user {
 	background: url('../images/icons/icons_user.png') no-repeat 40px 40px rgb(94, 164, 40);
+}
+
+#lieuPage .view {
+	background-color: rgb(94, 164, 40)	;
 }
 
 /* @group footer */
