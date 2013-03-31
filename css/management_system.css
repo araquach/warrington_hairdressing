@@ -21,6 +21,7 @@
 /* @end */
 
 
+
 /* @group Main styling */
 
 body {
@@ -73,7 +74,6 @@ div.items {
 }
 
 div.view {
-	background-color: green;
 	width: 230px;
 	height: 230px;
 	float: left;
@@ -239,7 +239,7 @@ div.form.user {
 }
 
 #lieuPage .view {
-	background-color: rgb(94, 164, 40)	;
+	background-color: rgb(94, 164, 40);
 }
 
 /* @group footer */
@@ -258,6 +258,66 @@ footer {
 
 /* @end */
 
+/* @group Mobile Styling */
+
+@media only screen and (max-device-width: 480px) {
+
+
+h1 {
+	font-size: 3em;
+}
+
+.menuBox h2 {
+	font-size: 2.5em;
+}
+
+p {
+	font-size: 2.5em;
+}
+
+div.view {
+	width: 410px;
+	height: 410px;
+	font-size: 1.7em;
+}
+
+div.view a {
+	width: 410px;
+	height: 410px;
+}
+
+
+.menuBox.small {
+	width: 410px;
+	height: 410px;
+	background-position: center 70px;
+	background-size: 60%;
+	background-repeat: no-repeat;
+}
+
+.menuBox.wide {
+	width: 880px;
+	height: 420px;
+	background-position: center 70px;
+	background-size: 30%;
+	background-repeat: no-repeat;
+}
+
+div.form {
+	background-size: 35%;
+}
+
+div.form.user {
+	background: url('../images/icons/icons_user.png') no-repeat 40px 40px rgb(94, 164, 40);
+}
+
+
+
+	
+	
+}
+
+/* @end */
 
 
 
