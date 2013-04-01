@@ -53,6 +53,7 @@ class Holiday extends SalonActiveRecord
 		// will receive user inputs.
 		return array(
 			array('hours_requested, request_date_from, request_date_to', 'required'),
+			array('approved','boolean'),
 			array('prebooked',  'numerical', 'integerOnly'=>true),
 			array('hours_requested',  'numerical'),
 			//array('request_date_from, request_date_to', 'date'),
@@ -144,6 +145,8 @@ class Holiday extends SalonActiveRecord
 	
 	public function afterValidate()
 	{
+		if($this->isNewRecord)
+		
 		$this->hours_requested=$this->hours_requested * 8;
 		
 		return parent::afterValidate();
@@ -151,8 +154,8 @@ class Holiday extends SalonActiveRecord
 	
 	public function hourConverter()
 	{
+	
 		$conversion = $this->hours_requested;
-		
 		$conversion = $conversion / 8;
 		
 		return $conversion;

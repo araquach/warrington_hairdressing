@@ -66,7 +66,19 @@ class HolidayController extends Controller
 	 */
 	public function actionView($id)
 	{
-		$this->render('view',array(
+		$model=$this->loadModel($id);
+		
+				// Uncomment the following line if AJAX validation is needed
+				// $this->performAjaxValidation($model);
+		
+				if(isset($_POST['Holiday']))
+				{
+					$model->attributes=$_POST['Holiday'];
+					if($model->save())
+						$this->redirect(array('view','id'=>$model->id));
+				}
+			
+			$this->render('view',array(
 			'model'=>$this->loadModel($id),
 		));
 	}

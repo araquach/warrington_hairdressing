@@ -54,3 +54,6 @@ $this->menu=array(
 			),
 	),
 )); ?>
+
+
+<?php echo $this->renderPartial('_approval', array('model'=>$model)); ?>
