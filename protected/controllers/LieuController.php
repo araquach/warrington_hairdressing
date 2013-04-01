@@ -61,7 +61,19 @@ class LieuController extends Controller
 	 */
 	public function actionView($id)
 	{
-		$this->render('view',array(
+		$model=$this->loadModel($id);
+		
+				// Uncomment the following line if AJAX validation is needed
+				// $this->performAjaxValidation($model);
+		
+				if(isset($_POST['Lieu']))
+				{
+					$model->attributes=$_POST['Lieu'];
+					if($model->save())
+						$this->redirect(array('view','id'=>$model->id));
+				}
+			
+			$this->render('view',array(
 			'model'=>$this->loadModel($id),
 		));
 	}

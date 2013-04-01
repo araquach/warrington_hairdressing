@@ -49,6 +49,7 @@ class Lieu extends SalonActiveRecord
 		// will receive user inputs.
 		return array(
 			array('lieu_hours, description, date_regarding', 'required'),
+			array('approved', 'boolean'),
 			array('lieu_hours', 'numerical', 'integerOnly'=>true), 
 			array('requested_on','default','value'=>new CDbExpression('NOW()'),'setOnEmpty'=>false,'on'=>'insert'),
 			// The following rule is used by search().

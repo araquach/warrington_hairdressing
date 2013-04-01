@@ -1,3 +1,6 @@
+/* @override 
+	http://www.warringtonhairdressing.co.uk/css/management_system.css */
+
 
 /* @group Clear/fix styling */
 
@@ -258,63 +261,126 @@ footer {
 
 /* @end */
 
-/* @group Mobile Styling */
 
+/* @group Mobile styles */
 @media only screen and (max-device-width: 480px) {
+	
+	
+	h1 {
+		font-size: 3em;
+	}
+	
+	.menuBox h2 {
+		font-size: 2.5em;
+	}
+	
+	p {
+		font-size: 2.5em;
+	}
+	
+	div.view {
+		width: 400px;
+		height: 400px;
+		margin-right: 20px;
+		margin-bottom: 20px;
+		font-size: 1.7em;
+	}
+	
+	div.view a {
+		width: 410px;
+		height: 410px;
+	}
+	
+	
+	.menuBox.small {
+		width: 410px;
+		height: 410px;
+		background-position: center 70px;
+		background-size: 60%;
+		background-repeat: no-repeat;
+	}
+	
+	.menuBox.wide {
+		width: 880px;
+		height: 420px;
+		background-position: center 70px;
+		background-size: 30%;
+		background-repeat: no-repeat;
+	}
+	
+	div.form {
+		background-size: 35%;
+	}
+	
+	div.form.user {
+		background: url('../images/icons/icons_user.png') no-repeat 40px 40px rgb(94, 164, 40);
+	}
+	
+	div#ui-datepicker-div.ui-datepicker.ui-widget.ui-widget-content.ui-helper-clearfix.ui-corner-all {
+		width: 700px;
+		height: 700px;
+	}
+	
+	a.ui-state-default {
+		width: 80px;
+		height: 80px;
+		font-size: 2em;
+	}
+	
+	
+}
+/* @end */
 
+/* @group Detail View Styling */
 
-h1 {
-	font-size: 3em;
+table.detail-view .null
+{
+
 }
 
-.menuBox h2 {
-	font-size: 2.5em;
+table.detail-view
+{
+	border-collapse: collapse;
+	width: 100%;
+	margin: 0;
 }
 
-p {
-	font-size: 2.5em;
+table.detail-view th, table.detail-view td
+{
+	font-size: 1.5em;
+	padding: 0.3em 0.6em;
+	vertical-align: top;
+	color: #FFF;
 }
 
-div.view {
-	width: 400px;
-	height: 400px;
-	margin-right: 20px;
-	margin-bottom: 20px;
-	font-size: 1.7em;
+table.detail-view th
+{
+	text-align: left;
+	width: 250px;
 }
 
-div.view a {
-	width: 410px;
-	height: 410px;
+table.detail-view tr.odd
+{
+	background-color: none;
 }
 
+table.detail-view tr.even
+{
 
-.menuBox.small {
-	width: 410px;
-	height: 410px;
-	background-position: center 70px;
-	background-size: 60%;
-	background-repeat: no-repeat;
 }
 
-.menuBox.wide {
-	width: 880px;
-	height: 420px;
-	background-position: center 70px;
-	background-size: 30%;
-	background-repeat: no-repeat;
+table.detail-view tr.odd th
+{
 }
 
-div.form {
-	background-size: 35%;
+table.detail-view tr.even th
+{
 }
 
-div.form.user {
-	background: url('../images/icons/icons_user.png') no-repeat 40px 40px rgb(94, 164, 40);
-}
+/* @end */
 
 footer {
-	font-size: 1.8em;
+	font-size: 1em;
 	color: #FFF;
 	padding-left: 20px;
 	margin-top: 400px;
@@ -325,11 +391,11 @@ footer {
 	background-color: #000;
 }
 
-	
-	
-}
 
-/* @end */
+	
+	
+
+
 
 
 

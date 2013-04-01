@@ -15,7 +15,16 @@
 
 	<?php echo $form->errorSummary($model); ?>
 
-
+	<?php if (Yii::app()->detectMobileBrowser->showMobile): ?> 
+	
+	<div class="row">
+		<?php echo $form->labelEx($model,'request_date_from'); ?>
+		<?php echo $form->dateField($model,'request_date_from'); ?>
+		<?php echo $form->error($model,'request_date_from'); ?>
+	</div>
+	
+	<?php else: ?>
+	
 	<div class="row">
 		<?php echo $form->labelEx($model,'request_date_from'); ?>
 		<?php $this->widget('zii.widgets.jui.CJuiDatePicker', array(
@@ -29,7 +38,18 @@
 		)); ?>
 		<?php echo $form->error($model,'request_date_from'); ?>
 	</div>
+	
+	<?php endif; ?>
 
+	<?php if (Yii::app()->detectMobileBrowser->showMobile): ?> 
+	<div class="row">
+		<?php echo $form->labelEx($model,'request_date_to'); ?>
+		<?php echo $form->dateField($model,'request_date_to'); ?>
+		<?php echo $form->error($model,'request_date_to'); ?>
+	</div>
+	
+	<?php else: ?>
+		
 	<div class="row">
 		<?php echo $form->labelEx($model,'request_date_to'); ?>
 		<?php $this->widget('zii.widgets.jui.CJuiDatePicker', array(
@@ -42,11 +62,13 @@
 		    ),
 		)); ?>
 		<?php echo $form->error($model,'request_date_to'); ?>
-	</div>
+	</div>	
+	
+	<?php endif; ?>
 	
 	<div class="row">
 		<?php echo $form->labelEx($model,'hours_requested'); ?>
-		<?php echo $form->textField($model,'hours_requested'); ?>
+		<?php echo $form->dateField($model,'hours_requested'); ?>
 		<?php echo $form->error($model,'hours_requested'); ?>
 	</div>
 
