@@ -177,7 +177,7 @@ class Holiday extends SalonActiveRecord
 	
 	public function preBooked()
 	{
-		$date = $this->requested_on_date;
+		$date = date('Y-m-d', strtotime('+2 week'));
 		$request = $this->request_date_from;
 		$pre = 'No';
 		
