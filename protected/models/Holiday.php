@@ -55,6 +55,8 @@ class Holiday extends SalonActiveRecord
 			array('hours_requested, request_date_from, request_date_to', 'required'),
 			array('approved','boolean'),
 			array('prebooked',  'numerical', 'integerOnly'=>true),
+			
+			array('prebooked', 'filter', 'filter'=>array( $this, 'filterPreBooked')),
 			array('hours_requested',  'numerical'),
 			//array('request_date_from, request_date_to', 'date'),
 			array('requested_on_date','default','value'=>new CDbExpression('NOW()'),'setOnEmpty'=>false,'on'=>'insert'),
@@ -175,17 +177,16 @@ class Holiday extends SalonActiveRecord
 		
 	}
 	
-	public function beforeSave()
+	public function filterPreBooked()
 	{
 		$prebooked = $this->prebooked;
 		$request = $this->request_date_from;
-		$date = strtotime($this->requested_on_date, '+2 week');
-		
+		$date = date('Y-m-d', strtotime('+2 week'));		
 		if ($date < $request) {
 			$prebooked = 1;
 		}
 		
-		return parent::beforeSave();
+		return $prebooked;
 	}
 	
 	
