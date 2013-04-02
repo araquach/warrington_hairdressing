@@ -15,7 +15,7 @@ $this->menu=array(
 	array('label'=>'Manage Lieu', 'url'=>array('admin')),
 );
 ?>
-
+<div class="detail lieu">
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model, 'cssFile'=>'false',
 	'attributes'=>array(
@@ -40,7 +40,9 @@ $this->menu=array(
 	),
 )); ?>
 
-<div id="approve" class="form">
+</div>
+
+<div id="approve" class="form lieu">
 <?php echo $this->renderPartial('_approval', array('model'=>$model)); ?>
 </div> <!--#approve-->
 

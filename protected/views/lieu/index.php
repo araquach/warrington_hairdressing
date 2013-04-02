@@ -12,9 +12,11 @@ $this->menu=array(
 );
 ?>
 
-<h1>Lieu Hours</h1>
+<div id="lieuPage">
 
 <?php $this->widget('zii.widgets.CListView', array(
 	'dataProvider'=>$dataProvider,
 	'itemView'=>'_view',
 )); ?>
+
+</div>

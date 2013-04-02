@@ -12,23 +12,24 @@ $this->menu=array(
 	array('label'=>'Add/Take Lieu Hours', 'url'=>array('staff_create')),
 );
 ?>
-
-<?php $this->widget('zii.widgets.CDetailView', array(
-	'data'=>$model, 'cssFile'=>'false',
-	'attributes'=>array(
-		'lieu_hours',
-		'description',
-		array(
-			'name'=>'date_regarding',
-			'value'=>Yii::app()->dateFormatter->formatDateTime($model->date_regarding,"short",""),		
-			),
-		array(
-			'name'=>'requested_on',
-			'value'=>Yii::app()->dateFormatter->formatDateTime($model->requested_on,"short",""),		
-			),
-		array(
-			'name'=>'approved',
-			'value'=>$model->getApprovedText(),
-			),
-	),
-)); ?>
+<div class="detail lieu">
+	<?php $this->widget('zii.widgets.CDetailView', array(
+		'data'=>$model, 'cssFile'=>'false',
+		'attributes'=>array(
+			'lieu_hours',
+			'description',
+			array(
+				'name'=>'date_regarding',
+				'value'=>Yii::app()->dateFormatter->formatDateTime($model->date_regarding,"short",""),		
+				),
+			array(
+				'name'=>'requested_on',
+				'value'=>Yii::app()->dateFormatter->formatDateTime($model->requested_on,"short",""),		
+				),
+			array(
+				'name'=>'approved',
+				'value'=>$model->getApprovedText(),
+				),
+		),
+	)); ?>
+</div>

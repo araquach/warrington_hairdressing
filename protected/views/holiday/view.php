@@ -15,6 +15,7 @@ $this->menu=array(
 	array('label'=>'Manage Holiday', 'url'=>array('admin')),
 );
 ?>
+<div class="detail holiday">
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model, 'cssFile'=>'false',
@@ -51,6 +52,8 @@ $this->menu=array(
 	),
 )); ?>
 
-<div id="approve" class="form">
+</div> <!--holiday-->
+
+<div id="approve" class="form holiday">
 <?php echo $this->renderPartial('_approval', array('model'=>$model)); ?>
 </div> <!--#approve-->

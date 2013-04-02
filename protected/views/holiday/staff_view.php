@@ -13,7 +13,7 @@ $this->menu=array(
 );
 
 ?>
-
+<div class="detail holiday">
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model, 'cssFile'=>'false',
 	'attributes'=>array(
@@ -49,3 +49,4 @@ $this->menu=array(
 		
 	),
 )); ?>
+</div> <!--#holiday-->
