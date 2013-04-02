@@ -257,13 +257,20 @@ div.view a {
 
 /* @end */
 
-/* @group holiday */
+/* @group View Styling */
 
+
+/* @end */
+
+
+/* @group holiday */
 
 
 #holidayNav {
 	margin-top: 50px;
 }
+
+/* @end */
 
 div.form.holiday {
 	background: url('../images/icons/icons_holiday.png') no-repeat 40px 40px rgb(45, 123, 232);
@@ -286,6 +293,8 @@ div.form.user {
 #lieuPage .view {
 	background-color: rgb(94, 164, 40);
 }
+
+
 
 /* @group footer */
 
