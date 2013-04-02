@@ -14,8 +14,6 @@ $this->menu=array(
 
 ?>
 
-<h1>View Your Holiday #<?php echo $model->id; ?></h1>
-
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model, 'cssFile'=>'false',
 	'attributes'=>array(

@@ -1,5 +1,6 @@
 /* @override 
-	http://www.warringtonhairdressing.co.uk/css/management_system.css */
+	http://www.warringtonhairdressing.co.uk/css/management_system.css
+	http://localhost/~adamcarter/warrington_hairdressing/css/management_system.css */
 
 
 /* @group Clear/fix styling */
@@ -330,6 +331,32 @@ footer {
 	
 }
 /* @end */
+
+#approve {
+	height: 60px;
+	padding: 0;
+	padding-left: 20px;
+	margin-top: 40px;
+	float: left;
+}
+
+#approve label {
+	float: left;
+	width: 100px;
+	margin-top: 10px;
+}
+
+#holiday-form div.row.buttons input {
+	float: left;
+	clear: both;
+	width: 130px;
+}
+
+#approve #Holiday_approved,
+#approve #Lieu_approved {
+	float: right;
+	width: 30px;
+}
 
 /* @group Detail View Styling */
 

@@ -13,10 +13,8 @@ $this->menu=array(
 );
 ?>
 
-<h1>View Lieu #<?php echo $model->id; ?></h1>
-
 <?php $this->widget('zii.widgets.CDetailView', array(
-	'data'=>$model,
+	'data'=>$model, 'cssFile'=>'false',
 	'attributes'=>array(
 		'lieu_hours',
 		'description',

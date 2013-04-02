@@ -83,13 +83,13 @@ class Holiday extends SalonActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'staff_id' => 'Staff Member',
+			'staff_id' => 'Staff',
 			'hours_requested' => 'Days Requested',
 			'prebooked' => 'Prebooked',
-			'request_date_from' => 'Request Date From',
-			'request_date_to' => 'Request Date To',
+			'request_date_from' => 'From',
+			'request_date_to' => 'To',
 			'approved' => 'Approved',
-			'requested_on_date' => 'Requested On Date',
+			'requested_on_date' => 'Requested On',
 		);
 	}
 
