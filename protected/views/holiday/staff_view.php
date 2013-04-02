@@ -18,35 +18,40 @@ $this->menu=array(
 	'data'=>$model, 'cssFile'=>'false',
 	'attributes'=>array(
 		array(
-			'name'=>'Day\'s Requested',
+			'name'=>'Days'.':',
 			'value'=>$model->hourConverter(),
 			),
 		array(
-			'name'=>'prebooked',
+			'name'=>'prebooked'.':',
 			'value'=>$model->getPrebookedText(),
 			),
 		array(
-			'name'=>'request_date_from',
+			'name'=>'from'.':',
 			'value'=>Yii::app()->dateFormatter->formatDateTime($model->request_date_from,"full",""),		
 			),
 		array(
-			'name'=>'request_date_to',
+			'name'=>'to'.':',
 			'value'=>Yii::app()->dateFormatter->formatDateTime($model->request_date_to,"full",""),
 			),
 		array(
-			'name'=>'approved',
+			'name'=>'approved'.':',
 			'value'=>$model->getApprovedText(),
 			),
 		
 		array(
-			'name'=>'requested_on_date',
+			'name'=>'requested'.':',
 			'value'=>Yii::app()->dateFormatter->formatDateTime($model->requested_on_date,"full",""),
 			),
 		array(
-			'name'=>'Total Holidays',
+			'name'=>'Total'.':',
 			'value'=>$model->totalHoliday(),
 			),
 		
 	),
 )); ?>
+
+		
+		
 </div> <!--#holiday-->
+
+<?php echo CHtml::link('<p class="pageLink">Back to the full list</p>', array('/holiday/staff_holiday')); ?>

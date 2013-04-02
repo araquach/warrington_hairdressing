@@ -75,7 +75,7 @@ class HolidayController extends Controller
 				{
 					$model->attributes=$_POST['Holiday'];
 					if($model->save())
-						$this->redirect(array('index','dataProvider'=>$dataProvider));
+						$this->redirect(array('index'));
 				}
 			
 			$this->render('view',array(

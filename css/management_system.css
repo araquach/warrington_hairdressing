@@ -1,7 +1,4 @@
-/* @override 
-	http://www.warringtonhairdressing.co.uk/css/management_system.css
-	http://localhost/~adamcarter/warrington_hairdressing/css/management_system.css */
-
+@import "mobile.css";
 
 /* @group Clear/fix styling */
 
@@ -70,6 +67,17 @@ header {
 
 header a {
 	text-decoration: none;
+}
+
+a p.pageLink {
+	font-size: 1.3em;
+	font-weight: bold;
+	margin-top: 40px;
+	opacity: .7;
+}
+
+a p.pageLink:hover {
+	opacity: 1;
 }
 
 /* @end */
@@ -295,76 +303,6 @@ footer {
 
 /* @end */
 
-
-/* @group Mobile styles */
-@media only screen and (max-device-width: 480px) {
-	
-	
-	h1 {
-		font-size: 3em;
-	}
-	
-	.menuBox h2 {
-		font-size: 2.5em;
-	}
-	
-	p {
-		font-size: 2.5em;
-	}
-	
-	div.view {
-		width: 400px;
-		height: 400px;
-		margin-right: 20px;
-		margin-bottom: 20px;
-		font-size: 1.7em;
-	}
-	
-	div.view a {
-		width: 410px;
-		height: 410px;
-	}
-	
-	
-	.menuBox.small {
-		width: 410px;
-		height: 410px;
-		background-position: center 70px;
-		background-size: 60%;
-		background-repeat: no-repeat;
-	}
-	
-	.menuBox.wide {
-		width: 880px;
-		height: 420px;
-		background-position: center 70px;
-		background-size: 30%;
-		background-repeat: no-repeat;
-	}
-	
-	div.form {
-		background-size: 35%;
-	}
-	
-	div.form.user {
-		background: url('../images/icons/icons_user.png') no-repeat 40px 40px rgb(94, 164, 40);
-	}
-	
-	div#ui-datepicker-div.ui-datepicker.ui-widget.ui-widget-content.ui-helper-clearfix.ui-corner-all {
-		width: 700px;
-		height: 700px;
-	}
-	
-	a.ui-state-default {
-		width: 80px;
-		height: 80px;
-		font-size: 2em;
-	}
-	
-	
-}
-/* @end */
-
 /* @group Approval Form */
 
 #approve {
@@ -465,6 +403,7 @@ footer {
 	width: 100%;
 	background-color: #000;
 }
+
 
 
 	

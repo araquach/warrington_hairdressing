@@ -70,7 +70,7 @@ class LieuController extends Controller
 				{
 					$model->attributes=$_POST['Lieu'];
 					if($model->save())
-						$this->redirect(array('index', 'dataProvider'=>$dataProvider));
+						$this->redirect(array('index'));
 				}
 			
 			$this->render('view',array(
