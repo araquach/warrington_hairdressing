@@ -366,7 +366,7 @@ table.detail-view tr.odd
 
 table.detail-view tr.even
 {
-
+	background: none;
 }
 
 table.detail-view tr.odd th
