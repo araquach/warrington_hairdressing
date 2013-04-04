@@ -1,5 +1,5 @@
 <?php
-/* @var $this SiteController */
+/* @var $this HomeController */
 ?>
 
 <div id="staffPage" class="group">
