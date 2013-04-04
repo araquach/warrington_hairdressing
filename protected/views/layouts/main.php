@@ -27,7 +27,7 @@
 <div class="container" id="page">
 
 	<header>
-		<div id="logo"><?php echo CHtml::link('<h1>Salon Manager</h1>', array('/site/index')); ?></div>
+		<div id="logo"><?php echo CHtml::link('<h1>Salon Manager</h1>', array('/home/index')); ?></div>
 	</header>
 
 	<?php /*echo CHtml::link('<div class="menuBox small" id="lieu">
