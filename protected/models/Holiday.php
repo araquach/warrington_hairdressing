@@ -19,8 +19,9 @@
 class Holiday extends SalonActiveRecord
 {
 
-	const APPROVED_Y = 1;
-	const APPROVED_N = 0;
+	const APPROVED_Y = 2;
+	const APPROVED_N = 1;
+	const APPROVED_P = 0;
 	
 	const PREBOOKED_Y = 1;
 	const PREBOOKED_N = 0;
@@ -53,8 +54,8 @@ class Holiday extends SalonActiveRecord
 		// will receive user inputs.
 		return array(
 			array('hours_requested, request_date_from, request_date_to', 'required'),
-			array('approved','boolean'),
-			array('prebooked',  'numerical', 'integerOnly'=>true),
+			array('approved','numerical', 'integerOnly'=>true),
+			array('prebooked','numerical', 'integerOnly'=>true),
 			
 			array('prebooked', 'filter', 'filter'=>array( $this, 'filterPreBooked')),
 			array('hours_requested',  'numerical'),
@@ -124,12 +125,13 @@ class Holiday extends SalonActiveRecord
 		return array(
 			self::APPROVED_Y => 'Yes',
 			self::APPROVED_N => 'No',
+			self::APPROVED_P => 'Pending',
 		);
 	}
 	
 	public function getApprovedText() {
 			$approvedOptions=$this->approvedOptions;
-			return isset($approvedOptions[$this->approved]) ? $approvedOptions[$this->approved] : "unknown position ({$this->approved})";
+			return isset($approvedOptions[$this->approved]) ? $approvedOptions[$this->approved] : "unknown ({$this->approved})";
 	}
 	
 	public function getPrebookedOptions() {
@@ -141,7 +143,7 @@ class Holiday extends SalonActiveRecord
 	
 	public function getPrebookedText() {
 			$prebookedOptions=$this->prebookedOptions;
-			return isset($prebookedOptions[$this->prebooked]) ? $prebookedOptions[$this->prebooked] : "unknown position ({$this->prebooked})";
+			return isset($prebookedOptions[$this->prebooked]) ? $prebookedOptions[$this->prebooked] : "unknown ({$this->prebooked})";
 	}
 	
 	
