@@ -130,8 +130,8 @@ div.items {
 /* @end */
 
 div.view {
-	width: 230px;
-	height: 230px;
+	width: 150px;
+	height: 150px;
 	float: left;
 	margin-right: 10px;
 	margin-bottom: 10px;
@@ -280,6 +280,17 @@ div.form.holiday {
 	background-color: rgb(45, 123, 232);
 }
 
+#holidayPage .view.approved {
+	background-color: green;
+}
+
+#holidayPage .view.unapproved {
+	background-color: red;
+}
+
+#holidayPage .view.pending {
+	background-color: orange;
+}
 
 div.form.lieu {
 	background: url('../images/icons/icons_lieu.png') no-repeat 40px 40px rgb(94, 164, 40);
@@ -422,8 +433,6 @@ footer {
 	width: 100%;
 	background-color: #000;
 }
-
-
 
 	
 	
