@@ -3,7 +3,12 @@
 /* @var $model Lieu */
 ?>
 
-<div class="view">
+<div class="view <?php if ($data->approved == 1) {
+	echo 'unapproved'; } elseif ($data->approved == 2) {
+		echo 'approved'; } else {
+			echo 'pending';
+		}
+?> " >
 
 	
 	<?php echo CHtml::link(CHtml::encode($data->id), array('staff_view', 'id'=>$data->id)); ?>
