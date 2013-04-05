@@ -181,7 +181,6 @@ class Holiday extends SalonActiveRecord
 	
 	public function filterPreBooked()
 	{
-		if($this->isNewRecord)
 		
 		$prebooked = $this->prebooked;
 		$request = $this->request_date_from;
