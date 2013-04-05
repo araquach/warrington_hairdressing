@@ -42,12 +42,7 @@ $this->menu=array(
 			'name'=>'requested'.':',
 			'value'=>Yii::app()->dateFormatter->formatDateTime($model->requested_on_date,"full",""),
 			),
-		array(
-			'name'=>'Total'.':',
-			'value'=>$model->totalHoliday(),
-			),
-		
-	),
+		),
 )); ?>
 
 		
