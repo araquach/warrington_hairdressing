@@ -29,9 +29,5 @@
 	<?php echo CHtml::encode(Yii::app()->dateFormatter->formatDateTime($data->requested_on, "short","")); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('approved')); ?>:</b>
-	<?php echo CHtml::encode($data->getApprovedText()); ?>
-	<br />
-
 
 </div>

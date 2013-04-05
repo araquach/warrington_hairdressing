@@ -23,20 +23,6 @@
 	<b><?php echo CHtml::encode($data->getAttributeLabel('request_date_to')); ?>:</b>
 	<?php echo CHtml::encode(Yii::app()->dateFormatter->formatDateTime($data->request_date_to, "short","")); ?>
 	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('approved')); ?>:</b>
-	<?php echo CHtml::encode($data->getApprovedText()); ?>
-	<br />
 	
-	
-	<?php echo CHtml::encode($data->totalHoliday()); ?>
-	
-
-	<?php /*
-	<b><?php echo CHtml::encode($data->getAttributeLabel('requested_on_date')); ?>:</b>
-	<?php echo CHtml::encode($data->requested_on_date); ?>
-	<br />
-
-	*/ ?>
 
 </div>
