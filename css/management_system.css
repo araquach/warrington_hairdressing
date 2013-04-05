@@ -325,10 +325,21 @@ footer {
 	background-image: none;
 }
 
-#approve label {
+#approve #holiday-form div.row,
+#approve #lieu-form div.row {
 	float: left;
+}
+
+#approve label {
 	width: 100px;
+}
+
+#approve p.scale_label {
+	float: left;
+	width: 200px;
 	margin-top: 10px;
+	margin-left: 150px;
+	padding-left: 0;
 }
 
 #approve #holiday-form div.row.buttons input {
@@ -341,6 +352,8 @@ footer {
 #approve #Lieu_approved {
 	float: right;
 	width: 50px;
+	margin: 0;
+	padding: 0;
 }
 
 /* @end */

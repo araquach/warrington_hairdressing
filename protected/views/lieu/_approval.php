@@ -13,7 +13,7 @@
 
 
 		
-	<div class="row">
+	<div class="row group">
 		<?php echo $form->labelEx($model,'approved'); ?>
 		
 		<?php echo '<p class="scale_label">No</p>' ?>
