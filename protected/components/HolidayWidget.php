@@ -5,13 +5,15 @@ class HolidayWidget extends CWidget
 
     public function run()
     {
-        $criteria = new CDbCriteria();
-        $criteria->with = 'staff';
-        $criteria->condition = 'staff.id=' . Yii::app()->user->id;
-        $criteria->select = 'hours_requested';
+        $total = Yii::app()->db->createCommand()
+        ->select('sum(hours_requested)')
+        ->from('holiday')
+        ->where('staff_id=' . Yii::app()->user->id)
+        ->queryScalar();
         
-        $total = Holiday::model()->count($criteria);
+        $total =$total/8;
         
         $this->render('holidayWidget', array('total'=>$total));
     }
 }
+

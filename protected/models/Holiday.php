@@ -167,16 +167,13 @@ class Holiday extends SalonActiveRecord
 	
 	public function totalHoliday()
 	{
-	
-		$criteria = new CDbCriteria();
-		$criteria->with = 'staff';
-		$criteria->condition = 'staff.id=' . Yii::app()->user->id;
-		$criteria->select = 'hours_requested';
-		
-		$total = Holiday::model()->count($criteria);
+		$cmd = Yii::app()->db->createCommand();
+		$cmd->select = sum('hours_requested');
+		$cmd->from = 'holiday, staff';
+		$cmd->where = 'staff.id=' . Yii::app()->user->id;
+		$total = $cmd->queryScalar();
 		
 		return $total;
-		
 	}
 	
 	public function filterPreBooked()
@@ -191,22 +188,5 @@ class Holiday extends SalonActiveRecord
 		
 		return $prebooked;
 	}
-	
-	
-	// Close - but still Not Working Properly!!
-	/*
-	public function beforeSave()
-	{
-		$prebooked = $this->prebooked;
-		$requested_date = $this->request_date_from;
-		$today = $this->requested_on_date;
-		
-		if (strtotime($requested_date) > strtotime($today)){
-			$prebooked = 1;
-		}
-		
-		return parent::beforeSave();
-	}
-	*/
 	
 }
