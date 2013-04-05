@@ -18,8 +18,9 @@
 class Lieu extends SalonActiveRecord
 {
 
-	const APPROVED_Y = 1;
-	const APPROVED_N = 0;
+	const APPROVED_Y = 2;
+	const APPROVED_N = 1;
+	const APPROVED_P = 0;
 	
 	
 	/**
@@ -49,7 +50,7 @@ class Lieu extends SalonActiveRecord
 		// will receive user inputs.
 		return array(
 			array('lieu_hours, description, date_regarding', 'required'),
-			array('approved', 'boolean'),
+			array('approved', 'numerical', 'integerOnly'=>true),
 			array('lieu_hours', 'numerical', 'integerOnly'=>true), 
 			array('requested_on','default','value'=>new CDbExpression('NOW()'),'setOnEmpty'=>false,'on'=>'insert'),
 			// The following rule is used by search().
@@ -115,6 +116,7 @@ class Lieu extends SalonActiveRecord
 		return array(
 			self::APPROVED_Y => 'Yes',
 			self::APPROVED_N => 'No',
+			self::APPROVED_P => 'Pending',
 		);
 	}
 	
