@@ -15,42 +15,45 @@ $this->menu=array(
 	array('label'=>'Manage Holiday', 'url'=>array('admin')),
 );
 ?>
-
-<h1>View Your Holiday #<?php echo $model->id; ?></h1>
-
+<div class="detail holiday">
 
 <?php $this->widget('zii.widgets.CDetailView', array(
-	'data'=>$model,
+	'data'=>$model, 'cssFile'=>'false',
 	'attributes'=>array(
-		'id',
 		array(
-			'name'=>'Staff Member',
+			'name'=>'Staff'.':',
 			'value'=>$model->staff->first_name . ' ' . $model->staff->last_name,
 			),
 		array(
-			'name'=>'Day\'s Requested',
+			'name'=>'Day\'s'.':',
 			'value'=>$model->hourConverter(),
 			),
 		array(
-			'name'=>'prebooked',
+			'name'=>'prebooked'.':',
 			'value'=>$model->getPrebookedText(),
 			),
 		array(
-			'name'=>'request_date_from',
+			'name'=>'From'.':',
 			'value'=>Yii::app()->dateFormatter->formatDateTime($model->request_date_from,"full",""),		
 			),
 		array(
-			'name'=>'request_date_to',
+			'name'=>'To'.':',
 			'value'=>Yii::app()->dateFormatter->formatDateTime($model->request_date_to,"full",""),
 			),
 		array(
-			'name'=>'approved',
+			'name'=>'approved'.':',
 			'value'=>$model->getApprovedText(),
 			),
 		
 		array(
-			'name'=>'requested_on_date',
+			'name'=>'Requested'.':',
 			'value'=>Yii::app()->dateFormatter->formatDateTime($model->requested_on_date,"full",""),
 			),
 	),
 )); ?>
+
+</div> <!--holiday-->
+
+<div id="approve" class="form holiday">
+<?php echo $this->renderPartial('_approval', array('model'=>$model)); ?>
+</div> <!--#approve-->

@@ -3,11 +3,15 @@
 /* @var $model Lieu */
 ?>
 
-<div class="view">
+<div class="view <?php if ($data->approved == 1) {
+	echo 'unapproved'; } elseif ($data->approved == 2) {
+		echo 'approved'; } else {
+			echo 'pending';
+		}
+?> " >
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('id')); ?>:</b>
+	
 	<?php echo CHtml::link(CHtml::encode($data->id), array('staff_view', 'id'=>$data->id)); ?>
-	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('lieu_hours')); ?>:</b>
 	<?php echo CHtml::encode($data->lieu_hours); ?>
@@ -18,15 +22,11 @@
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('date_regarding')); ?>:</b>
-	<?php echo CHtml::encode(Yii::app()->dateFormatter->formatDateTime($data->date_regarding, "full","")); ?>
+	<?php echo CHtml::encode(Yii::app()->dateFormatter->formatDateTime($data->date_regarding, "short","")); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('requested_on')); ?>:</b>
-	<?php echo CHtml::encode(Yii::app()->dateFormatter->formatDateTime($data->requested_on, "full","")); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('approved')); ?>:</b>
-	<?php echo CHtml::encode($data->getApprovedText()); ?>
+	<?php echo CHtml::encode(Yii::app()->dateFormatter->formatDateTime($data->requested_on, "short","")); ?>
 	<br />
 
 

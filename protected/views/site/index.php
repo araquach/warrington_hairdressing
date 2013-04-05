@@ -1,10 +1,9 @@
 <?php
 /* @var $this SiteController */
-
-$this->pageTitle=Yii::app()->name;
 ?>
 
-<h2>Welcome to the <i><?php echo CHtml::encode(Yii::app()->name); ?></i></h2>
+<h1>Main Home Page</h1>
 
-<p>The Jakata &amp; Paul Kemp Hairdressing system for booking holidays, managing sick days and calculating wages/commission.</p>
-<p><strong>Click one of the links in the menu above.</strong></p>
+<?php echo CHtml::link('Staff index', array('/home/index')); ?>
+
+<?php echo CHtml::link('Admin index', array('/home/admin_index')); ?>

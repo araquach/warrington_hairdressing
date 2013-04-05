@@ -9,7 +9,7 @@ class ZHtml extends CHtml
 {
     public static function enumDropDownList($model, $attribute, $htmlOptions=array())
     {
-      return CHtml::activeDropDownList( $model, $attribute, self::enumItem($model,  $attribute), $htmlOptions);
+      return CHtml::activeDropDownList($model, $attribute, self::enumItem($model,  $attribute), $htmlOptions);
     }
  
     public static function enumItem($model,$attribute) {

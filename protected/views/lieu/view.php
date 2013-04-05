@@ -15,13 +15,10 @@ $this->menu=array(
 	array('label'=>'Manage Lieu', 'url'=>array('admin')),
 );
 ?>
-
-<h1>View Lieu #<?php echo $model->id; ?></h1>
-
+<div class="detail lieu">
 <?php $this->widget('zii.widgets.CDetailView', array(
-	'data'=>$model,
+	'data'=>$model, 'cssFile'=>'false',
 	'attributes'=>array(
-		'id',
 		array(
 			'name'=>'Staff Member',
 			'value'=>$model->staff->first_name . ' ' . $model->staff->last_name,
@@ -42,6 +39,12 @@ $this->menu=array(
 			),
 	),
 )); ?>
+
+</div>
+
+<div id="approve" class="form lieu">
+<?php echo $this->renderPartial('_approval', array('model'=>$model)); ?>
+</div> <!--#approve-->
 
 
 

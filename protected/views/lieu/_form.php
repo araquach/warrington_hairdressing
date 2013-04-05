@@ -4,7 +4,7 @@
 /* @var $form CActiveForm */
 ?>
 
-<div class="form">
+<div class="form lieu">
 
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'lieu-form',
@@ -18,7 +18,7 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'lieu_hours'); ?>
-		<?php echo $form->textField($model,'lieu_hours'); ?>
+		<?php echo $form->numberField($model,'lieu_hours'); ?>
 		<?php echo $form->error($model,'lieu_hours'); ?>
 	</div>
 
@@ -27,6 +27,16 @@
 		<?php echo $form->textField($model,'description'); ?>
 		<?php echo $form->error($model,'description'); ?>
 	</div>
+
+	<?php if (Yii::app()->detectMobileBrowser->showMobile): ?> 
+	
+	<div class="row">
+		<?php echo $form->labelEx($model,'date_regarding'); ?>
+		<?php echo $form->dateField($model,'date_regarding'); ?>
+		<?php echo $form->error($model,'date_regarding'); ?>
+	</div>
+	
+	<?php else: ?>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'date_regarding'); ?>
@@ -41,6 +51,8 @@
 		)); ?>
 		<?php echo $form->error($model,'date_regarding'); ?>
 	</div>
+	
+	<?php endif; ?>
 
 	<div class="row">
 		<?php echo $form->hiddenField($model,'requested_on'); ?>

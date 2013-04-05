@@ -19,8 +19,9 @@
 class Holiday extends SalonActiveRecord
 {
 
-	const APPROVED_Y = 1;
-	const APPROVED_N = 0;
+	const APPROVED_Y = 2;
+	const APPROVED_N = 1;
+	const APPROVED_P = 0;
 	
 	const PREBOOKED_Y = 1;
 	const PREBOOKED_N = 0;
@@ -53,7 +54,10 @@ class Holiday extends SalonActiveRecord
 		// will receive user inputs.
 		return array(
 			array('hours_requested, request_date_from, request_date_to', 'required'),
-			array('prebooked',  'numerical', 'integerOnly'=>true),
+			array('approved','numerical', 'integerOnly'=>true),
+			array('prebooked','numerical', 'integerOnly'=>true),
+			
+			array('prebooked', 'filter', 'filter'=>array( $this, 'filterPreBooked')),
 			array('hours_requested',  'numerical'),
 			//array('request_date_from, request_date_to', 'date'),
 			array('requested_on_date','default','value'=>new CDbExpression('NOW()'),'setOnEmpty'=>false,'on'=>'insert'),
@@ -82,13 +86,13 @@ class Holiday extends SalonActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'staff_id' => 'Staff Member',
+			'staff_id' => 'Staff',
 			'hours_requested' => 'Days Requested',
 			'prebooked' => 'Prebooked',
-			'request_date_from' => 'Request Date From',
-			'request_date_to' => 'Request Date To',
+			'request_date_from' => 'From',
+			'request_date_to' => 'To',
 			'approved' => 'Approved',
-			'requested_on_date' => 'Requested On Date',
+			'requested_on_date' => 'Requested On',
 		);
 	}
 
@@ -121,6 +125,7 @@ class Holiday extends SalonActiveRecord
 		return array(
 			self::APPROVED_Y => 'Yes',
 			self::APPROVED_N => 'No',
+			self::APPROVED_P => 'Pending',
 		);
 	}
 	
@@ -144,6 +149,8 @@ class Holiday extends SalonActiveRecord
 	
 	public function afterValidate()
 	{
+		if($this->isNewRecord)
+		
 		$this->hours_requested=$this->hours_requested * 8;
 		
 		return parent::afterValidate();
@@ -151,11 +158,38 @@ class Holiday extends SalonActiveRecord
 	
 	public function hourConverter()
 	{
+	
 		$conversion = $this->hours_requested;
-		
 		$conversion = $conversion / 8;
 		
 		return $conversion;
+	}
+	
+	public function totalHoliday()
+	{
+	
+		$criteria = new CDbCriteria();
+		$criteria->with = 'staff';
+		$criteria->condition = 'staff.id=' . Yii::app()->user->id;
+		$criteria->select = 'hours_requested';
+		
+		$total = Holiday::model()->count($criteria);
+		
+		return $total;
+		
+	}
+	
+	public function filterPreBooked()
+	{
+		
+		$prebooked = $this->prebooked;
+		$request = $this->request_date_from;
+		$date = date('Y-m-d', strtotime('+2 week'));		
+		if ($date < $request) {
+			$prebooked = 1;
+		}
+		
+		return $prebooked;
 	}
 	
 	

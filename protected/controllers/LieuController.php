@@ -2,11 +2,6 @@
 
 class LieuController extends Controller
 {
-	/**
-	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
-	 * using two-column layout. See 'protected/views/layouts/column2.php'.
-	 */
-	public $layout='//layouts/column2';
 
 	/**
 	 * @return array action filters
@@ -42,16 +37,9 @@ class LieuController extends Controller
 				'users'=>array('*'),
 			),
 		);
-	}
+	}	
 	
 	public function actionStaff_lieu()
-	{
-		$this->render('staff_lieu');
-		
-	}
-	
-	
-	public function actionStaff_lieu_list()
 	{
 		$criteria=new CDbCriteria;
 		$criteria->with = 'staff';
@@ -62,7 +50,7 @@ class LieuController extends Controller
 			'criteria'=>$criteria
 		));
 		
-		$this->render('staff_lieu_list',array(
+		$this->render('staff_lieu',array(
 			'dataProvider'=>$dataProvider,
 		));
 	}
@@ -73,7 +61,19 @@ class LieuController extends Controller
 	 */
 	public function actionView($id)
 	{
-		$this->render('view',array(
+		$model=$this->loadModel($id);
+		
+				// Uncomment the following line if AJAX validation is needed
+				// $this->performAjaxValidation($model);
+		
+				if(isset($_POST['Lieu']))
+				{
+					$model->attributes=$_POST['Lieu'];
+					if($model->save())
+						$this->redirect(array('index'));
+				}
+			
+			$this->render('view',array(
 			'model'=>$this->loadModel($id),
 		));
 	}
