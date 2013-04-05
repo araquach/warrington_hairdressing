@@ -280,7 +280,6 @@ div.form.holiday {
 	background-color: rgb(45, 123, 232);
 }
 
-/* @end */
 
 div.form.lieu {
 	background: url('../images/icons/icons_lieu.png') no-repeat 40px 40px rgb(94, 164, 40);
@@ -315,7 +314,7 @@ footer {
 /* @group Approval Form */
 
 #approve {
-	height: 60px;
+	height: 110px;
 	width: 500px;
 	padding: 0;
 	padding-left: 30px;
@@ -328,32 +327,30 @@ footer {
 #approve #holiday-form div.row,
 #approve #lieu-form div.row {
 	float: left;
+	margin-top: 10px;
 }
 
 #approve label {
 	width: 100px;
+	margin-bottom: 0px;
 }
 
 #approve p.scale_label {
 	float: left;
-	width: 200px;
-	margin-top: 10px;
-	margin-left: 150px;
+	width: 50px;
+	margin-top: 30px;
+	margin-left: 0px;
 	padding-left: 0;
-}
-
-#approve #holiday-form div.row.buttons input {
-	float: left;
-	clear: both;
-	width: 130px;
 }
 
 #approve #Holiday_approved,
 #approve #Lieu_approved {
-	float: right;
+	float: left;
 	width: 50px;
 	margin: 0;
-	padding: 0;
+	margin-top: 20px;
+	margin-right: 150px;
+	
 }
 
 /* @end */
