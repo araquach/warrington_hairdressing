@@ -125,6 +125,18 @@ class Lieu extends SalonActiveRecord
 			return isset($approvedOptions[$this->approved]) ? $approvedOptions[$this->approved] : "unknown ({$this->approved})";
 	}
 	
+	public function totalLieu()
+		{
+			$cmd = Yii::app()->db->createCommand();
+			$cmd->select = ('sum(lieu_hours)');
+			$cmd->from = 'lieu';
+			$cmd->where = 'staff_id=' . Yii::app()->user->id;
+			$total = $cmd->queryScalar();
+			
+			return $total;
+	
+		}
+	
 }
 
 
