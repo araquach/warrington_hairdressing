@@ -1,6 +1,13 @@
 @media only screen and (max-device-width: 480px) {
 	/* @group General */
 	
+	.container {
+		padding: 0 20px;
+		padding-bottom: 70px;
+		width: 900px;
+	}
+	
+	
 	h1 {
 		font-size: 3em;
 	}
@@ -18,31 +25,30 @@
 	/* @group View Styling */
 	
 	div.view {
-		width: 400px;
-		height: 400px;
-		margin-right: 20px;
-		margin-bottom: 20px;
+		width: 100%;
+		margin-right: 2em;
+		margin-bottom: 2em;
 		font-size: 1.7em;
 	}
 	
 	div.view a {
-		width: 410px;
-		height: 410px;
+		width: 28em;
+		height: 28em;
 	}
 	
 	
 	.menuBox.small {
-		width: 410px;
-		height: 410px;
-		background-position: center 70px;
+		width: 27em;
+		height: 27em;
+		background-position: center 7em;
 		background-size: 60%;
 		background-repeat: no-repeat;
 	}
 	
 	.menuBox.wide {
-		width: 880px;
-		height: 420px;
-		background-position: center 70px;
+		width: 56em;
+		height: 28em;
+		background-position: center 7em;
 		background-size: 30%;
 		background-repeat: no-repeat;
 	}
