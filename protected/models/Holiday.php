@@ -168,12 +168,15 @@ class Holiday extends SalonActiveRecord
 	public function totalHoliday()
 	{
 		$cmd = Yii::app()->db->createCommand();
-		$cmd->select = sum('hours_requested');
-		$cmd->from = 'holiday, staff';
-		$cmd->where = 'staff.id=' . Yii::app()->user->id;
+		$cmd->select = ('sum(hours_requested)');
+		$cmd->from = 'holiday';
+		$cmd->where = 'staff_id=' . Yii::app()->user->id;
 		$total = $cmd->queryScalar();
 		
+		$total =$total / 8;
+		
 		return $total;
+
 	}
 	
 	public function filterPreBooked()

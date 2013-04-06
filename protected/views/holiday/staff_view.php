@@ -37,6 +37,11 @@ $this->menu=array(
 			'name'=>'approved'.':',
 			'value'=>$model->getApprovedText(),
 			),
+			
+		array(
+			'name'=>'total'.':',
+			'value'=>$model->totalHoliday(),
+			),
 		
 		array(
 			'name'=>'requested'.':',

@@ -55,6 +55,7 @@ class HolidayController extends Controller
 	
 		$this->render('staff_holiday',array(
 			'dataProvider'=>$dataProvider,
+			'model'=>$model,
 			
 		));
 		
