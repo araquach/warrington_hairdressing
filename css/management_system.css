@@ -80,6 +80,20 @@ a p.pageLink:hover {
 	opacity: 1;
 }
 
+.pageHead {
+	width: 100%;
+	height: 200px;
+	padding-left: 240px;
+	background-repeat: no-repeat;
+	background-position: 40px 20px;
+	margin-left: -20px;
+	margin-top: -30px;
+}
+
+.pageHead p {
+	margin: 20px;
+}
+
 /* @end */
 
 /* @group general Colour styles */
@@ -171,6 +185,26 @@ div.view a {
 
 /* @group Staff Page */
 
+.pageHead.holiday {
+	background-image: url('../images/icons/icons_holiday.png');
+}
+
+
+#staffPage p.info {
+	position: absolute;
+	bottom: 20px;
+	right: 20px;
+	line-height: 25px;
+}
+
+#staffPage h2 {
+	position: absolute;
+	font-size: 1em;
+	top: 20px;
+	left: 20px;
+	width: 90%;
+	height: 90%;
+}
 
 .menuBox {
 	margin-right: 20px;

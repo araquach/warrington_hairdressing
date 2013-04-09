@@ -4,10 +4,15 @@
 
 <div id="staffPage" class="group">
 
+<div class="menuBox wide holiday" id="holiday">
+<?php echo CHtml::link('<h2>Holidays</h2>', array('/holiday/staff_holiday')); ?>
+<?php $this->widget('HolidayWidget'); ?>
+</div>
 
-<?php $this->widget('HolidayWidget'); ?>	
-
+<div class="menuBox small lieu" id="lieu">
+<?php echo CHtml::link('<h2>Lieu Hours</h2>', array('/lieu/staff_lieu')); ?>
 <?php $this->widget('LieuWidget'); ?>
+</div>
 
 
 <!--to put inside links-->

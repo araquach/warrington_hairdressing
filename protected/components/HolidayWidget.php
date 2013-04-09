@@ -5,7 +5,16 @@ class HolidayWidget extends CWidget
 
     public function run()
     {
-    	// total holiday calculation
+    	// parameter binding required!
+    	$q = 'SELECT sum(hours_requested) 
+    		FROM holiday
+    		WHERE staff_id='.Yii::app()->user->id. ' AND approved=2';
+    	$cmd = Yii::app()->db->createCommand($q);
+    	$total = $cmd->queryScalar();
+    	$total /= 8;
+    	
+    	// total holiday calculation using Query Builder - needs adapting to work
+    	/*
         $total = Yii::app()->db->createCommand()
         ->select('sum(hours_requested)')
         ->from('holiday')
@@ -13,6 +22,7 @@ class HolidayWidget extends CWidget
         ->queryScalar();
         
         $total = $total/8;
+        */
         
         // remaining holiday calculation
         $entitlement = Yii::app()->db->createCommand()
