@@ -12,21 +12,7 @@ class HolidayWidget extends CWidget
     	$cmd = Yii::app()->db->createCommand($q);
     	$total = $cmd->queryScalar();
     	$total /= 8;
-    	
-    	// total holiday calculation using Query Builder - needs adapting to work
-    	/*
-        $total = Yii::app()->db->createCommand()
-        ->select('sum(hours_requested)')
-        ->from('holiday')
-        ->where('staff_id=' . Yii::app()->user->id)
-        ->queryScalar();
         
-<<<<<<< HEAD
-        $total = $total/8;
-        */
-=======
-        $total /=8;
->>>>>>> jxmx
         
         // remaining holiday calculation
         $entitlement = Yii::app()->db->createCommand()
