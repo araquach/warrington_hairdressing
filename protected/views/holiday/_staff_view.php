@@ -17,11 +17,11 @@
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('request_date_from')); ?>:</b>
-	<?php echo CHtml::encode(Yii::app()->dateFormatter->formatDateTime($data->request_date_from, "short","")); ?>
+	<?php echo CHtml::encode(Yii::app()->dateFormatter->formatDateTime($data->request_date_from, "long","")); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('request_date_to')); ?>:</b>
-	<?php echo CHtml::encode(Yii::app()->dateFormatter->formatDateTime($data->request_date_to, "short","")); ?>
+	<?php echo CHtml::encode(Yii::app()->dateFormatter->formatDateTime($data->request_date_to, "medium","")); ?>
 	<br />
 	
 

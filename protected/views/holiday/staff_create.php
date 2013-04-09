@@ -1,16 +1,9 @@
 <?php
 /* @var $this HolidayController */
 /* @var $model Holiday */
-
-$this->breadcrumbs=array(
-	'Holidays'=>array('index'),
-	'Create',
-);
-
-$this->menu=array(
-	array('label'=>'View Your Holidays', 'url'=>array('staff_holiday_list')),
-	
-);
 ?>
 
+<nav>
+<?php echo CHtml::link('Back to Full List', array('staff_holiday')); ?>
+</nav>
 <?php echo $this->renderPartial('_staff_form', array('model'=>$model)); ?>

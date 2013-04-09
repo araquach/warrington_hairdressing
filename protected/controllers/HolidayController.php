@@ -23,7 +23,7 @@ class HolidayController extends Controller
 		return array(
 			
 			array('allow', 
-				'actions'=>array('index','view','create','update','delete','admin','staff_holiday','staff_create','staff_holiday_list','staff_view','staff_denied'),
+				'actions'=>array('index','view','create','update','delete','admin','staff_holiday','staff_create','staff_holiday_list','staff_view','staff_denied','staff_approval','staff_upcoming'),
 				'users'=>array('@'),
 				'expression'=>'isset($user->role) && ($user->role==="admin")',
 			),
@@ -63,10 +63,13 @@ class HolidayController extends Controller
 	
 	public function actionStaff_denied()
 	{	
+		$conditions=array();
+		$conditions[]='staff.id=' . Yii::app()->user->id;
+		$conditions[]='approved=1';	
+	
 		$criteria=new CDbCriteria;
 		$criteria->with = 'staff';
-		$criteria->condition = 'staff.id=' . Yii::app()->user->id;
-		$criteria->condition = 'approved=1';
+		$criteria->condition=implode(' AND ',$conditions);
 		$criteria->order = 't.id DESC';
 		
 		$dataProvider=new CActiveDataProvider('Holiday', array(
@@ -75,6 +78,55 @@ class HolidayController extends Controller
 		
 	
 		$this->render('staff_denied',array(
+			'dataProvider'=>$dataProvider,
+			'model'=>$model,
+			
+		));
+		
+	}
+	
+	public function actionStaff_approval()
+	{	
+		$conditions=array();
+		$conditions[]='staff.id=' . Yii::app()->user->id;
+		$conditions[]='approved=0';
+	
+		$criteria=new CDbCriteria;
+		$criteria->with = 'staff';
+		$criteria->condition=implode(' AND ',$conditions);
+		$criteria->order = 't.id DESC';
+		
+		$dataProvider=new CActiveDataProvider('Holiday', array(
+			'criteria'=>$criteria			
+		));
+		
+	
+		$this->render('staff_approval',array(
+			'dataProvider'=>$dataProvider,
+			'model'=>$model,
+			
+		));
+		
+	}
+	
+	public function actionStaff_upcoming()
+	{	
+		$conditions=array();
+		$conditions[]='staff.id=' . Yii::app()->user->id;
+		$conditions[]='approved=2';
+		$conditions[]='request_date_from >=' . new CDbExpression('NOW()');
+	
+		$criteria=new CDbCriteria;
+		$criteria->with = 'staff';
+		$criteria->condition=implode(' AND ',$conditions);
+		$criteria->order = 't.id DESC';
+		
+		$dataProvider=new CActiveDataProvider('Holiday', array(
+			'criteria'=>$criteria			
+		));
+		
+	
+		$this->render('staff_upcoming',array(
 			'dataProvider'=>$dataProvider,
 			'model'=>$model,
 			
