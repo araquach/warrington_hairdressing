@@ -14,36 +14,29 @@
 <?php $this->widget('LieuWidget'); ?>
 </div>
 
-
-<!--to put inside links-->
-
-
+<div class="menuBox small sick" id="sick">
+<?php echo CHtml::link('<h2>Sick Days</h2>', array('/lieu/staff_sick')); ?>
 <?php $this->widget('SickWidget'); ?>
+</div>
 
+<div class="menuBox small messages" id="messages">
+<?php echo CHtml::link('<h2>Messages</h2>', array('/lieu/staff_message')); ?>
+<?php $this->widget('MessageWidget'); ?>
+</div>
+
+<div class="menuBox small figures" id="figures">
+<?php echo CHtml::link('<h2>Figures</h2>', array('/lieu/staff_figures')); ?>
+<?php $this->widget('FiguresWidget'); ?>
+</div>
+
+<div class="menuBox small products" id="products">
+<?php echo CHtml::link('<h2>Product Sales</h2>', array('/lieu/staff_product')); ?>
 <?php $this->widget('ProductWidget'); ?>
-
-<div class="menuBox small blank" id="blank">			
-	<h2>Something Else</h2>
-	<p>12</p>
 </div>
 
-<div class="menuBox small messages" id="messages">			
-	<h2>Messages</h2>
-	<p>2 new</p>
-</div>
-
-<div class="menuBox small figures" id="figures">			
-	<h2>Figures</h2>
-	<p>&pound;3,200</p>
-</div>
-
-<div class="menuBox small users" id="users">			
-	<h2>Users</h2>
-	<p>12</p>
-</div>
-
-<div class="menuBox wide user" id="user">			
-	<h2>Your Info</h2>
+<div class="menuBox small users" id="users">
+<?php echo CHtml::link('<h2>User</h2>', array('/lieu/staff_user')); ?>
+<?php $this->widget('UserWidget'); ?>
 </div>
 
 </div> <!--#staffPage-->

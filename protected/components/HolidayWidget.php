@@ -34,7 +34,7 @@ class HolidayWidget extends CWidget
         $remaining = $entitlement - $total;
         
         
-        $this->render('holidayWidget', array('total'=>$total, 'remaining'=>$remaining));
+        $this->render('holidayWidget', array('total'=>$total, 'entitlement'=>$entitlement, 'remaining'=>$remaining));
     }
 }
 

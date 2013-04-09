@@ -5,11 +5,11 @@ class LieuWidget extends CWidget
 
     public function run()
     {
-        $total = Yii::app()->db->createCommand()
-        ->select('sum(lieu_hours)')
-        ->from('lieu')
-        ->where('staff_id=' . Yii::app()->user->id)
-        ->queryScalar();
+        $q = 'SELECT sum(lieu_hours) 
+        	FROM lieu
+        	WHERE staff_id='.Yii::app()->user->id. ' AND approved=2';
+        $cmd = Yii::app()->db->createCommand($q);
+        $total = $cmd->queryScalar();
         
         $this->render('lieuWidget', array('total'=>$total));
     }

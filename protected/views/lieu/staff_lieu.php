@@ -5,9 +5,15 @@
 
 <div id="lieuPage">
 
-<nav id="lieuNav">
-<?php echo CHtml::link('Add/Take Lieu Hours', array('staff_create')); ?>
+<div class="pageHead lieu">
+
+<?php $this->widget('LieuWidget'); ?>
+
+<nav>
+<h2><?php echo CHtml::link('Add/Take Lieu Hours', array('staff_create')); ?></h2>
 </nav>
+
+</div>  <!--pageHead lieu-->
 
 <?php $this->widget('zii.widgets.CListView', array(
 	'dataProvider'=>$dataProvider,

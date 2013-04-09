@@ -1,7 +1,2 @@
-
-
-<?php  echo '<div class="menuBox wide products" id="products">			
-	<h2>Products</h2>
-	<p>&pound;134</p>
-</div>' ?>
+<?php echo '<p class="info">Total here</p>'; ?>
 

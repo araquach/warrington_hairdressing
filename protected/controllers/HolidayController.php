@@ -23,7 +23,7 @@ class HolidayController extends Controller
 		return array(
 			
 			array('allow', 
-				'actions'=>array('index','view','create','update','delete','admin','staff_holiday','staff_create','staff_holiday_list','staff_view'),
+				'actions'=>array('index','view','create','update','delete','admin','staff_holiday','staff_create','staff_holiday_list','staff_view','staff_denied'),
 				'users'=>array('@'),
 				'expression'=>'isset($user->role) && ($user->role==="admin")',
 			),
@@ -60,6 +60,28 @@ class HolidayController extends Controller
 		));
 		
 	}
+	
+	public function actionStaff_denied()
+	{	
+		$criteria=new CDbCriteria;
+		$criteria->with = 'staff';
+		$criteria->condition = 'staff.id=' . Yii::app()->user->id;
+		$criteria->condition = 'approved=1';
+		$criteria->order = 't.id DESC';
+		
+		$dataProvider=new CActiveDataProvider('Holiday', array(
+			'criteria'=>$criteria			
+		));
+		
+	
+		$this->render('staff_denied',array(
+			'dataProvider'=>$dataProvider,
+			'model'=>$model,
+			
+		));
+		
+	}
+	
 
 	/**
 	 * Displays a particular model.

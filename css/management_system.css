@@ -1,3 +1,6 @@
+/* @override 
+	http://localhost/~adamcarter/warrington_hairdressing/css/management_system.css */
+
 @import "mobile.css";
 
 /* @group Clear/fix styling */
@@ -81,17 +84,75 @@ a p.pageLink:hover {
 }
 
 .pageHead {
-	width: 100%;
-	height: 200px;
-	padding-left: 240px;
+	height: 250px;
+	padding-left: 220px;
+	padding-top: 30px;
 	background-repeat: no-repeat;
 	background-position: 40px 20px;
-	margin-left: -20px;
 	margin-top: -30px;
+	position: relative;
 }
 
-.pageHead p {
+.pageHead nav {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	float: left;
+	padding-left: 20px;
+}
+
+.pageHead nav ul {
+	float: left;
+	margin: 0;
+	padding: 0;
+}
+
+.pageHead nav ul li {
+	float: left;
+}
+
+.pageHead.holiday nav ul li a,
+.pageHead.lieu nav ul li a,
+.pageHead.sick nav ul li a,
+.pageHead.products nav ul li a,
+.pageHead.messages nav ul li a,
+.pageHead.figures nav ul li a,
+.pageHead.user nav ul li a,
+.pageHead.users nav ul li a {
+	border: 5px solid #FFF;
+	border-radius: 20px;
+	padding: 10px;
+	font-size: .8em;
+	display: inline;
+}
+
+.pageHead nav a {
+	list-style-type: none;
+	display: inline;
+	margin: 10px;
+	line-height: 100px;
+	text-decoration: none;
+	color: #FFF;
+	opacity: .7;
+}
+
+.pageHead nav a  {
+	color: #FFF;
+	text-decoration: none;
+	margin: 10px 10px;	
+}
+
+.pageHead nav a:hover {
+	opacity: 1;
+	border-bottom: none;
+	color: #FFF;
+}
+
+.pageHead ul.info {
 	margin: 20px;
+	font-size: 1.5em;
+	line-height: 1.5em;
+	color: #FFF;
 }
 
 /* @end */
@@ -185,16 +246,20 @@ div.view a {
 
 /* @group Staff Page */
 
-.pageHead.holiday {
-	background-image: url('../images/icons/icons_holiday.png');
+
+#staffPage ul.info {
+	position: absolute;
+	bottom: 5px;
+	right: 20px;
+	text-align: right;
 }
 
+#staffPage ul.info li {
+	color: #FFF;
+}
 
-#staffPage p.info {
-	position: absolute;
-	bottom: 20px;
-	right: 20px;
-	line-height: 25px;
+#staffPage ul.info li.hidden {
+	display: none;
 }
 
 #staffPage h2 {
@@ -289,6 +354,7 @@ div.view a {
 	background-image: url('../images/icons/icons_calendar.png');
 }
 
+
 /* @end */
 
 /* @group View Styling */
@@ -299,12 +365,9 @@ div.view a {
 
 /* @group holiday */
 
-
-#holidayNav {
-	margin-top: 50px;
+.pageHead.holiday {
+	background-image: url('../images/icons/icons_holiday.png');
 }
-
-/* @end */
 
 div.form.holiday {
 	background: url('../images/icons/icons_holiday.png') no-repeat 40px 40px rgb(45, 123, 232);
@@ -330,6 +393,14 @@ div.form.holiday {
 	background-color: rgb(208, 72, 46);
 }
 
+/* @end */
+
+/* @group Lieu */
+
+.pageHead.lieu {
+	background-image: url('../images/icons/icons_lieu.png');
+}
+
 div.form.lieu {
 	background: url('../images/icons/icons_lieu.png') no-repeat 40px 40px rgb(94, 164, 40);
 }
@@ -342,7 +413,7 @@ div.form.user {
 	background-color: rgb(94, 164, 40);
 }
 
-
+/* @end */
 
 /* @group footer */
 
