@@ -55,7 +55,6 @@ class HolidayController extends Controller
 	
 		$this->render('staff_holiday',array(
 			'dataProvider'=>$dataProvider,
-			'model'=>$model,
 			
 		));
 		
@@ -79,8 +78,6 @@ class HolidayController extends Controller
 	
 		$this->render('staff_denied',array(
 			'dataProvider'=>$dataProvider,
-			'model'=>$model,
-			
 		));
 		
 	}
@@ -103,7 +100,6 @@ class HolidayController extends Controller
 	
 		$this->render('staff_approval',array(
 			'dataProvider'=>$dataProvider,
-			'model'=>$model,
 			
 		));
 		
@@ -128,7 +124,6 @@ class HolidayController extends Controller
 	
 		$this->render('staff_upcoming',array(
 			'dataProvider'=>$dataProvider,
-			'model'=>$model,
 			
 		));
 		
