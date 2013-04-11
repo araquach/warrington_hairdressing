@@ -24,5 +24,10 @@
 	<?php echo CHtml::encode(Yii::app()->dateFormatter->formatDateTime($data->request_date_to, "medium","")); ?>
 	<br />
 	
-
+	<?php if ($data->prebooked == 1) {
+		echo CHtml::image('images/icons/pb-11.png');
+		
+		} ?>
+	<br />
 </div>
+

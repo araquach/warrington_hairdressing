@@ -393,6 +393,16 @@ div.form.holiday {
 	background-color: rgb(208, 72, 46);
 }
 
+.pb {
+	margin-left: 30px;
+}
+
+#holidayPage img {
+	position: absolute;
+	bottom: 20px;
+	right: 20px;
+}
+
 /* @end */
 
 /* @group Lieu */
