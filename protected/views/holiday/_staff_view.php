@@ -3,8 +3,8 @@
 /* @var $model Holiday */
 ?>
 
-<div class="view <?php if ($data->approved == 1) {
-	echo 'unapproved'; } elseif ($data->approved == 2) {
+<div class="view <?php if (CHtml::encode($data->approved) == 1) {
+	echo 'unapproved'; } elseif (CHtml::encode($data->approved) == 2) {
 		echo 'approved'; } else {
 			echo 'pending';
 		}
@@ -24,9 +24,8 @@
 	<?php echo CHtml::encode(Yii::app()->dateFormatter->formatDateTime($data->request_date_to, "medium","")); ?>
 	<br />
 	
-	<?php if ($data->prebooked == 1) {
+	<?php if (CHtml::encode($data->prebooked) == 1) {
 		echo CHtml::image('images/icons/pb-11.png');
-		
 		} ?>
 	<br />
 </div>

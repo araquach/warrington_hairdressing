@@ -22,10 +22,6 @@ $this->menu=array(
 			'value'=>$model->hourConverter(),
 			),
 		array(
-			'name'=>'prebooked'.':',
-			'value'=>$model->getPrebookedText(),
-			),
-		array(
 			'name'=>'from'.':',
 			'value'=>Yii::app()->dateFormatter->formatDateTime($model->request_date_from,"full",""),		
 			),
