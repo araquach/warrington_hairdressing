@@ -35,7 +35,7 @@ body {
 .container {
 	padding: 0 20px;
 	padding-bottom: 70px;
-	min-width: 600px;
+	min-width: 800px;
 }
 
 p,h1,h2,h3,h4,h5,h6,a,b {
@@ -155,6 +155,9 @@ a p.pageLink:hover {
 	color: #FFF;
 }
 
+.summary {
+	display: none;
+}
 /* @end */
 
 /* @group general Colour styles */
@@ -401,6 +404,15 @@ div.form.holiday {
 	position: absolute;
 	bottom: 20px;
 	right: 20px;
+}
+
+#holidayPage span.empty {
+	color: #FFF;
+	
+	
+	
+	
+	content: 'whatever it is you want to add';
 }
 
 /* @end */
