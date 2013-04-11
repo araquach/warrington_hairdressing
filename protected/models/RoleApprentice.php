@@ -26,15 +26,6 @@ class RoleApprentice extends RoleApplicant
 	{
 		return parent::model($className);
 	}
-
-	/**
-	 * @return string the associated database table name
-	 */
-	public function tableName()
-	{
-		return 'role_applicant';
-	}
-
 	
 	/**
 	 * @return array relational rules.

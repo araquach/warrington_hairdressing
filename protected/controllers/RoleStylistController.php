@@ -1,6 +1,6 @@
 <?php
 
-class StylistController extends ApplicantController
+class RoleStylistController extends ApplicantController
 {
 
 	/**
@@ -62,11 +62,11 @@ class StylistController extends ApplicantController
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Stylist']))
+		if(isset($_POST['RoleStylist']))
 		{
-			$model->attributes=$_POST['Stylist'];
+			$model->attributes=$_POST['RoleStylist'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->stylist_id));
+				$this->redirect(array('view','id'=>$model->id));
 		}
 
 		$this->render('update',array(
@@ -100,9 +100,9 @@ class StylistController extends ApplicantController
 	public function actionIndex()
 	{
 		$criterea=new CDbCriteria;
-		$criteria->order = 'stylist_id DESC'; 
+		$criteria->order = 'id DESC'; 
 		
-		$dataProvider=new CActiveDataProvider('Stylist', 
+		$dataProvider=new CActiveDataProvider('RoleStylist', 
 			array('criteria'=>$criteria, 
 			'pagination'=>array(
 				'pageSize'=>'5',
@@ -119,10 +119,10 @@ class StylistController extends ApplicantController
 	 */
 	public function actionAdmin()
 	{
-		$model=new Stylist('search');
+		$model=new RoleStylist('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Stylist']))
-			$model->attributes=$_GET['Stylist'];
+		if(isset($_GET['RoleStylist']))
+			$model->attributes=$_GET['RoleStylist'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -136,7 +136,7 @@ class StylistController extends ApplicantController
 	 */
 	public function loadModel($id)
 	{
-		$model=Stylist::model()->findByPk($id);
+		$model=RoleStylist::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -148,7 +148,7 @@ class StylistController extends ApplicantController
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='stylist-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='roleStylist-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();

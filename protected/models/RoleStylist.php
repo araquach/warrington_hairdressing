@@ -41,16 +41,6 @@ class RoleStylist extends RoleApplicant
 		return parent::model($className);
 	}
 
-	/**
-	 * @return string the associated database table name
-	 */
-	public function tableName()
-	{
-		return 'role_applicant';
-	}
-
-	
-	
 	public function relations()
 	{
 		// NOTE: you may need to adjust the relation name and the related
@@ -71,6 +61,11 @@ class RoleStylist extends RoleApplicant
 			'adex4'  => 'Reception',
 			'adex5'  => 'Marketing',
 			'adex6'  => 'Customer Service',
+			
+			'experience' => 'How many years hairdressing experience do you have? (Since qualified)',
+			'current_position' => 'Which of these best describes your current level?',
+			'client_base' => 'Do you have an existing client base?',
+			'qualifications' => 'Hairdressing Qualifications',
 			
 		);
 	}

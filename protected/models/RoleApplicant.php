@@ -83,7 +83,7 @@ class RoleApplicant extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return 'apprentice';
+		return 'role_applicant';
 	}
 
 	/**
@@ -159,24 +159,6 @@ class RoleApplicant extends CActiveRecord
 			'current_emp' => 'What is your current employment status?',
 			'current_emp_des'  => 'If employed, please tell us where',
 			'salon_name' => 'Please state your current workplace (if applicable)',
-			
-			// from stylist model
-			
-			 
-			'experience' => 'How many years hairdressing experience do you have? (Since qualified)',
-			'current_position' => 'Which of these best describes your current level?',
-			'client_base' => 'Do you have an existing client base?',
-			'qualifications' => 'Hairdressing Qualifications',
-			
-			
-			//from apprentice model
-			'current_position' => 'Current Position',
-			
-			
-			
-			
-			
-			
 		);
 	}
 
