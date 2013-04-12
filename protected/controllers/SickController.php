@@ -24,7 +24,7 @@ class SickController extends Controller
 		return array(
 			
 			array('allow', 
-				'actions'=>array('index','view','create','update','delete','admin'),
+				'actions'=>array('index','view','create','update','delete','admin','staff_sick'),
 				'users'=>array('@'),
 				'expression'=>'isset($user->role) && ($user->role==="admin")',
 			),
@@ -121,6 +121,14 @@ class SickController extends Controller
 			'dataProvider'=>$dataProvider,
 		));
 	}
+	
+	public function actionStaff_sick()
+	{
+		$dataProvider=new CActiveDataProvider('Sick');
+		$this->render('staff_sick',array(
+			'dataProvider'=>$dataProvider,
+		));
+	}
 
 	/**
 	 * Manages all models.
@@ -144,7 +152,7 @@ class SickController extends Controller
 	 */
 	public function loadModel($id)
 	{
-		$model=Sick::model()->findByPk($id);
+		$model=Sick::model()->with('staff')->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;

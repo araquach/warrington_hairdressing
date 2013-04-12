@@ -32,7 +32,7 @@ class UserIdentity extends CUserIdentity
 	
 	public function getId()
 	{
-	 return $this->_id;
+	 	return $this->_id;
 	}
 }
 

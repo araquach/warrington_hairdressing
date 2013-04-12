@@ -1,6 +1,3 @@
-/* @override 
-	http://localhost/~adamcarter/warrington_hairdressing/css/management_system.css */
-
 @import "mobile.css";
 
 /* @group Clear/fix styling */
@@ -408,11 +405,6 @@ div.form.holiday {
 
 #holidayPage span.empty {
 	color: #FFF;
-	
-	
-	
-	
-	content: 'whatever it is you want to add';
 }
 
 /* @end */
@@ -433,6 +425,22 @@ div.form.user {
 
 #lieuPage .view {
 	background-color: rgb(94, 164, 40);
+}
+
+/* @end */
+
+/* @group Sick */
+
+.pageHead.sick {
+	background-image: url('../images/icons/icons_sick.png');
+}
+
+div.form.sick {
+	background: url('../images/icons/icons_sick.png') no-repeat 40px 40px rgb(84, 57, 172);
+}
+
+#sickPage .view {
+	background-color: rgb(84, 57, 172);
 }
 
 /* @end */

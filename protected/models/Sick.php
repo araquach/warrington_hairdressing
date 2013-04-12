@@ -43,7 +43,7 @@ class Sick extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('sick_hours, description, date_sick_from, date_sick_to', 'required'),
+			array('staff_id, sick_hours, description, date_sick_from, date_sick_to', 'required'),
 			array('staff_id, sick_hours', 'numerical', 'integerOnly'=>true),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
@@ -103,11 +103,13 @@ class Sick extends CActiveRecord
 		));
 	}
 	
-	public function afterValidate()
+	public function beforeSave()
 	{
+		if($this->isNewRecord)
+		
 		$this->sick_hours=$this->sick_hours * 8;
 		
-		return parent::afterValidate();
+		return parent::beforeSave();
 	}
 	
 	public function hourConverter()

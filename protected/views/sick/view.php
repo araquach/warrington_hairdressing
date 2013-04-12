@@ -22,7 +22,7 @@ $this->menu=array(
 	'data'=>$model,
 	'attributes'=>array(
 		'id',
-		'staff_id',
+		'staff.first_name',
 		array(
 		'name'=>'sick_hours',
 		'value'=>$model->hourConverter(),

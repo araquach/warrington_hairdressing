@@ -15,7 +15,7 @@
 </div>
 
 <div class="menuBox small sick" id="sick">
-<?php echo CHtml::link('<h2>Sick Days</h2>', array('/lieu/staff_sick')); ?>
+<?php echo CHtml::link('<h2>Sick Days</h2>', array('/sick/staff_sick')); ?>
 <?php $this->widget('SickWidget'); ?>
 </div>
 

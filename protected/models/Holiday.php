@@ -127,7 +127,7 @@ class Holiday extends SalonActiveRecord
 			self::APPROVED_N => 'No',
 			self::APPROVED_P => 'Pending',
 		);
-	}
+	} 
 	
 	public function getApprovedText() {
 			$approvedOptions=$this->approvedOptions;

@@ -1,16 +1,8 @@
 <?php
 /* @var $this SickController */
 /* @var $dataProvider CActiveDataProvider */
-
-$this->breadcrumbs=array(
-	'Sicks',
-);
-
-$this->menu=array(
-	array('label'=>'Create Sick', 'url'=>array('create')),
-	array('label'=>'Manage Sick', 'url'=>array('admin')),
-);
 ?>
+
 
 <div id="sickPage">
 
@@ -25,6 +17,9 @@ $this->menu=array(
 <?php $this->widget('zii.widgets.CListView', array(
 	'dataProvider'=>$dataProvider,
 	'itemView'=>'_view',
+	'pager'=>array('cssFile'=>false),
 )); ?>
 
-</div>
+
+
+</div> <!--sickPage-->
