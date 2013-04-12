@@ -147,13 +147,13 @@ class Holiday extends SalonActiveRecord
 	}
 	
 	
-	public function afterValidate()
+	public function beforeSave()
 	{
 		if($this->isNewRecord)
 		
 		$this->hours_requested=$this->hours_requested * 8;
 		
-		return parent::afterValidate();
+		return parent::beforeSave();
 	}
 	
 	public function hourConverter()
