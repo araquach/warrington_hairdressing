@@ -8,7 +8,7 @@ class HolidayWidget extends CWidget
     	// parameter binding required!
     	$q = 'SELECT sum(hours_requested) 
     		FROM holiday
-    		WHERE staff_id='.Yii::app()->user->id. ' AND approved=2';
+    		WHERE staff_id='.Yii::app()->user->id. ' AND approved!=1';
     	$cmd = Yii::app()->db->createCommand($q);
     	$total = $cmd->queryScalar();
     	$total /= 8;
@@ -23,8 +23,17 @@ class HolidayWidget extends CWidget
         
         $remaining = $entitlement - $total;
         
+        //Saturday Calculator
+        $q = 'SELECT sum(saturday) 
+        	FROM holiday
+        	WHERE staff_id='.Yii::app()->user->id. ' AND approved<>1';
+        $cmd = Yii::app()->db->createCommand($q);
+        $saturday = $cmd->queryScalar();
         
-        $this->render('holidayWidget', array('total'=>$total, 'entitlement'=>$entitlement, 'remaining'=>$remaining));
+        $saturday = 4 - $saturday;
+        
+        
+        $this->render('holidayWidget', array('total'=>$total, 'entitlement'=>$entitlement, 'remaining'=>$remaining, 'saturday'=>$saturday));
     }
 }
 

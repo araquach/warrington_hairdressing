@@ -12,6 +12,7 @@
  * @property integer $request_date_to
  * @property integer $approved
  * @property integer $requested_on_date
+ * @property integer $saturday
  *
  * The followings are the available model relations:
  * @property Staff $staff
@@ -60,10 +61,12 @@ class Holiday extends SalonActiveRecord
 			array('prebooked', 'filter', 'filter'=>array( $this, 'filterPreBooked')),
 			array('hours_requested',  'numerical'),
 			//array('request_date_from, request_date_to', 'date'),
+			array('saturday', 'filter', 'filter'=>array( $this, 'filterCountSaturday')),
+			array('saturday', 'validateSaturday'),
 			array('requested_on_date','default','value'=>new CDbExpression('NOW()'),'setOnEmpty'=>false,'on'=>'insert'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, staff_id, hours_requested, prebooked, request_date_from, request_date_to, approved, requested_on_date', 'safe', 'on'=>'search'),
+			array('id, staff_id, hours_requested, prebooked, request_date_from, request_date_to, approved, requested_on_date, saturday', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -93,6 +96,7 @@ class Holiday extends SalonActiveRecord
 			'request_date_to' => 'To',
 			'approved' => 'Approved',
 			'requested_on_date' => 'Requested On',
+			'saturday' => 'Saturday\'s',
 		);
 	}
 
@@ -115,6 +119,7 @@ class Holiday extends SalonActiveRecord
 		$criteria->compare('request_date_to',$this->request_date_to);
 		$criteria->compare('approved',$this->approved);
 		$criteria->compare('requested_on_date',$this->requested_on_date);
+		$criteria->compare('saturday',$this->saturday);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -192,4 +197,54 @@ class Holiday extends SalonActiveRecord
 		return $prebooked;
 	}
 	
+	public function filterCountSaturday()
+	{
+		if($this->isNewRecord)
+		
+		$saturday = $this->saturday;
+		$start_ts = strtotime($this->request_date_from);
+		$end_ts = strtotime($this->request_date_to);
+		$day_sec = 86400;
+		
+		$count = 0;
+		
+		while ($start_ts < $end_ts) { // loop through each day to find saturdays
+		$day = date('w', $start_ts);
+		if ($day == 6) { // this is a saturday
+		$count++;
+		}
+		$start_ts = $start_ts + $day_sec;
+		}
+		return $count;
+	}
+	
+	public function validateSaturday($attr, $params)
+	{
+		if($this->isNewRecord)
+		{
+		
+			$cmd = Yii::app()->db->createCommand();
+			$cmd->select = ('sum(saturday)');
+			$cmd->from = 'holiday';
+			$cmd->where = 'staff_id=' . Yii::app()->user->id . ' AND approved<>1';
+			$total = $cmd->queryScalar();
+			
+			$totalSaturday = $this->saturday;
+			
+			if ($totalSaturday > 2)
+			{
+				$this->addError('saturday', 'You can only have 2 Saturdays in a row.');
+			}
+			if (($total + $totalSaturday) > 4) 
+			{
+				$this->addError('saturday', 'You can only have 4 Saturdays a year.');
+			}
+		}
+	}
 }
+
+
+
+
+
+

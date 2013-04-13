@@ -24,6 +24,10 @@
 	<?php echo CHtml::encode(Yii::app()->dateFormatter->formatDateTime($data->request_date_to, "medium","")); ?>
 	<br />
 	
+	<b><?php echo CHtml::encode($data->getAttributeLabel('saturday')); ?>:</b>
+	<?php echo CHtml::encode($data->saturday); ?>
+	<br />
+	
 	<?php if (CHtml::encode($data->prebooked) == 1) {
 		echo CHtml::image('images/icons/pb-11.png');
 		} ?>
