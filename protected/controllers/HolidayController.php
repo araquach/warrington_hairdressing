@@ -28,7 +28,7 @@ class HolidayController extends Controller
 				'expression'=>'isset($user->role) && ($user->role==="admin")',
 			),
 			array('allow', 
-				'actions'=>array('staff_holiday','staff_create','staff_view','staff_holiday_list'),
+				'actions'=>array('staff_holiday','staff_create','staff_view','staff_holiday_list','staff_denied','staff_approval','staff_upcoming'),
 				'users'=>array('@'),
 				'expression'=>'isset($user->role) && ($user->role==="staff")',
 			),
