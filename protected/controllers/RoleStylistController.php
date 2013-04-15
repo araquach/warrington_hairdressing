@@ -1,6 +1,6 @@
 <?php
 
-class RoleStylistController extends ApplicantController
+class RoleStylistController extends Controller
 {
 
 	/**
@@ -24,12 +24,12 @@ class RoleStylistController extends ApplicantController
 			return array(
 				
 				array('allow', 
-					'actions'=>array(''),
+					'actions'=>array('index','view'),
 					'users'=>array('@'),
 					'expression'=>'isset($user->role) && ($user->role==="admin")',
 				),
 				array('allow', 
-					'actions'=>array(''),
+					'actions'=>array('index','view'),
 					'users'=>array('@'),
 					'expression'=>'isset($user->role) && ($user->role==="staff")',
 				),

@@ -41,7 +41,7 @@
  * @property string $awards
  * @property string $about_you
  * @property string $why_hairdressing
- * @property string $why_jakata
+ * @property string $why_us
  */
  
 class RoleApplicant extends CActiveRecord
@@ -94,7 +94,7 @@ class RoleApplicant extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('first_name, second_name, address1, address3, postcode, email, mobile, current_position, in_salon, qualification_school, qualification_hair, cutting, styling, colouring, men, extensions, chem_straightening, brazil_blow, hair_up, about, why_hairdressing, why_jakata', 'required'),
+			array('first_name, second_name, address1, address3, postcode, email, mobile, current_position, in_salon, qualification_school, qualification_hair, cutting, styling, colouring, men, extensions, chem_straightening, brazil_blow, hair_up, about, why_hairdressing, why_us', 'required'),
 			array('age, current_position, in_salon, qualification_school, qualification_hair, cutting, styling, colouring, men, extensions, chem_straightening, brazil_blow, hair_up', 'numerical', 'integerOnly'=>true),
 			array('first_name, second_name, address1, address2, address3, email, salon_name', 'length', 'max'=>256),
 			array('postcode', 'length', 'max'=>56),
@@ -104,7 +104,7 @@ class RoleApplicant extends CActiveRecord
 			array('date','default','value'=>new CDbExpression('NOW()'),'setOnEmpty'=>false,'on'=>'insert'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('apprentice_id, date, first_name, second_name, age, address1, address2, address3, postcode, email, phone, mobile, current_position, in_salon, salon_name, qualification_school, qualification_hair, cutting, styling, colouring, men, extensions, chem_straightening, brazil_blow, hair_up, about, why_hairdressing, why_jakata', 'safe', 'on'=>'search'),
+			array('apprentice_id, date, first_name, second_name, age, address1, address2, address3, postcode, email, phone, mobile, current_position, in_salon, salon_name, qualification_school, qualification_hair, cutting, styling, colouring, men, extensions, chem_straightening, brazil_blow, hair_up, about, why_hairdressing, why_us', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -150,7 +150,7 @@ class RoleApplicant extends CActiveRecord
 			'awards' => 'Please state any hairdressing awards',
 			'about_you' => 'Tell us a bit about yourself',
 			'why_hairdressing' => 'Why did you choose to be a hairdresser?',
-			'why_jakata' => 'Why do you want to join the Jakata Team?',
+			'why_us' => 'Why do you want to join the team?',
 			
 			'qual_school'  => 'What qualification did you achieve at school?',
 			'qual_hair' => 'Are you currently doing any hairdressing qualifications?',
@@ -200,7 +200,7 @@ class RoleApplicant extends CActiveRecord
 		$criteria->compare('hair_up',$this->hair_up);
 		$criteria->compare('about',$this->about,true);
 		$criteria->compare('why_hairdressing',$this->why_hairdressing,true);
-		$criteria->compare('why_jakata',$this->why_jakata,true);
+		$criteria->compare('why_us',$this->why_us,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

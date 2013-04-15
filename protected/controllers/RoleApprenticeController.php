@@ -24,7 +24,7 @@ class RoleApprenticeController extends Controller
 			return array(
 				
 				array('allow', 
-					'actions'=>array(''),
+					'actions'=>array('index','view'),
 					'users'=>array('@'),
 					'expression'=>'isset($user->role) && ($user->role==="admin")',
 				),
