@@ -5,12 +5,9 @@
 
 <div class="view">
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('id')); ?>:</b>
 	<?php echo CHtml::link(CHtml::encode($data->id), array('view', 'id'=>$data->id)); ?>
-	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('staff_id')); ?>:</b>
-	<?php echo CHtml::encode($data->staff_id); ?>
+	<?php echo CHtml::encode($data->staff->first_name . ' ' . $data->staff->last_name); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('sick_hours')); ?>:</b>
@@ -22,15 +19,11 @@
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('date_sick_from')); ?>:</b>
-	<?php echo CHtml::encode($data->date_sick_from); ?>
+	<?php echo CHtml::encode(Yii::app()->dateFormatter->formatDateTime($data->date_sick_from, "medium","")); ?>
 	<br />
 	
 	<b><?php echo CHtml::encode($data->getAttributeLabel('date_sick_to')); ?>:</b>
-	<?php echo CHtml::encode($data->date_sick_to); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('date_deducted')); ?>:</b>
-	<?php echo CHtml::encode($data->date_deducted); ?>
+	<?php echo CHtml::encode(Yii::app()->dateFormatter->formatDateTime($data->date_sick_to, "medium", "")); ?>
 	<br />
 
 

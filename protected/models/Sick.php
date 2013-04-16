@@ -73,8 +73,8 @@ class Sick extends CActiveRecord
 			'staff_id' => 'Staff Member',
 			'sick_hours' => 'Sick Days',
 			'description' => 'Description',
-			'date_sick_from' => 'Date Sick From',
-			'date_sick_to' => 'Date Sick To',
+			'date_sick_from' => 'From',
+			'date_sick_to' => 'To',
 			'date_deducted' => 'Date Deducted',
 		);
 	}
