@@ -58,6 +58,7 @@ class StaffRole extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'staffs' => array(self::HAS_MANY, 'Staff', 'staff_role_id'),
+			'roleApplicants' => array(self::HAS_MANY, 'RoleApplicant', 'role_id')
 		);
 	}
 
