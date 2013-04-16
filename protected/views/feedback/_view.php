@@ -3,7 +3,7 @@
 /* @var $model Feedback */
 ?>
 
-<div class="view">
+<div class="view feedback">
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('id')); ?>:</b>
 	<?php echo CHtml::link(CHtml::encode($data->id), array('view', 'id'=>$data->id)); ?>
@@ -73,7 +73,7 @@
 	*/  ?>
 	
 	<b><?php echo CHtml::encode($data->getAttributeLabel('stylist_id')); ?>:</b>
-	<?php echo CHtml::encode($data->FeedbackStylist->stylist); ?>
+	<?php echo CHtml::encode($data->stylist->first_name); ?>
 	<br />
 	<b><?php echo CHtml::encode('Score'); ?>:</b>
 	<?php echo CHtml::encode($data->score()); ?>

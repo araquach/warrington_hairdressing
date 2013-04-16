@@ -1,13 +1,7 @@
 <?php
 
 class FeedbackController extends Controller
-{
-	/**
-	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
-	 * using two-column layout. See 'protected/views/layouts/column2.php'.
-	 */
-	public $layout='//layouts/column2';
-
+{	
 	/**
 	 * @return array action filters
 	 */
@@ -27,13 +21,16 @@ class FeedbackController extends Controller
 	public function accessRules()
 	{
 		return array(
-			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('create'),
-				'users'=>array('*'),
+			
+			array('allow', 
+				'actions'=>array('index','view','update','delete','admin'),
+				'users'=>array('@'),
+				'expression'=>'isset($user->role) && ($user->role==="admin")',
 			),
-			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete','index','update','view'),
-				'users'=>array('manager'),
+			array('allow', 
+				'actions'=>array(''),
+				'users'=>array('@'),
+				'expression'=>'isset($user->role) && ($user->role==="staff")',
 			),
 			array('deny',  // deny all users
 				'users'=>array('*'),
@@ -51,31 +48,7 @@ class FeedbackController extends Controller
 			'model'=>$this->loadModel($id),
 		));
 	}
-
-	/**
-	 * Creates a new model.
-	 * If creation is successful, the browser will be redirected to the 'view' page.
-	 */
-	public function actionCreate()
-	{
-		$model=new Feedback;
-
-		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
-
-		if(isset($_POST['Feedback']))
-		{
-			$model->attributes=$_POST['Feedback'];
-			if($model->save())
-			
-			Yii::app()->user->setFlash('Feedback','Thank you for your help ' . ucfirst($model->client_first) . '. It\'s really appreciated.<br>You have automatically been entered into our prize draw for the chance to win some great prizes.<br>See you in the salon soon!');
-		}
-
-		$this->render('create',array(
-			'model'=>$model,
-		));
-	}
-
+	
 	/**
 	 * Updates a particular model.
 	 * If update is successful, the browser will be redirected to the 'view' page.
@@ -147,7 +120,7 @@ class FeedbackController extends Controller
 	 */
 	public function loadModel($id)
 	{
-		$model=Feedback::model()->with('FeedbackStylist')->findByPk($id);
+		$model=Feedback::model()->with('stylist')->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
