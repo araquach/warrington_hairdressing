@@ -146,7 +146,7 @@ a p.pageLink:hover {
 }
 
 .pageHead ul.info {
-	margin: 20px;
+	margin: 0px;
 	font-size: 1.5em;
 	line-height: 1.5em;
 	color: #FFF;
@@ -197,6 +197,10 @@ a p.pageLink:hover {
 
 .recruitment {
 	background-color: rgb(208, 72, 46);
+}
+
+.feedback {
+	background-color: rgb(186, 34, 46);
 }
 
 /* @group list Formatting */
@@ -362,6 +366,10 @@ div.view a {
 	background-image: url('../images/icons/icons_recruitment.png');
 }
 
+#feedback {
+	background-image: url('../images/icons/icons_feedback.png');
+}
+
 
 /* @end */
 
@@ -457,6 +465,14 @@ div.form.sick {
 
 #roleApplicantPage .view {
 	background-color: rgb(208, 72, 46);
+}
+
+/* @end */
+
+/* @group Feedback */
+
+#feedbackPage .view {
+	background-color: background-color: rgb(186, 34, 46);
 }
 
 /* @end */

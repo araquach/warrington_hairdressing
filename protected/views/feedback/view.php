@@ -6,19 +6,21 @@
 
 <div class="detail feedback">
 
-<h1>View Feedback #<?php echo $model->id; ?></h1>
-
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
-		'id',
 		array(
 			'name'=>'Date Submitted',
 			'value'=>Yii::app()->dateFormatter->formatDateTime($model->date,"medium",""),
 			),
-		'client_first',
-		'client_second',
-		'stylist.first_name',
+		array(
+			'name'=>'Client Name'.':',
+			'value'=>$model->client_first . ' ' . $model->client_second,
+			),
+		array(
+			'name'=>'Last Stylist'.':',
+			'value'=>$model->stylist->first_name . ' ' . $model->stylist->last_name,
+			),
 		'mobile',
 		'intro',
 		'consultation',

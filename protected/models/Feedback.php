@@ -83,7 +83,7 @@ class Feedback extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'date'=> 'Date Submitted',
+			'date'=> 'Submitted',
 			'client_first' => 'First Name',
 			'client_second' => 'Second Name',
 			'mobile' => 'Mobile Number (no spaces)',
@@ -98,7 +98,7 @@ class Feedback extends CActiveRecord
 			'whole_experience' => '9. How do you rate the experience as a whole on your last visit?',
 			'end_result' => '10. How happy were you with the end result of your hair?',
 			'extra' => 'Do you have any extra comments you would like to make?',
-			'stylist_id' => 'Your Last Stylist',
+			'stylist_id' => 'Last Stylist',
 		);
 	}
 
