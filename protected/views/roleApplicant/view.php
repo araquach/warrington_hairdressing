@@ -16,7 +16,6 @@ $this->menu=array(
 	'data'=>$model,
 	'cssFile'=>'false',
 	'attributes'=>array(
-		'id',
 		'salon.salon',
 		'role.job_description',
 		array(

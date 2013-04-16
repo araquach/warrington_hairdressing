@@ -437,7 +437,6 @@ div.form.user {
 
 /* @end */
 
-<<<<<<< HEAD
 /* @group Sick */
 
 .pageHead.sick {
@@ -450,12 +449,14 @@ div.form.sick {
 
 #sickPage .view {
 	background-color: rgb(84, 57, 172);
-=======
-/* @group Role Applicant */
+}
+
+/* @end */
+
+/* @group Recruitment */
 
 #roleApplicantPage .view {
 	background-color: rgb(208, 72, 46);
->>>>>>> Recruitment
 }
 
 /* @end */
