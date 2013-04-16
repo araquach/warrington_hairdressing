@@ -1,6 +1,6 @@
 <?php
 
-class RoleStylistController extends Controller
+class RoleApplicantController extends Controller
 {
 
 	/**
@@ -62,9 +62,9 @@ class RoleStylistController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['RoleStylist']))
+		if(isset($_POST['RoleApplicant']))
 		{
-			$model->attributes=$_POST['RoleStylist'];
+			$model->attributes=$_POST['RoleApplicant'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -101,8 +101,7 @@ class RoleStylistController extends Controller
 	{
 		$criterea=new CDbCriteria;
 		$criteria->order = 'id DESC'; 
-		
-		$dataProvider=new CActiveDataProvider('RoleStylist', 
+		$dataProvider=new CActiveDataProvider('RoleApplicant', 
 			array('criteria'=>$criteria, 
 			'pagination'=>array(
 				'pageSize'=>'5',
@@ -119,10 +118,10 @@ class RoleStylistController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new RoleStylist('search');
+		$model=new RoleApplicant('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['RoleStylist']))
-			$model->attributes=$_GET['RoleStylist'];
+		if(isset($_GET['RoleApplicant']))
+			$model->attributes=$_GET['RoleApplicant'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -136,7 +135,7 @@ class RoleStylistController extends Controller
 	 */
 	public function loadModel($id)
 	{
-		$model=RoleStylist::model()->findByPk($id);
+		$model=RoleApplicant::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -148,7 +147,7 @@ class RoleStylistController extends Controller
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='roleStylist-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='roleApplicant-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();

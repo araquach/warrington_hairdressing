@@ -15,7 +15,7 @@ $this->menu=array(
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
-		'stylist_id',
+		'id',
 		array(
 			'name'=>'date',
 			'value'=>Yii::app()->dateFormatter->formatDateTime($model->date,"medium",""),

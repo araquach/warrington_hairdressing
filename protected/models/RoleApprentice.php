@@ -17,10 +17,6 @@ class RoleApprentice extends RoleApplicant
 	 const POSITION_COL_2 = 5;
 	 const POSITION_SCHOOL = 6;
 	 
-	 const IN_SALON_YES = 1;
-	 const IN_SALON_OTHER = 2;
-	 const IN_SALON_NO = 0;
-	 
 	 
 	public static function model($className=__CLASS__)
 	{
@@ -73,15 +69,7 @@ class RoleApprentice extends RoleApplicant
 			self::POSITION_OTHER=>'Other',
 		);
 	}
-	
-	public function getInSalonOptions() {
-		return array(
-			self::CHOOSE=>'--Please Choose--',
-			self::IN_SALON_YES=>'In a salon',
-			self::IN_SALON_OTHER=>'Other industry',
-			self::IN_SALON_NO=>'Not employed',
-		);
-	}
+
 	
 	public function getPositionText() {
 		$positionOptions=$this->positionOptions;
