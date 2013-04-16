@@ -277,7 +277,7 @@ class RoleApplicant extends CActiveRecord
 	
 	public function getQualSchoolText() {
 		$qualSchoolOptions=$this->qualSchoolOptions;
-		return isset($qualSchoolOptions[$this->qualification_school]) ? $qualSchoolOptions[$this->qualification_school] : "unknown qualification ({$this->qualification_school})";
+		return isset($qualSchoolOptions[$this->qual_school]) ? $qualSchoolOptions[$this->qual_school] : "unknown qualification ({$this->qual_school})";
 	}
 	
 	

@@ -15,4 +15,8 @@
 	<p>2 owed</p>
 </div>', array('/lieu/index')); ?>
 
+<?php echo CHtml::link('<div class="menuBox small recruitment" id="recruitment">
+	<h2>Recruitment</h2>
+</div>', array('/roleApplicant/index')); ?>
+
 </div> <!--#staffPage-->

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Apr 16, 2013 at 11:05 AM
+-- Generation Time: Apr 16, 2013 at 12:39 PM
 -- Server version: 5.1.44
 -- PHP Version: 5.3.1
 
@@ -27,6 +27,8 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 
 CREATE TABLE IF NOT EXISTS `role_applicant` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `salon_id` int(11) NOT NULL,
+  `role_id` int(11) NOT NULL,
   `date` datetime NOT NULL,
   `first_name` varchar(256) NOT NULL,
   `second_name` varchar(256) NOT NULL,
@@ -65,4 +67,11 @@ CREATE TABLE IF NOT EXISTS `role_applicant` (
   `why_hairdressing` text NOT NULL,
   `why_us` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+
+--
+-- Dumping data for table `role_applicant`
+--
+
+INSERT INTO `role_applicant` (`id`, `salon_id`, `role_id`, `date`, `first_name`, `second_name`, `address1`, `address2`, `address3`, `postcode`, `email`, `phone`, `mobile`, `current_emp`, `current_emp_des`, `qual_school`, `qual_non_hair`, `adex1`, `adex2`, `adex3`, `adex4`, `adex5`, `adex6`, `experience`, `current_position`, `client_base`, `qual_hair`, `cutting_skills`, `colour_knowledge`, `colour_skills`, `men`, `extensions_weave`, `extensions_other`, `chem_straighten`, `braz_blow`, `hair_up`, `awards`, `about_you`, `why_hairdressing`, `why_us`) VALUES
+(6, 0, 0, '2013-04-16 12:15:34', 'Adam', 'Carter', '', '', '', '', '', '', '', 0, '', 0, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '', '', '');

@@ -14,6 +14,7 @@ $this->menu=array(
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
+	'cssFile'=>'false',
 	'attributes'=>array(
 		'id',
 		array(
@@ -44,27 +45,27 @@ $this->menu=array(
 		'qual_non_hair',
 		
 		array(
-			'name'=>'adex_1',
+			'name'=>'adex1',
 			'type'=>'boolean'
 			),
 		array(
-			'name'=>'adex_2',
+			'name'=>'adex2',
 			'type'=>'boolean'
 			),
 		array
-			('name'=>'adex_3',
+			('name'=>'adex3',
 			'type'=>'boolean'
 			),
 		array(
-			'name'=>'adex_4',
+			'name'=>'adex4',
 			'type'=>'boolean'
 			),
 		array(
-			'name'=>'adex_5',
+			'name'=>'adex5',
 			'type'=>'boolean'
 			),
 		array(
-			'name'=>'adex_6',
+			'name'=>'adex6',
 			'type'=>'boolean'
 			),
 	
@@ -79,10 +80,6 @@ $this->menu=array(
 		array(
 			'name'=>'client_base', 
 			'value'=>CHtml::encode($model->getClientBaseText())
-			),
-		array(
-			'name'=>'qualifications', 
-			'value'=>CHtml::encode($model->getQualificationText())
 			),
 			
 		'cutting_skills',
