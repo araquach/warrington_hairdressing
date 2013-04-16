@@ -9,6 +9,11 @@
 <?php $this->widget('HolidayWidget'); ?>
 </div>
 
+<div class="menuBox small feedback" id="feedback">
+<?php echo CHtml::link('<h2>Feedback</h2>', array('/lieu/staff_feedback')); ?>
+<?php $this->widget('FeedbackWidget'); ?>
+</div>
+
 <div class="menuBox small lieu" id="lieu">
 <?php echo CHtml::link('<h2>Lieu Hours</h2>', array('/lieu/staff_lieu')); ?>
 <?php $this->widget('LieuWidget'); ?>

@@ -6,7 +6,7 @@
 	<?php echo CHtml::encode(Yii::app()->dateFormatter->formatDateTime($data->date, "medium","")); ?>
 	<br />
 
-	<?php echo CHtml::encode($data->first_name . ' ' . $data->second_name); ?>
+	<strong><?php echo CHtml::encode($data->first_name . ' ' . $data->second_name); ?></strong>
 	<br />
 	
 	<?php echo CHtml::encode($data->salon->salon); ?>
