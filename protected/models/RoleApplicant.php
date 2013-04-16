@@ -5,6 +5,8 @@
  *
  * The followings are the available columns in table 'role_applicant':
  * @property integer $id
+ * @property integer $salon_id
+ * @property integer $role_id
  * @property string $date
  * @property string $first_name
  * @property string $second_name
@@ -148,6 +150,8 @@ class RoleApplicant extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'role' => array(self::BELONGS_TO, 'StaffRole', 'role_id'),
+			'salon' => array(self::BELONGS_TO, 'Salon', 'salon_id'),
 		);
 	}
 

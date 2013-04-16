@@ -1,14 +1,6 @@
 
-<div id="recruitBlank">
-<?php
-$this->breadcrumbs=array(
-	'Applicants',
-);
 
-$this->menu=array(
-	array('label'=>'Manage Applicants', 'url'=>array('admin')),
-);
-?>
+<div id="roleApplicantPage">
 
 <h1>Job Applicants</h1>
 
@@ -17,4 +9,3 @@ $this->menu=array(
 	'itemView'=>'_view',
 )); ?>
 
-</div> <!--recruitBlank-->

@@ -423,6 +423,14 @@ div.form.user {
 
 /* @end */
 
+/* @group Role Applicant */
+
+#roleApplicantPage .view {
+	background-color: rgb(208, 72, 46);
+}
+
+/* @end */
+
 /* @group footer */
 
 footer {

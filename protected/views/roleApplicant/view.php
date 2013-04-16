@@ -1,5 +1,3 @@
-<div id="recruitBlank">
-
 <?php
 
 $this->menu=array(
@@ -10,6 +8,8 @@ $this->menu=array(
 );
 ?>
 
+<div class="detail recruitment">
+
 <h1>View Applicant #<?php echo $model->id; ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
@@ -17,6 +17,8 @@ $this->menu=array(
 	'cssFile'=>'false',
 	'attributes'=>array(
 		'id',
+		'salon.salon',
+		'role.job_description',
 		array(
 			'name'=>'date',
 			'value'=>Yii::app()->dateFormatter->formatDateTime($model->date,"medium",""),
@@ -99,5 +101,5 @@ $this->menu=array(
 	),
 )); ?>
 
-</div> <!--recruitBlank-->
+</div> <!--.detail.roleApplicant-->
 

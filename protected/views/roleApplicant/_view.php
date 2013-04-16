@@ -1,6 +1,6 @@
-<div class="view">
+<div class="view roleApplicant">
 
-	<ul>
+	
 	<?php echo CHtml::link(CHtml::encode($data->id), array('view', 'id'=>$data->id)); ?>
 	<br />
 	
@@ -8,6 +8,12 @@
 	<br />
 
 	<?php echo CHtml::encode($data->first_name . ' ' . $data->second_name); ?>
+	<br />
+	
+	<?php echo CHtml::encode($data->salon->salon); ?>
+	<br />
+	
+	<?php echo CHtml::encode($data->role->job_description); ?>
 	<br />
 
 

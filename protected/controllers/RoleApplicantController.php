@@ -112,6 +112,73 @@ class RoleApplicantController extends Controller
 			'dataProvider'=>$dataProvider,
 		));
 	}
+	
+	public function actionPkStylistIndex()
+	{
+		$criterea=new CDbCriteria;
+		$criteria->order = 'id DESC'; 
+		$dataProvider=new CActiveDataProvider('RoleApplicant', 
+			array('criteria'=>$criteria, 
+			'pagination'=>array(
+				'pageSize'=>'5',
+				),			
+			
+			));
+		$this->render('index',array(
+			'dataProvider'=>$dataProvider,
+		));
+	}
+	
+	public function actionPkApprenticeIndex()
+	{
+		$criterea=new CDbCriteria;
+		$criteria->order = 'id DESC'; 
+		$dataProvider=new CActiveDataProvider('RoleApplicant', 
+			array('criteria'=>$criteria, 
+			'pagination'=>array(
+				'pageSize'=>'5',
+				),			
+			
+			));
+		$this->render('index',array(
+			'dataProvider'=>$dataProvider,
+		));
+	}
+	
+	public function actionJakStylistIndex()
+	{
+		$criterea=new CDbCriteria;
+		$criteria->order = 'id DESC'; 
+		$dataProvider=new CActiveDataProvider('RoleApplicant', 
+			array('criteria'=>$criteria, 
+			'pagination'=>array(
+				'pageSize'=>'5',
+				),			
+			
+			));
+		$this->render('index',array(
+			'dataProvider'=>$dataProvider,
+		));
+	}
+	
+	public function actionJakApprenticeIndex()
+	{
+		$criterea=new CDbCriteria;
+		$criteria->order = 'id DESC'; 
+		$dataProvider=new CActiveDataProvider('RoleApplicant', 
+			array('criteria'=>$criteria, 
+			'pagination'=>array(
+				'pageSize'=>'5',
+				),			
+			
+			));
+		$this->render('index',array(
+			'dataProvider'=>$dataProvider,
+		));
+	}
+	
+	
+	
 
 	/**
 	 * Manages all models.
@@ -135,7 +202,7 @@ class RoleApplicantController extends Controller
 	 */
 	public function loadModel($id)
 	{
-		$model=RoleApplicant::model()->findByPk($id);
+		$model=RoleApplicant::model()->with('salon','role')->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
