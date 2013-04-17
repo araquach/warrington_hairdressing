@@ -1,3 +1,3 @@
 
 
-<?php echo '<p class="info">Sick Hours</p>'; ?>
+<?php echo '<p class="info">'. $total . ' Sick Days</p>'; ?>

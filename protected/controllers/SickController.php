@@ -29,7 +29,7 @@ class SickController extends Controller
 				'expression'=>'isset($user->role) && ($user->role==="admin")',
 			),
 			array('allow', 
-				'actions'=>array('index'),
+				'actions'=>array('index','staff_sick'),
 				'users'=>array('@'),
 				'expression'=>'isset($user->role) && ($user->role==="staff")',
 			),
@@ -124,7 +124,15 @@ class SickController extends Controller
 	
 	public function actionStaff_sick()
 	{
-		$dataProvider=new CActiveDataProvider('Sick');
+		$criteria=new CDbCriteria;
+		$criteria->with = 'staff';
+		$criteria->condition = 'staff.id=' . Yii::app()->user->id;
+		$criteria->order = 't.id DESC';
+		
+		$dataProvider=new CActiveDataProvider('Sick', array(
+			'criteria'=>$criteria			
+		));
+		
 		$this->render('staff_sick',array(
 			'dataProvider'=>$dataProvider,
 		));

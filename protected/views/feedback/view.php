@@ -8,6 +8,7 @@
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
+	'cssFile'=>'false',
 	'attributes'=>array(
 		array(
 			'name'=>'Date Submitted',

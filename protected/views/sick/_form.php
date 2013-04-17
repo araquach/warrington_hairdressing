@@ -17,17 +17,25 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'staff_id'); ?>
-		<?php echo $form->dropDownList($model, 'id', CHtml::listData(
+		<?php echo $form->dropDownList($model, 'staff_id', CHtml::listData(
 		Staff::model()->findAll(), 'id', 'first_name'),
 		array('prompt' => 'Select Staff Member')); ?>
 		<?php echo $form->error($model,'staff_id'); ?>
 	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'sick_hours'); ?>
-		<?php echo $form->textField($model,'sick_hours'); ?>
-		<?php echo $form->error($model,'sick_hours'); ?>
-	</div>
+	
+	<div class="row question">
+			<?php echo $form->labelEx($model,'sick_hours'); ?>
+			<?php echo '<p class="scale_label">Full Day</p>' ?>
+			<?php echo $form->radioButton($model,'sick_hours', array(
+			'value'=>8,
+			'uncheckValue'=>null)); ?>
+			<?php echo '<p class="scale_label">Half Day</p>' ?>
+			<?php echo $form->radioButton($model,'sick_hours', array(
+			'value'=>4,
+			'uncheckValue'=>null)); ?>
+			<?php echo $form->error($model,'sick_hours'); ?>
+		</div>
+	
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'description'); ?>
@@ -49,20 +57,6 @@
 		<?php echo $form->error($model,'date_sick_from'); ?>
 	</div>
 	
-	<div class="row">
-		<?php echo $form->labelEx($model,'date_sick_to'); ?>
-		<?php $this->widget('zii.widgets.jui.CJuiDatePicker', array(
-		    'model'=>$model, 'attribute'=>'date_sick_to',
-		    'options'=>array(
-		        'dateFormat'=>'yy-mm-dd',
-		        'yearRange'=>'-5:+5',
-		        'changeYear'=>'true',
-		        'changeMonth'=>'true',
-		    ),
-		)); ?>
-		<?php echo $form->error($model,'date_sick_to'); ?>
-	</div>
-
 	<div class="row">
 		<?php echo $form->hiddenField($model,'date_deducted'); ?>
 	</div>

@@ -29,7 +29,6 @@ $this->menu=array(
 		),
 		'description',
 		'date_sick_from',
-		'date_sick_from',
 		'date_deducted',
 	),
 )); ?>

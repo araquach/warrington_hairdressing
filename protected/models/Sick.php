@@ -9,7 +9,6 @@
  * @property integer $sick_hours
  * @property integer $description
  * @property integer $date_sick_from
- * @property integer $date_sick_to
  * @property integer $date_deducted
  *
  * The followings are the available model relations:
@@ -43,11 +42,12 @@ class Sick extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('staff_id, sick_hours, description, date_sick_from, date_sick_to', 'required'),
+			array('staff_id, sick_hours, description, date_sick_from', 'required'),
 			array('staff_id, sick_hours', 'numerical', 'integerOnly'=>true),
+			array('description', 'length', 'max'=>50),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, staff_id, sick_hours, description, date_sick_from, date_sick_to, date_deducted', 'safe', 'on'=>'search'),
+			array('id, staff_id, sick_hours, description, date_sick_from, date_deducted', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -73,8 +73,7 @@ class Sick extends CActiveRecord
 			'staff_id' => 'Staff Member',
 			'sick_hours' => 'Sick Days',
 			'description' => 'Description',
-			'date_sick_from' => 'From',
-			'date_sick_to' => 'To',
+			'date_sick_from' => 'Date Sick',
 			'date_deducted' => 'Date Deducted',
 		);
 	}
@@ -95,23 +94,13 @@ class Sick extends CActiveRecord
 		$criteria->compare('sick_hours',$this->sick_hours);
 		$criteria->compare('description',$this->description);
 		$criteria->compare('date_sick_from',$this->date_sick_from);
-		$criteria->compare('date_sick_to',$this->date_sick_to);
 		$criteria->compare('date_deducted',$this->date_deducted);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
 	}
-	
-	public function beforeSave()
-	{
-		if($this->isNewRecord)
 		
-		$this->sick_hours=$this->sick_hours * 8;
-		
-		return parent::beforeSave();
-	}
-	
 	public function hourConverter()
 	{
 		$conversion = $this->sick_hours;
