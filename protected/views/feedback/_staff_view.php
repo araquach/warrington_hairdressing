@@ -10,9 +10,6 @@
 	<?php echo CHtml::encode(Yii::app()->dateFormatter->formatDateTime($data->date, "medium","")); ?>
 	<br />
 
-	<?php echo CHtml::encode($data->client_first . ' ' . $data->client_second); ?>
-	<br />
-
 	<?php /*
 	<b><?php echo CHtml::encode($data->getAttributeLabel('mobile')); ?>:</b>
 	<?php echo CHtml::encode($data->mobile); ?>
@@ -65,9 +62,6 @@
 	
 	*/  ?>
 	
-	<b><?php echo CHtml::encode($data->getAttributeLabel('stylist_id')); ?>:</b>
-	<?php echo CHtml::encode($data->staff->first_name); ?>
-	<br />
 	<b><?php echo CHtml::encode('Score'); ?>:</b>
 	<?php echo CHtml::encode($data->score()); ?>
 
