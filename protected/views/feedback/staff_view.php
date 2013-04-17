@@ -13,15 +13,6 @@
 			'name'=>'Date Submitted',
 			'value'=>Yii::app()->dateFormatter->formatDateTime($model->date,"medium",""),
 			),
-		array(
-			'name'=>'Client Name'.':',
-			'value'=>$model->client_first . ' ' . $model->client_second,
-			),
-		array(
-			'name'=>'Last Stylist'.':',
-			'value'=>$model->staff->first_name . ' ' . $model->staff->last_name,
-			),
-		'mobile',
 		'intro',
 		'consultation',
 		'styling_area',

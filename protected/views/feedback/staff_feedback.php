@@ -8,7 +8,7 @@
 
 <?php $this->widget('zii.widgets.CListView', array(
 	'dataProvider'=>$dataProvider,
-	'itemView'=>'_view',
+	'itemView'=>'_staff_view',
 	'sortableAttributes'=>array('stylist_id')
 )); ?>
 </div> <!--feedbackPage-->
