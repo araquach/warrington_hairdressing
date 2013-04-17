@@ -10,7 +10,7 @@
 </div>
 
 <div class="menuBox small feedback" id="feedback">
-<?php echo CHtml::link('<h2>Feedback</h2>', array('/lieu/staff_feedback')); ?>
+<?php echo CHtml::link('<h2>Feedback</h2>', array('/feedback/staff_feedback')); ?>
 <?php $this->widget('FeedbackWidget'); ?>
 </div>
 

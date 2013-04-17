@@ -23,12 +23,12 @@ class FeedbackController extends Controller
 		return array(
 			
 			array('allow', 
-				'actions'=>array('index','view','update','delete','admin'),
+				'actions'=>array('index','view','update','delete','admin','staff_view','staff_feedback'),
 				'users'=>array('@'),
 				'expression'=>'isset($user->role) && ($user->role==="admin")',
 			),
 			array('allow', 
-				'actions'=>array(''),
+				'actions'=>array('staff_view','staff_feedback'),
 				'users'=>array('@'),
 				'expression'=>'isset($user->role) && ($user->role==="staff")',
 			),
@@ -45,6 +45,13 @@ class FeedbackController extends Controller
 	public function actionView($id)
 	{
 		$this->render('view',array(
+			'model'=>$this->loadModel($id),
+		));
+	}
+	
+	public function actionStaff_view($id)
+	{
+		$this->render('staff_view',array(
 			'model'=>$this->loadModel($id),
 		));
 	}
@@ -97,6 +104,15 @@ class FeedbackController extends Controller
 			'dataProvider'=>$dataProvider,
 		));
 	}
+	
+	public function actionStaff_feedback()
+	{
+		$dataProvider=new CActiveDataProvider('Feedback');
+		$this->render('staff_feedback',array(
+			'dataProvider'=>$dataProvider,
+		));
+	}
+	
 
 	/**
 	 * Manages all models.
