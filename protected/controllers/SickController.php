@@ -24,12 +24,12 @@ class SickController extends Controller
 		return array(
 			
 			array('allow', 
-				'actions'=>array('index','view','create','update','delete','admin','staff_sick'),
+				'actions'=>array('index','view','create','update','delete','admin','staff_sick','staff_view'),
 				'users'=>array('@'),
 				'expression'=>'isset($user->role) && ($user->role==="admin")',
 			),
 			array('allow', 
-				'actions'=>array('index','staff_sick'),
+				'actions'=>array('index','staff_sick','staff_view'),
 				'users'=>array('@'),
 				'expression'=>'isset($user->role) && ($user->role==="staff")',
 			),
@@ -49,6 +49,14 @@ class SickController extends Controller
 			'model'=>$this->loadModel($id),
 		));
 	}
+	
+	public function actionStaff_view($id)
+	{
+		$this->render('staff_view',array(
+			'model'=>$this->loadModel($id),
+		));
+	}
+	
 
 	/**
 	 * Creates a new model.
