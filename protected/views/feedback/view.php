@@ -19,7 +19,7 @@
 			),
 		array(
 			'name'=>'Last Stylist'.':',
-			'value'=>$model->stylist->first_name . ' ' . $model->stylist->last_name,
+			'value'=>$model->stylist->first_name . ' ' . $model->staff->last_name,
 			),
 		'mobile',
 		'intro',

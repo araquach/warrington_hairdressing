@@ -37,10 +37,9 @@ class HolidayController extends Controller
 			),
 		);
 	}
-	/**
-	 * The 
-	 * 
-	 */
+	
+	
+	
 	public function actionStaff_holiday()
 	{	
 		$criteria=new CDbCriteria;

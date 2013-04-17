@@ -72,7 +72,7 @@ class Feedback extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'stylist' => array(self::BELONGS_TO, 'staff', 'stylist_id'),
+			'staff' => array(self::BELONGS_TO, 'staff', 'stylist_id'),
 		);
 	}
 

@@ -107,7 +107,15 @@ class FeedbackController extends Controller
 	
 	public function actionStaff_feedback()
 	{
-		$dataProvider=new CActiveDataProvider('Feedback');
+		$criteria=new CDbCriteria;
+		$criteria->with = 'staff';
+		$criteria->condition = 'staff.id=' . Yii::app()->user->id;
+		$criteria->order = 't.id DESC';
+		
+		$dataProvider=new CActiveDataProvider('Feedback', array(
+			'criteria'=>$criteria			
+		));
+		
 		$this->render('staff_feedback',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -136,7 +144,7 @@ class FeedbackController extends Controller
 	 */
 	public function loadModel($id)
 	{
-		$model=Feedback::model()->with('stylist')->findByPk($id);
+		$model=Feedback::model()->with('staff')->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
