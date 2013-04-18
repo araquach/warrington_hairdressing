@@ -45,6 +45,7 @@ class Sick extends CActiveRecord
 			array('staff_id, sick_hours, description, date_sick_from', 'required'),
 			array('staff_id, sick_hours', 'numerical', 'integerOnly'=>true),
 			array('description', 'length', 'max'=>50),
+			array('date_sick_from', 'validateBeforeToday'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, staff_id, sick_hours, description, date_sick_from, date_deducted', 'safe', 'on'=>'search'),
@@ -108,6 +109,20 @@ class Sick extends CActiveRecord
 		$conversion = $conversion / 8;
 		
 		return $conversion;
+	}
+	
+	public function validateBeforeToday($attr, $params)
+	{
+		$date = date('Y-m-d');
+	
+		if($this->isNewRecord)
+		{
+			if ($this->date_sick_from > $date)
+			{
+				$this->addError('date_sick_from', 'Has to be today or earlier.');
+			}
+			
+		}
 	}
 		
 }
