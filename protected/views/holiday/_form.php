@@ -14,6 +14,15 @@
 	<p class="note">Fields with <span class="required">*</span> are required.</p>
 
 	<?php echo $form->errorSummary($model); ?>
+	
+	<div class="row">
+		<?php echo $form->labelEx($model,'staff_id'); ?>
+		<?php echo $form->dropDownList($model, 'staff_id', CHtml::listData(
+		Staff::model()->findAll(), 'id', 'first_name'),
+		array('prompt' => 'Select Staff Member')); ?>
+		<?php echo $form->error($model,'staff_id'); ?>
+	</div>
+	
 
 	<?php if (Yii::app()->detectMobileBrowser->showMobile): ?> 
 	

@@ -25,11 +25,11 @@
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('date_regarding')); ?>:</b>
-	<?php echo CHtml::encode(Yii::app()->dateFormatter->formatDateTime($data->date_regarding, "short","")); ?>
+	<?php echo CHtml::encode(Yii::app()->dateFormatter->formatDateTime($data->date_regarding, "medium","")); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('requested_on')); ?>:</b>
-	<?php echo CHtml::encode(Yii::app()->dateFormatter->formatDateTime($data->requested_on, "short","")); ?>
+	<?php echo CHtml::encode(Yii::app()->dateFormatter->formatDateTime($data->requested_on, "medium","")); ?>
 	<br />
 
 
