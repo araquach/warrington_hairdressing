@@ -51,8 +51,9 @@ class Lieu extends SalonActiveRecord
 		return array(
 			array('lieu_hours, description, date_regarding', 'required'),
 			array('approved', 'numerical', 'integerOnly'=>true),
-			array('lieu_hours', 'numerical', 'integerOnly'=>true), 
+			array('lieu_hours', 'numerical', 'integerOnly'=>true, 'max'=>8, 'min'=>-8), 
 			array('requested_on','default','value'=>new CDbExpression('NOW()'),'setOnEmpty'=>false,'on'=>'insert'),
+			array('lieu_hours', 'validateNotZero'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, staff_id, lieu_hours, description, date_regarding, requested_on, approved', 'safe', 'on'=>'search'),
@@ -136,6 +137,19 @@ class Lieu extends SalonActiveRecord
 			return $total;
 	
 		}
+		
+	public function validateNotZero($attr, $params)
+	{
+		if($this->isNewRecord)
+		{
+			
+			if ($this->lieu_hours == 0)
+			{
+				$this->addError('lieu_hours', 'You must enter a value.');
+			}
+			
+		}
+	}
 	
 }
 
