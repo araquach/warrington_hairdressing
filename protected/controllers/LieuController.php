@@ -44,7 +44,7 @@ class LieuController extends Controller
 		$criteria=new CDbCriteria;
 		$criteria->with = 'staff';
 		$criteria->condition = 'staff.id=' . Yii::app()->user->id;
-		$criteria->order = 't.id DESC';
+		$criteria->order = 't.date_regarding';
 		
 		$dataProvider=new CActiveDataProvider('Lieu', array(
 			'criteria'=>$criteria
@@ -172,7 +172,7 @@ class LieuController extends Controller
 	{
 		$criteria=new CDbCriteria();
 		$criteria->with = 'staff';
-		$criteria->order = 't.id DESC';
+		$criteria->order = 't.date_regarding';
 	
 		$dataProvider=new CActiveDataProvider('Lieu', array(
 			'criteria'=>$criteria
