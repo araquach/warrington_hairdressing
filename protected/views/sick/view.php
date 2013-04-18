@@ -16,7 +16,10 @@
 		'value'=>$model->hourConverter(),
 		),
 		'description',
-		'date_sick_from',
+		array(
+			'name'=>'Date'.':',
+			'value'=>Yii::app()->dateFormatter->formatDateTime($model->date_sick_from,"medium",""),
+			),
 		'date_deducted',
 	),
 )); ?>

@@ -7,9 +7,6 @@
 
 	<?php echo CHtml::link(CHtml::encode($data->id), array('staff_view', 'id'=>$data->id)); ?>
 
-	<?php echo CHtml::encode($data->staff->first_name . ' ' . $data->staff->last_name); ?>
-	<br />
-
 	<b><?php echo CHtml::encode($data->getAttributeLabel('sick_hours')); ?>:</b>
 	<?php echo CHtml::encode($data->hourConverter()); ?>
 	<br />
