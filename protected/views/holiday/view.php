@@ -3,6 +3,12 @@
 /* @var $model Holiday */
 ?>
 <div class="detail holiday">
+<div class="detailCode <?php if (CHtml::encode($model->approved) == 1) {
+	echo 'unapproved'; } elseif (CHtml::encode($model->approved) == 2) {
+		echo 'approved'; } else {
+			echo 'pending';
+		}
+?>"></div>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model, 

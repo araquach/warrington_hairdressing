@@ -63,6 +63,8 @@ class Holiday extends SalonActiveRecord
 			//array('request_date_from, request_date_to', 'date'),
 			array('saturday', 'filter', 'filter'=>array( $this, 'filterCountSaturday')),
 			array('saturday', 'validateSaturday'),
+			array('request_date_to', 'validateDays'),
+			array('hours_requested', 'validateTotal'),
 			array('requested_on_date','default','value'=>new CDbExpression('NOW()'),'setOnEmpty'=>false,'on'=>'insert'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
@@ -203,8 +205,11 @@ class Holiday extends SalonActiveRecord
 		
 		$saturday = $this->saturday;
 		$start_ts = strtotime($this->request_date_from);
-		$end_ts = strtotime($this->request_date_to);
+		$end = strtotime($this->request_date_to);
+		
 		$day_sec = 86400;
+		
+		$end_ts = $end + $day_sec;
 		
 		$count = 0;
 		
@@ -241,6 +246,58 @@ class Holiday extends SalonActiveRecord
 			}
 		}
 	}
+	
+	public function validateDays($attr, $params)
+	{
+		if($this->isNewRecord)
+		{
+			
+			if ($this->request_date_from > $this->request_date_to)
+			{
+				$this->addError('saturday', 'Your \'To\' date must be after your \'From\' date.');
+			}
+			
+		}
+	}
+	
+	public function validateTotal($attr, $params)
+	{
+		if($this->isNewRecord) {
+		
+			$hours_requested = $this->hours_requested;
+		
+			// parameter binding required!
+			$q = 'SELECT sum(hours_requested) 
+				FROM holiday
+				WHERE staff_id='.Yii::app()->user->id. ' AND approved!=1';
+			$cmd = Yii::app()->db->createCommand($q);
+			$total = $cmd->queryScalar();
+			$total /= 8;
+			
+			
+			// remaining holiday calculation
+			$entitlement = Yii::app()->db->createCommand()
+			->select('holiday_entitlement')
+			->from('staff')
+			->where('id=' . Yii::app()->user->id)
+			->queryScalar();
+			
+			$remaining = $entitlement - $total;
+			
+			{			
+				if ($hours_requested > $remaining)
+				{
+					$this->addError('hours_requested', 'You don\'t have enough holidays.');
+				}
+				
+			}
+		}
+	}
+	
+	
+	
+	
+	
 }
 
 

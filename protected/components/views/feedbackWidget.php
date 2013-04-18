@@ -1,2 +1,2 @@
 
-<?php echo '<ul class="info"><li>You have ' . $total . ' points</li></ul>'; ?>
+<?php echo '<ul class="info"><li>You have  points</li></ul>'; ?>

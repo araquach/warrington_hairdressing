@@ -45,7 +45,7 @@ class HolidayController extends Controller
 		$criteria=new CDbCriteria;
 		$criteria->with = 'staff';
 		$criteria->condition = 'staff.id=' . Yii::app()->user->id;
-		$criteria->order = 't.id DESC';
+		$criteria->order = 't.request_date_from DESC';
 		
 		$dataProvider=new CActiveDataProvider('Holiday', array(
 			'criteria'=>$criteria			
@@ -68,7 +68,7 @@ class HolidayController extends Controller
 		$criteria=new CDbCriteria;
 		$criteria->with = 'staff';
 		$criteria->condition=implode(' AND ',$conditions);
-		$criteria->order = 't.id DESC';
+		$criteria->order = 't.request_date_from DESC';
 		
 		$dataProvider=new CActiveDataProvider('Holiday', array(
 			'criteria'=>$criteria			
@@ -90,7 +90,7 @@ class HolidayController extends Controller
 		$criteria=new CDbCriteria;
 		$criteria->with = 'staff';
 		$criteria->condition=implode(' AND ',$conditions);
-		$criteria->order = 't.id DESC';
+		$criteria->order = 't.request_date_from DESC';
 		
 		$dataProvider=new CActiveDataProvider('Holiday', array(
 			'criteria'=>$criteria			
@@ -114,7 +114,7 @@ class HolidayController extends Controller
 		$criteria=new CDbCriteria;
 		$criteria->with = 'staff';
 		$criteria->condition=implode(' AND ',$conditions);
-		$criteria->order = 't.id DESC';
+		$criteria->order = 't.request_date_from DESC';
 		
 		$dataProvider=new CActiveDataProvider('Holiday', array(
 			'criteria'=>$criteria			

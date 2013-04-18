@@ -203,6 +203,31 @@ a p.pageLink:hover {
 	background-color: rgb(186, 34, 46);
 }
 
+.detailCode {
+	float: left;
+	width: 106.8%;
+	height: 20px;
+	margin: -20px -5px 20px -20px;
+}
+
+.detailCode.pending {
+	background-color: rgb(208, 111, 45);
+}
+
+.detailCode.unapproved {
+	background-color: rgb(186, 34, 46);
+}
+
+.detailCode.approved {
+	background-color: rgb(108, 197, 39);
+}
+
+span.empty {
+	color: #FFF;
+}
+
+
+
 /* @group list Formatting */
 
 div.items {
@@ -417,10 +442,6 @@ div.form.holiday {
 	position: absolute;
 	bottom: 20px;
 	right: 20px;
-}
-
-#holidayPage span.empty {
-	color: #FFF;
 }
 
 /* @end */

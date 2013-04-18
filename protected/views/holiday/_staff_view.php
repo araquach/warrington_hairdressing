@@ -17,7 +17,7 @@
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('request_date_from')); ?>:</b>
-	<?php echo CHtml::encode(Yii::app()->dateFormatter->formatDateTime($data->request_date_from, "long","")); ?>
+	<?php echo CHtml::encode(Yii::app()->dateFormatter->formatDateTime($data->request_date_from, "medium","")); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('request_date_to')); ?>:</b>
