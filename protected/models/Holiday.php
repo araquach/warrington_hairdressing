@@ -57,9 +57,8 @@ class Holiday extends SalonActiveRecord
 			array('hours_requested, request_date_from, request_date_to', 'required'),
 			array('approved','numerical', 'integerOnly'=>true),
 			array('prebooked','numerical', 'integerOnly'=>true),
-			
 			array('prebooked', 'filter', 'filter'=>array( $this, 'filterPreBooked')),
-			array('hours_requested',  'numerical'),
+			array('hours_requested',  'numerical', 'integerOnly'=>true, 'min'=>1),
 			//array('request_date_from, request_date_to', 'date'),
 			array('saturday', 'filter', 'filter'=>array( $this, 'filterCountSaturday')),
 			array('saturday', 'validateSaturday'),
