@@ -1,7 +1,4 @@
 <!--admin Lieu widget-->
 
 
-<?php
-
-
-?>
+<?php echo '<ul class="info"><li>Admin Lieu</li></ul>'; ?>

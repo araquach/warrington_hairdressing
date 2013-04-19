@@ -1,4 +1,4 @@
 <!--admin Product widget-->
 
-<?php echo '<p class="info">Total here</p>'; ?>
+<?php echo '<ul class="info"><li>Admin Product</li></ul>'; ?>
 

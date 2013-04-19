@@ -1,3 +1,3 @@
 <!--admin Figures widget-->
 
-<?php echo '<p class="info">Figures</p>'; ?>
+<?php echo '<ul class="info"><li>Admin Figures</li></ul>'; ?>

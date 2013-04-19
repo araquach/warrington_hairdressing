@@ -1,4 +1,4 @@
-<!--Admin Sick Menu-->
+<!--Admin User Menu-->
 
 
 <nav>

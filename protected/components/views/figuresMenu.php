@@ -1,4 +1,4 @@
-<!--admin lieu Menu-->
+<!--Figures Menu-->
 
 <nav>
 <ul>

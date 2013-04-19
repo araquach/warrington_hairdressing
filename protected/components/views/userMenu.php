@@ -1,4 +1,4 @@
-<!--Sick Menu-->
+<!--User Menu-->
 
 <nav>
 <ul>

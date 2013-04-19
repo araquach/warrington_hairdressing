@@ -1,4 +1,4 @@
-<!--admin lieu Menu-->
+<!--Message Menu-->
 
 <nav>
 <ul>

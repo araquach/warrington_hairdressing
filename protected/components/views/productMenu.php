@@ -1,4 +1,4 @@
-<!--admin lieu Menu-->
+<!--Product Menu-->
 
 <nav>
 <ul>

@@ -1,3 +1,3 @@
 <!--admin Message widget-->
 
-<?php echo '<p class="info">User</p>'; ?>
+<?php echo '<ul class="info"><li>Admin Messages</li></ul>'; ?>

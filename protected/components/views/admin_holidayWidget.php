@@ -1,8 +1,4 @@
 <!--admin Holiday widget-->
 
-<?php 
-
-
-
-?>	
+<?php echo '<ul class="info"><li>Admin Holiday</li></ul>'; ?>
 

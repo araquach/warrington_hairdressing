@@ -1,3 +1,3 @@
 <!--admin Feedback widget-->
 
-<?php echo '<ul class="info"><li>You have  points</li></ul>'; ?>
+<?php echo '<ul class="info"><li>Admin Feedback</li></ul>'; ?>

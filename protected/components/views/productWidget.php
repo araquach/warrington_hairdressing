@@ -1,4 +1,4 @@
 <!--Product widget-->
 
-<?php echo '<p class="info">Total here</p>'; ?>
+<?php echo '<p class="info">Product Total here</p>'; ?>
 
