@@ -1,10 +1,10 @@
 <?php 
 
-class SickMenu extends CWidget
+class LieuMenu extends CWidget
 {
 
     public function run()
     {
- 		 $this->render('sickMenu');
+ 		 $this->render('lieuMenu');
     }
 }

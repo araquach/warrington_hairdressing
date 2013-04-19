@@ -1,3 +1,5 @@
+<!--Holiday widget-->
+
 <?php 
 
 	echo '<ul class="info"><li class="hidden">Holiday Entitlement: ' .$entitlement . ' days</li>

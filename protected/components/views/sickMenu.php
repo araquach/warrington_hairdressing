@@ -1,4 +1,4 @@
-<!--Holiday Menu-->
+<!--Sick Menu-->
 
 
 <?php  if (Yii::app()->user->role==="admin"):?>

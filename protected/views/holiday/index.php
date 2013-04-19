@@ -1,20 +1,23 @@
 <?php
 /* @var $this HolidayController */
 /* @var $dataProvider CActiveDataProvider */
-
-$this->breadcrumbs=array(
-	'Holidays',
-);
-
-$this->menu=array(
-	array('label'=>'Manage Holidays', 'url'=>array('admin')),
-);
 ?>
 <div id="holidayPage">
+
+<div class="pageHead holiday">
+
+<?php $this->widget('Admin_holidayWidget'); ?>
+
+<?php $this->widget('Admin_holidayMenu'); ?>
+
+</div> <!--.pageHead holiday-->
 
 <?php $this->widget('zii.widgets.CListView', array(
 	'dataProvider'=>$dataProvider,
 	'itemView'=>'_view',
+	'pager'=>array('cssFile'=>false),
 )); ?>
 
-</div> <!--#holidayPage-->
+
+
+</div> <!--holidayPage-->
