@@ -4,24 +4,47 @@
 
 <div id="staffPage" class="group">
 
-<?php echo CHtml::link('<div class="menuBox wide holiday" id="holiday">
-	<h2>Holidays</h2>
-</div>', array('/holiday/index')); ?>		
+<div class="menuBox wide holiday" id="holiday">
+<?php echo CHtml::link('<h2>Holidays</h2>', array('/holiday/index')); ?>
+<?php $this->widget('HolidayWidget'); ?>
+</div>
 
-<?php echo CHtml::link('<div class="menuBox small lieu" id="lieu">
-	<h2>Lieu Hours</h2>
-</div>', array('/lieu/index')); ?>
 
-<?php echo CHtml::link('<div class="menuBox small sick" id="sick">
-	<h2>Sick</h2>
-</div>', array('/sick/index')); ?>
+<div class="menuBox small feedback" id="feedback">
+<?php echo CHtml::link('<h2>Feedback</h2>', array('/feedback/index')); ?>
+<?php $this->widget('FeedbackWidget'); ?>
+</div>
 
-<?php /*echo CHtml::link('<div class="menuBox small feedback" id="feedback">
-	<h2>Feedback</h2>
-</div>', array('/feedback/index')); ?>
 
-<?php echo CHtml::link('<div class="menuBox small recruitment" id="recruitment">
-	<h2>Recruitment</h2>
-</div>', array('/roleApplicant/index')); */?>
+<div class="menuBox small lieu" id="lieu">
+<?php echo CHtml::link('<h2>Lieu Hours</h2>', array('/lieu/index')); ?>
+<?php $this->widget('LieuWidget'); ?>
+</div>
+
+<div class="menuBox small sick" id="sick">
+<?php echo CHtml::link('<h2>Sick Days</h2>', array('/sick/index')); ?>
+<?php $this->widget('SickWidget'); ?>
+</div>
+
+
+<div class="menuBox small messages" id="messages">
+<?php echo CHtml::link('<h2>Messages</h2>', array('/messages/index')); ?>
+<?php $this->widget('MessageWidget'); ?>
+</div>
+
+<div class="menuBox small figures" id="figures">
+<?php echo CHtml::link('<h2>Figures</h2>', array('/figures/index')); ?>
+<?php $this->widget('FiguresWidget'); ?>
+</div>
+
+<div class="menuBox small products" id="products">
+<?php echo CHtml::link('<h2>Product Sales</h2>', array('/products/index')); ?>
+<?php $this->widget('ProductWidget'); ?>
+</div>
+
+<div class="menuBox small users" id="users">
+<?php echo CHtml::link('<h2>User</h2>', array('/user/index')); ?>
+<?php $this->widget('UserWidget'); ?>
+</div>
 
 </div> <!--#staffPage-->

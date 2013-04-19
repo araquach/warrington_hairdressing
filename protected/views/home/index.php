@@ -9,12 +9,12 @@
 <?php $this->widget('HolidayWidget'); ?>
 </div>
 
-<!--
+
 <div class="menuBox small feedback" id="feedback">
 <?php echo CHtml::link('<h2>Feedback</h2>', array('/feedback/staff_feedback')); ?>
 <?php $this->widget('FeedbackWidget'); ?>
 </div>
--->
+
 
 <div class="menuBox small lieu" id="lieu">
 <?php echo CHtml::link('<h2>Lieu Hours</h2>', array('/lieu/staff_lieu')); ?>
@@ -26,7 +26,7 @@
 <?php $this->widget('SickWidget'); ?>
 </div>
 
-<!--
+
 <div class="menuBox small messages" id="messages">
 <?php echo CHtml::link('<h2>Messages</h2>', array('/lieu/staff_message')); ?>
 <?php $this->widget('MessageWidget'); ?>
@@ -46,6 +46,5 @@
 <?php echo CHtml::link('<h2>User</h2>', array('/lieu/staff_user')); ?>
 <?php $this->widget('UserWidget'); ?>
 </div>
--->
 
 </div> <!--#staffPage-->
