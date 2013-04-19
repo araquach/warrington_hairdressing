@@ -1,24 +1,15 @@
 <?php
 /* @var $this SickController */
 /* @var $dataProvider CActiveDataProvider */
-
-$this->breadcrumbs=array(
-	'Sicks',
-);
-
-$this->menu=array(
-	array('label'=>'Create Sick', 'url'=>array('create')),
-	array('label'=>'Manage Sick', 'url'=>array('admin')),
-);
 ?>
 
 <div id="sickPage">
 
 <div class="pageHead sick">
 
-<?php $this->widget('SickWidget'); ?>
+<?php $this->widget('Admin_sickWidget'); ?>
 
-<?php $this->widget('SickMenu'); ?>
+<?php $this->widget('Admin_sickMenu'); ?>
 
 </div> <!--.pageHead sick-->
 
