@@ -19,6 +19,4 @@
 	'pager'=>array('cssFile'=>false),
 )); ?>
 
-
-
 </div> <!--holidayPage-->

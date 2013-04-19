@@ -85,7 +85,7 @@ a p.pageLink:hover {
 	padding-left: 220px;
 	padding-top: 30px;
 	background-repeat: no-repeat;
-	background-position: 40px 20px;
+	background-position: 40px 30px;
 	margin-top: -30px;
 	position: relative;
 }
@@ -491,6 +491,10 @@ div.form.sick {
 /* @end */
 
 /* @group Feedback */
+
+.pageHead.feedback {
+	background-image: url('../images/icons/icons_feedback.png');
+}
 
 #feedbackPage .view {
 	background-color: background-color: rgb(186, 34, 46);
