@@ -6,7 +6,7 @@ abstract class SalonActiveRecord extends CActiveRecord {
 * Prepares create_user_id before saving
 */
 
-	protected function beforeSave()
+	protected function beforeValidate()
 	{
 		$id=Yii::app()->user->id;
 		$selection = $this->staff_id;
@@ -21,7 +21,7 @@ abstract class SalonActiveRecord extends CActiveRecord {
 			$this->staff_id=$selection;
 			}
 			
-		return parent::beforeSave();
+		return parent::beforeValidate();
 	}
 	
 }

@@ -61,7 +61,7 @@ class Holiday extends SalonActiveRecord
 			//array('request_date_from, request_date_to', 'date'),
 			array('saturday', 'filter', 'filter'=>array( $this, 'filterCountSaturday')),
 			array('saturday', 'validateSaturday'),
-			//array('request_date_to', 'validateDays'),
+			array('request_date_to', 'validateDays'),
 			array('hours_requested', 'validateTotal'),
 			array('requested_on_date','default','value'=>new CDbExpression('NOW()'),'setOnEmpty'=>false,'on'=>'insert'),
 			// The following rule is used by search().
