@@ -50,7 +50,7 @@ class Lieu extends SalonActiveRecord
 		// will receive user inputs.
 		return array(
 			array('lieu_hours, description, date_regarding', 'required'),
-			array('approved', 'numerical', 'integerOnly'=>true),
+			array('staff_id, approved', 'numerical', 'integerOnly'=>true),
 			array('lieu_hours', 'numerical', 'integerOnly'=>true, 'max'=>8, 'min'=>-8), 
 			array('requested_on','default','value'=>new CDbExpression('NOW()'),'setOnEmpty'=>false,'on'=>'insert'),
 			array('lieu_hours', 'validateNotZero'),
@@ -131,7 +131,7 @@ class Lieu extends SalonActiveRecord
 			$cmd = Yii::app()->db->createCommand();
 			$cmd->select = ('sum(lieu_hours)');
 			$cmd->from = 'lieu';
-			$cmd->where = 'staff_id=' . Yii::app()->user->id;
+			$cmd->where = 'staff_id=' . $this->staff_id;
 			$total = $cmd->queryScalar();
 			
 			return $total;

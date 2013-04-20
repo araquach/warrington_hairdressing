@@ -9,10 +9,19 @@ abstract class SalonActiveRecord extends CActiveRecord {
 	protected function beforeSave()
 	{
 		$id=Yii::app()->user->id;
+		$selection = $this->staff_id;
 		
-		if($this->isNewRecord)
+		
+			if ($selection==0){
+			
 			$this->staff_id=$id;
-		
+			}
+			
+			else {
+			$this->staff_id=$selection;
+			}
+			
 		return parent::beforeSave();
 	}
+	
 }

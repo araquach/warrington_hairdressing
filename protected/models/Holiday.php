@@ -55,14 +55,13 @@ class Holiday extends SalonActiveRecord
 		// will receive user inputs.
 		return array(
 			array('hours_requested, request_date_from, request_date_to', 'required'),
-			array('approved','numerical', 'integerOnly'=>true),
-			array('prebooked','numerical', 'integerOnly'=>true),
+			array('staff_id, approved, prebooked','numerical', 'integerOnly'=>true),
 			array('prebooked', 'filter', 'filter'=>array( $this, 'filterPreBooked')),
 			array('hours_requested',  'numerical', 'integerOnly'=>true, 'min'=>1),
 			//array('request_date_from, request_date_to', 'date'),
 			array('saturday', 'filter', 'filter'=>array( $this, 'filterCountSaturday')),
 			array('saturday', 'validateSaturday'),
-			array('request_date_to', 'validateDays'),
+			//array('request_date_to', 'validateDays'),
 			array('hours_requested', 'validateTotal'),
 			array('requested_on_date','default','value'=>new CDbExpression('NOW()'),'setOnEmpty'=>false,'on'=>'insert'),
 			// The following rule is used by search().
@@ -176,7 +175,7 @@ class Holiday extends SalonActiveRecord
 		$cmd = Yii::app()->db->createCommand();
 		$cmd->select = ('sum(hours_requested)');
 		$cmd->from = 'holiday';
-		$cmd->where = 'staff_id=' . Yii::app()->user->id;
+		$cmd->where = 'staff_id=' . $this->staff_id;
 		$total = $cmd->queryScalar();
 		
 		$total =$total / 8;
@@ -230,7 +229,7 @@ class Holiday extends SalonActiveRecord
 			$cmd = Yii::app()->db->createCommand();
 			$cmd->select = ('sum(saturday)');
 			$cmd->from = 'holiday';
-			$cmd->where = 'staff_id=' . Yii::app()->user->id . ' AND approved<>1';
+			$cmd->where = 'staff_id=' . $this->staff_id . ' AND approved<>1';
 			$total = $cmd->queryScalar();
 			
 			$totalSaturday = $this->saturday;
@@ -268,7 +267,7 @@ class Holiday extends SalonActiveRecord
 			// parameter binding required!
 			$q = 'SELECT sum(hours_requested) 
 				FROM holiday
-				WHERE staff_id='.Yii::app()->user->id. ' AND approved!=1';
+				WHERE staff_id='.$this->staff_id. ' AND approved!=1';
 			$cmd = Yii::app()->db->createCommand($q);
 			$total = $cmd->queryScalar();
 			$total /= 8;
@@ -278,7 +277,7 @@ class Holiday extends SalonActiveRecord
 			$entitlement = Yii::app()->db->createCommand()
 			->select('holiday_entitlement')
 			->from('staff')
-			->where('id=' . Yii::app()->user->id)
+			->where('id=' . $this->staff_id)
 			->queryScalar();
 			
 			$remaining = $entitlement - $total;

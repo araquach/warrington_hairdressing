@@ -9,9 +9,7 @@
 
 <?php $this->widget('LieuWidget'); ?>
 
-<nav>
-<h2><?php echo CHtml::link('Add/Take Lieu Hours', array('staff_create')); ?></h2>
-</nav>
+<?php $this->widget('lieuMenu'); ?>
 
 </div>  <!--pageHead lieu-->
 
