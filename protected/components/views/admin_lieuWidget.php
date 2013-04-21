@@ -1,4 +1,4 @@
 <!--admin Lieu widget-->
 
 
-<?php echo '<ul class="info"><li>Admin Lieu</li></ul>'; ?>
+<?php echo '<ul class="info"><li>' . $pending . ' pending approval</li></ul>'; ?>
