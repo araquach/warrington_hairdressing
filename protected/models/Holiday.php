@@ -297,9 +297,3 @@ class Holiday extends SalonActiveRecord
 	
 	
 }
-
-
-
-
-
-
