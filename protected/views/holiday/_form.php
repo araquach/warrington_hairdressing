@@ -85,11 +85,6 @@
 		<?php echo $form->hiddenField($model,'requested_on_date'); ?>
 	</div>
 	
-	<div class="row">
-		<?php echo $form->labelEx($model,'approved'); ?>
-		<?php echo $form->checkBox($model,'approved'); ?>
-		<?php echo $form->error($model,'approved'); ?>
-	</div>
 
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Book' : 'Save'); ?>
