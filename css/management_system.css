@@ -438,6 +438,12 @@ div.form.holiday {
 	margin-left: 30px;
 }
 
+#holidayPage img:first-of-type {
+	position: absolute;
+	bottom: 20px;
+	left: 20px;
+}
+
 #holidayPage img {
 	position: absolute;
 	bottom: 20px;
