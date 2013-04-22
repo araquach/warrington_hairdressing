@@ -292,7 +292,19 @@ class Holiday extends SalonActiveRecord
 		}
 	}
 	
-	
+	public function afterValidate()
+	{
+		$message = new YiiMailMessage;
+		$message->setBody('There is a new holiday request.', 'text/html');
+		$message->subject = 'New Holiday Request';
+		$message->addTo('adamcarter@jakatasalon.co.uk');
+		//$message->addTo('jimmy@jakatasalon.co.uk');
+		$message->from = Yii::app()->params['adminEmail'];
+		
+		Yii::app()->mail->send($message);
+		
+		return parent::afterValidate();
+	}
 	
 	
 	

@@ -193,20 +193,9 @@ class HolidayController extends Controller
 			if(isset($_POST['Holiday']))
 			{
 				$model->attributes=$_POST['Holiday'];
-				if($model->save()){
-				// Sends email confirmation - not working at the same time as page redirect?
-				/* 
-				$message = new YiiMailMessage;
-					$message->setBody('There is a new holiday request<br>Name: '.$model->staff->first_name.' '.$model->staff->last_name.'<br>Date: '.$model->request_date_from. 'text/html');
-					$message->subject = 'Holiday Request';
-					$message->addTo('adamcarter@jakatasalon.co.uk');
-					//$message->addTo('jimmy@jakatasalon.co.uk');
-					$message->from = Yii::app()->params['adminEmail'];
-					
-					Yii::app()->mail->send($message);
-				*/
-					$this->redirect(array('staff_view','id'=>$model->id));
-					}
+				if($model->save())
+				$this->redirect(array('staff_view','id'=>$model->id));
+			
 			}
 	
 			$this->render('staff_create',array(
