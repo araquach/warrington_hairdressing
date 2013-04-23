@@ -10,11 +10,14 @@
 	'cssFile'=>'false',
 	'attributes'=>array(
 		'id',
-		'staff.first_name',
 		array(
-		'name'=>'sick_hours',
-		'value'=>$model->hourConverter(),
-		),
+			'name'=>'Staff'.':',
+			'value'=>$model->staff->getFullName(),
+			),
+		array(
+			'name'=>'sick_hours',
+			'value'=>$model->hourConverter(),
+			),
 		'description',
 		array(
 			'name'=>'Date'.':',

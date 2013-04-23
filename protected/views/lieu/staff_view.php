@@ -1,17 +1,9 @@
 <?php
 /* @var $this LieuController */
 /* @var $model Lieu */
-
-$this->breadcrumbs=array(
-	'Lieus'=>array('index'),
-	$model->id,
-);
-
-$this->menu=array(
-	array('label'=>'List Your Lieu Hours', 'url'=>array('staff_lieu_list')),
-	array('label'=>'Add/Take Lieu Hours', 'url'=>array('staff_create')),
-);
 ?>
+
+
 <div class="detail lieu">
 <div class="detailCode <?php if (CHtml::encode($model->approved) == 1) {
 	echo 'unapproved'; } elseif (CHtml::encode($model->approved) == 2) {

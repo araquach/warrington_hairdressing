@@ -70,8 +70,9 @@ class LieuController extends Controller
 				{
 					$model->attributes=$_POST['Lieu'];
 					if($model->save())
-					{
 					
+					{
+						/*
 						$message = new YiiMailMessage;
 						$message->view = 'lieu_approval';
 						$message->setBody(array('model'=>$model), 'text');
@@ -80,8 +81,9 @@ class LieuController extends Controller
 						$message->from = ('enquiries@jakatasalon.co.uk');
 						
 						Yii::app()->mail->send($message);
-						
+						*/
 						}
+						
 						$this->redirect(array('index'));
 				}
 			
@@ -131,8 +133,9 @@ class LieuController extends Controller
 			if(isset($_POST['Lieu']))
 			{
 				$model->attributes=$_POST['Lieu'];
-				if($model->save()){
-				
+				if($model->save())
+					{
+					/*
 					$message = new YiiMailMessage;
 					$message->setBody('There is a new <strong>Lieu</strong> request.<br>From: '.$model->staff->first_name .' '. 
 					$model->staff->last_name .
@@ -145,7 +148,7 @@ class LieuController extends Controller
 					$message->from = Yii::app()->params['adminEmail'];
 					
 					Yii::app()->mail->send($message);
-					
+					*/
 					$this->redirect(array('staff_view','id'=>$model->id));
 					}
 			}

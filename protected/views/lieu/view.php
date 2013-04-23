@@ -1,19 +1,6 @@
 <?php
 /* @var $this LieuController */
 /* @var $model Lieu */
-
-$this->breadcrumbs=array(
-	'Lieus'=>array('index'),
-	$model->id,
-);
-
-$this->menu=array(
-	array('label'=>'List Lieu', 'url'=>array('index')),
-	array('label'=>'Create Lieu', 'url'=>array('create')),
-	array('label'=>'Update Lieu', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Delete Lieu', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage Lieu', 'url'=>array('admin')),
-);
 ?>
 <div class="detail lieu">
 <div class="detailCode <?php if (CHtml::encode($model->approved) == 1) {
@@ -28,7 +15,7 @@ $this->menu=array(
 	'attributes'=>array(
 		array(
 			'name'=>'Staff Member',
-			'value'=>$model->staff->first_name . ' ' . $model->staff->last_name,
+			'value'=>$model->staff->getFullName(),
 			),
 		'lieu_hours',
 		'description',

@@ -13,7 +13,7 @@
 	
 	<?php echo CHtml::link(CHtml::encode($data->id), array('view', 'id'=>$data->id)); ?>
 
-	<?php echo CHtml::encode($data->staff->first_name . ' ' . $data->staff->last_name); ?>
+	<?php echo CHtml::encode($data->staff->getFullName()); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('lieu_hours')); ?>:</b>

@@ -55,7 +55,6 @@ class Lieu extends SalonActiveRecord
 			array('requested_on','default','value'=>new CDbExpression('NOW()'),'setOnEmpty'=>false,'on'=>'insert'),
 			array('lieu_hours', 'validateNotZero'),
 			array('lieu_hours', 'validateBeforeToday'),
-			array('lieu_hours', 'validateTotalHours'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, staff_id, lieu_hours, description, date_regarding, requested_on, approved', 'safe', 'on'=>'search'),
@@ -161,19 +160,6 @@ class Lieu extends SalonActiveRecord
 			if (strtotime($this->date_regarding) > strtotime('now'))
 			{
 				$this->addError('lieu_hours', 'You cannot choose a future date');
-			}
-			
-		}
-	}
-	
-	public function validateTotalHours()
-	{
-		if($this->isNewRecord)
-		{
-			
-			if ($this->totalLieu() < -8)
-			{
-				$this->addError('lieu_hours', 'You cannot exceed 8 hours ');
 			}
 			
 		}
