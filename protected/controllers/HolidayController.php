@@ -143,7 +143,23 @@ class HolidayController extends Controller
 				if(isset($_POST['Holiday']))
 				{
 					$model->attributes=$_POST['Holiday'];
-					if($model->save())
+					if($model->save()){
+					
+						$message = new YiiMailMessage;
+						$message->view = 'holiday_approval';
+						$message->setBody(array('model'=>$model), 'text');
+						$message->subject = 'Salon Manager';
+						$message->addTo($model->staff->mobile.'@smsid.textapp.net');
+						$message->from = ('enquiries@jakatasalon.co.uk');
+						
+						Yii::app()->mail->send($message);
+						
+						
+						$this->redirect(array('staff_view','id'=>$model->id));
+					}
+					
+					//text confirmation code to go here
+					
 						$this->redirect(array('index'));
 				}
 			
@@ -193,9 +209,23 @@ class HolidayController extends Controller
 			if(isset($_POST['Holiday']))
 			{
 				$model->attributes=$_POST['Holiday'];
-				if($model->save())
+				if($model->save()){
+				
+				$message = new YiiMailMessage;
+				$message->setBody('There is a new <strong>Holiday</strong> request.<br>From: '.$model->staff->first_name .' '. 
+				$model->staff->last_name .
+				'<br>Date from: '. Yii::app()->dateFormatter->formatDateTime($model->request_date_from, "medium","") .
+				'<br>Date to: '. Yii::app()->dateFormatter->formatDateTime($model->request_date_to, "medium","") .
+				'<br>Number of days: '.$model->hourConverter(), 'text/html');
+				$message->subject = 'New Holiday Request';
+				$message->addTo('adamcarter@jakatasalon.co.uk');
+				//$message->addTo('jimmy@jakatasalon.co.uk');
+				$message->from = Yii::app()->params['adminEmail'];
+				
+				Yii::app()->mail->send($message);
+				
 				$this->redirect(array('staff_view','id'=>$model->id));
-			
+				}
 			}
 	
 			$this->render('staff_create',array(

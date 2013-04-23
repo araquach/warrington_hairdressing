@@ -70,6 +70,18 @@ class LieuController extends Controller
 				{
 					$model->attributes=$_POST['Lieu'];
 					if($model->save())
+					{
+					
+						$message = new YiiMailMessage;
+						$message->view = 'lieu_approval';
+						$message->setBody(array('model'=>$model), 'text');
+						$message->subject = 'Salon Manager';
+						$message->addTo($model->staff->mobile.'@smsid.textapp.net');
+						$message->from = ('enquiries@jakatasalon.co.uk');
+						
+						Yii::app()->mail->send($message);
+						
+						}
 						$this->redirect(array('index'));
 				}
 			
@@ -100,6 +112,7 @@ class LieuController extends Controller
 		{
 			$model->attributes=$_POST['Lieu'];
 			if($model->save())
+				
 				$this->redirect(array('view','id'=>$model->id));
 		}
 
@@ -118,8 +131,23 @@ class LieuController extends Controller
 			if(isset($_POST['Lieu']))
 			{
 				$model->attributes=$_POST['Lieu'];
-				if($model->save())
+				if($model->save()){
+				
+					$message = new YiiMailMessage;
+					$message->setBody('There is a new <strong>Lieu</strong> request.<br>From: '.$model->staff->first_name .' '. 
+					$model->staff->last_name .
+					'<br>Date regarding: '. Yii::app()->dateFormatter->formatDateTime($model->date_regarding, "medium","") .
+					'<br>Number of hours: '.$model->lieu_hours.
+					'<br>Reason: ' . $model->description, 'text/html');
+					$message->subject = 'New Lieu Request';
+					$message->addTo('adamcarter@jakatasalon.co.uk');
+					//$message->addTo('jimmy@jakatasalon.co.uk');
+					$message->from = Yii::app()->params['adminEmail'];
+					
+					Yii::app()->mail->send($message);
+					
 					$this->redirect(array('staff_view','id'=>$model->id));
+					}
 			}
 	
 			$this->render('staff_create',array(
