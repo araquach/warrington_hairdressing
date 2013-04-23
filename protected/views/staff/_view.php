@@ -7,14 +7,14 @@
 
 	<?php echo CHtml::link(CHtml::encode($data->id), array('view', 'id'=>$data->id)); ?>
 
-	<?php echo CHtml::encode($data->getFullName()); ?>
+	<strong><?php echo CHtml::encode($data->getFullName()); ?></strong>
 	<br />
 	
 	<?php echo CHtml::encode($data->staffRole->job_description); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('dob')); ?>:</b>
-	<?php echo CHtml::encode($data->dob); ?>
+	<?php echo CHtml::encode(Yii::app()->dateFormatter->formatDateTime($data->dob, "medium","")); ?>
 	<br />
 
 	
