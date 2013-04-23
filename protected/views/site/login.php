@@ -2,14 +2,9 @@
 /* @var $this SiteController */
 /* @var $model LoginForm */
 /* @var $form CActiveForm  */
-
-$this->pageTitle=Yii::app()->name . ' - Login';
-$this->breadcrumbs=array(
-	'Login',
-);
 ?>
 
-<div class="form user">
+<div class="form staff">
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'login-form',
 	'enableClientValidation'=>true,
