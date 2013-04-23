@@ -187,7 +187,7 @@ a p.pageLink:hover {
 	background-color: rgb(208, 72, 46);
 }
 
-.user {
+.staff {
 	background-color: rgb(94, 164, 40);
 }
 
@@ -379,7 +379,7 @@ div.view a {
 	background-image: url('../images/icons/icons_kpi.png');
 }
 
-#user {
+#staff {
 	background-image: url('../images/icons/icons_user.png');
 }
 
@@ -462,7 +462,7 @@ div.form.lieu {
 	background: url('../images/icons/icons_lieu.png') no-repeat 40px 40px rgb(94, 164, 40);
 }
 
-div.form.user {
+div.form.staff {
 	background: url('../images/icons/icons_user.png') no-repeat 40px 40px rgb(94, 164, 40);
 }
 
@@ -507,6 +507,18 @@ div.form.sick {
 }
 
 /* @end */
+
+.pageHead.staff {
+	background-image: url('../images/icons/icons_user.png');
+}
+
+div.form.staff {
+	background: url('../images/icons/icons_sick.png') no-repeat 40px 40px rgb(84, 57, 172);
+}
+
+#staffPage .view {
+	background-color: rgb(94, 164, 40);
+}
 
 /* @group footer */
 

@@ -24,12 +24,12 @@ class StaffController extends Controller
 		return array(
 			
 			array('allow', 
-				'actions'=>array('index','view','create','update','delete','admin'),
+				'actions'=>array('index','view','create','update','delete','admin','staff_staff','staff_view','staff_update'),
 				'users'=>array('@'),
 				'expression'=>'isset($user->role) && ($user->role==="admin")',
 			),
 			array('allow', 
-				'actions'=>array('index'),
+				'actions'=>array('staff_staff','staff_view','staff_update'),
 				'users'=>array('@'),
 				'expression'=>'isset($user->role) && ($user->role==="staff")',
 			),
@@ -46,6 +46,13 @@ class StaffController extends Controller
 	public function actionView($id)
 	{
 		$this->render('view',array(
+			'model'=>$this->loadModel($id),
+		));
+	}
+	
+	public function actionStaff_view($id)
+	{
+		$this->render('staff_view',array(
 			'model'=>$this->loadModel($id),
 		));
 	}
@@ -96,6 +103,26 @@ class StaffController extends Controller
 			'model'=>$model,
 		));
 	}
+	
+	public function actionStaff_update($id)
+		{
+			$model=$this->loadModel($id);
+	
+			// Uncomment the following line if AJAX validation is needed
+			// $this->performAjaxValidation($model);
+	
+			if(isset($_POST['Staff']))
+			{
+				$model->attributes=$_POST['Staff'];
+				if($model->save())
+					$this->redirect(array('view','id'=>$model->id));
+			}
+	
+			$this->render('staff_update',array(
+				'model'=>$model,
+			));
+		}
+	
 
 	/**
 	 * Deletes a particular model.
@@ -118,6 +145,14 @@ class StaffController extends Controller
 	{
 		$dataProvider=new CActiveDataProvider('Staff');
 		$this->render('index',array(
+			'dataProvider'=>$dataProvider,
+		));
+	}
+	
+	public function actionStaff_staff()
+	{
+		$dataProvider=new CActiveDataProvider('Staff');
+		$this->render('staff_staff',array(
 			'dataProvider'=>$dataProvider,
 		));
 	}
@@ -144,7 +179,7 @@ class StaffController extends Controller
 	 */
 	public function loadModel($id)
 	{
-		$model=Staff::model()->findByPk($id);
+		$model=Staff::model()->with('salon','staffRole')->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;

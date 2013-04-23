@@ -42,8 +42,8 @@
 <?php $this->widget('Admin_productWidget'); ?>
 </div>
 
-<div class="menuBox small users" id="users">
-<?php echo CHtml::link('<h2>User</h2>', array('/user/index')); ?>
+<div class="menuBox small staff" id="staff">
+<?php echo CHtml::link('<h2>User</h2>', array('/staff/index')); ?>
 <?php $this->widget('Admin_userWidget'); ?>
 </div>
 

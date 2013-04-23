@@ -7,9 +7,9 @@
 
 <div class="pageHead staff">
 
-<?php $this->widget('StaffWidget'); ?>
+<?php $this->widget('Admin_staffWidget'); ?>
 
-<?php $this->widget('StaffMenu'); ?>
+<?php $this->widget('Admin_staffMenu'); ?>
 
 </div> <!--.pageHead staff-->
 

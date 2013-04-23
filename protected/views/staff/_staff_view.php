@@ -5,23 +5,39 @@
 
 <div class="view">
 
+	<b><?php echo CHtml::encode($data->getAttributeLabel('id')); ?>:</b>
 	<?php echo CHtml::link(CHtml::encode($data->id), array('view', 'id'=>$data->id)); ?>
-
-	<?php echo CHtml::encode($data->getFullName()); ?>
 	<br />
-	
-	<?php echo CHtml::encode($data->staffRole->job_description); ?>
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('iris')); ?>:</b>
+	<?php echo CHtml::encode($data->iris); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('salon_id')); ?>:</b>
+	<?php echo CHtml::encode($data->salon_id); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('staff_role_id')); ?>:</b>
+	<?php echo CHtml::encode($data->staff_role_id); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('first_name')); ?>:</b>
+	<?php echo CHtml::encode($data->first_name); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('last_name')); ?>:</b>
+	<?php echo CHtml::encode($data->last_name); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('dob')); ?>:</b>
 	<?php echo CHtml::encode($data->dob); ?>
 	<br />
 
-	
+	<?php /*
 	<b><?php echo CHtml::encode($data->getAttributeLabel('mobile')); ?>:</b>
 	<?php echo CHtml::encode($data->mobile); ?>
 	<br />
-	<?php /*
+
 	<b><?php echo CHtml::encode($data->getAttributeLabel('email')); ?>:</b>
 	<?php echo CHtml::encode($data->email); ?>
 	<br />

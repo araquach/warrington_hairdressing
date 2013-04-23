@@ -1,4 +1,4 @@
-<!--User Menu-->
+<!--Staff Menu-->
 
 <nav>
 <ul>

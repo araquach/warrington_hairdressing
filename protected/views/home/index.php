@@ -42,9 +42,9 @@
 <?php $this->widget('ProductWidget'); ?>
 </div>
 
-<div class="menuBox small users" id="users">
-<?php echo CHtml::link('<h2>User</h2>', array('/lieu/staff_user')); ?>
-<?php $this->widget('UserWidget'); ?>
+<div class="menuBox small staff" id="staff">
+<?php echo CHtml::link('<h2>Staff</h2>', array('/staff/staff_staff')); ?>
+<?php $this->widget('StaffWidget'); ?>
 </div>
 
 </div> <!--#staffPage-->
