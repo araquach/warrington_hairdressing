@@ -157,10 +157,6 @@ class HolidayController extends Controller
 						
 						$this->redirect(array('index','id'=>$model->id));
 					}
-					
-					//text confirmation code to go here
-					
-						$this->redirect('index');
 				}
 			
 			$this->render('view',array(

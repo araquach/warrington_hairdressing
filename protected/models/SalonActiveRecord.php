@@ -24,7 +24,7 @@ abstract class SalonActiveRecord extends CActiveRecord {
 		return parent::beforeValidate();
 	}
 	
-	protected function dmy2mysql($input) {
+	public function dmy2mysql($input) {
 	  $output = false;
 	  $d = preg_split('#[-/:. ]#', $input);
 	  if (is_array($d) && count($d) == 3) {

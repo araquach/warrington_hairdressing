@@ -61,7 +61,7 @@ class Holiday extends SalonActiveRecord
 			//array('request_date_from, request_date_to', 'date'),
 			array('saturday', 'filter', 'filter'=>array( $this, 'filterCountSaturday')),
 			array('saturday', 'validateSaturday'),
-			array('request_date_to', 'validateDays'),
+			//array('request_date_to', 'validateDays'),
 			array('hours_requested', 'validateTotal'),
 			array('requested_on_date','default','value'=>new CDbExpression('NOW()'),'setOnEmpty'=>false,'on'=>'insert'),
 			// The following rule is used by search().
@@ -155,7 +155,10 @@ class Holiday extends SalonActiveRecord
 	public function beforeSave()
 	{
 		if($this->isNewRecord)
-		
+		//reverts date back to sql format
+		$this->request_date_from = $this->dmy2mysql($this->request_date_from);
+		$this->request_date_to = $this->dmy2mysql($this->request_date_to);
+		//turns hour input into days
 		$this->hours_requested=$this->hours_requested * 8;
 		
 		return parent::beforeSave();
@@ -201,9 +204,12 @@ class Holiday extends SalonActiveRecord
 	{
 		if($this->isNewRecord)
 		
+		$from = $this->request_date_from;
+		$to = $this->request_date_to;
 		$saturday = $this->saturday;
-		$start_ts = strtotime($this->request_date_from);
-		$end = strtotime($this->request_date_to);
+		
+		$start_ts = strtotime($this->dmy2mysql($from));
+		$end = strtotime($this->dmy2mysql($to));
 		
 		$day_sec = 86400;
 		
