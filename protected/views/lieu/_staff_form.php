@@ -43,7 +43,7 @@
 		<?php $this->widget('zii.widgets.jui.CJuiDatePicker', array(
 		    'model'=>$model, 'attribute'=>'date_regarding',
 		    'options'=>array(
-		        'dateFormat'=>'yy-mm-dd',
+		        'dateFormat'=>'dd-mm-yy',
 		        'yearRange'=>'-5:+5',
 		        'changeYear'=>'true',
 		        'changeMonth'=>'true',

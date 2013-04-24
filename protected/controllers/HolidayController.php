@@ -45,7 +45,7 @@ class HolidayController extends Controller
 		$criteria=new CDbCriteria;
 		$criteria->with = 'staff';
 		$criteria->condition = 'staff.id=' . Yii::app()->user->id;
-		$criteria->order = 't.request_date_from';
+		$criteria->order = 't.id DESC';
 		
 		$dataProvider=new CActiveDataProvider('Holiday', array(
 			'criteria'=>$criteria			
@@ -144,7 +144,7 @@ class HolidayController extends Controller
 				{
 					$model->attributes=$_POST['Holiday'];
 					if($model->save()){
-					
+						/*
 						$message = new YiiMailMessage;
 						$message->view = 'holiday_approval';
 						$message->setBody(array('model'=>$model), 'text');
@@ -153,14 +153,14 @@ class HolidayController extends Controller
 						$message->from = ('enquiries@jakatasalon.co.uk');
 						
 						Yii::app()->mail->send($message);
+						*/
 						
-						
-						$this->redirect(array('staff_view','id'=>$model->id));
+						$this->redirect(array('index','id'=>$model->id));
 					}
 					
 					//text confirmation code to go here
 					
-						$this->redirect(array('index'));
+						$this->redirect('index');
 				}
 			
 			$this->render('view',array(
@@ -210,7 +210,7 @@ class HolidayController extends Controller
 			{
 				$model->attributes=$_POST['Holiday'];
 				if($model->save()){
-				
+				/*
 				$message = new YiiMailMessage;
 				$message->setBody('There is a new <strong>Holiday</strong> request.<br>From: '.$model->staff->first_name .' '. 
 				$model->staff->last_name .
@@ -223,7 +223,7 @@ class HolidayController extends Controller
 				$message->from = Yii::app()->params['adminEmail'];
 				
 				Yii::app()->mail->send($message);
-				
+				*/
 				$this->redirect(array('staff_view','id'=>$model->id));
 				}
 			}

@@ -39,7 +39,7 @@
 		<?php $this->widget('zii.widgets.jui.CJuiDatePicker', array(
 		    'model'=>$model, 'attribute'=>'request_date_from',
 		    'options'=>array(
-		        'dateFormat'=>'yy-mm-dd',
+		        'dateFormat'=>'dd-mm-yy',
 		        'yearRange'=>'-3:+5',
 		        'changeYear'=>'true',
 		        'changeMonth'=>'true',
@@ -64,7 +64,7 @@
 		<?php $this->widget('zii.widgets.jui.CJuiDatePicker', array(
 		    'model'=>$model, 'attribute'=>'request_date_to',
 		    'options'=>array(
-		        'dateFormat'=>'yy-mm-dd',
+		        'dateFormat'=>'dd-mm-yy',
 		        'yearRange'=>'-3:+5',
 		        'changeYear'=>'true',
 		        'changeMonth'=>'true',

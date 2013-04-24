@@ -127,6 +127,13 @@ class Lieu extends SalonActiveRecord
 			return isset($approvedOptions[$this->approved]) ? $approvedOptions[$this->approved] : "unknown ({$this->approved})";
 	}
 	
+	public function beforeSave()
+	{
+		$this->date_regarding = $this->dmy2mysql($this->date_regarding);
+		
+		return parent::beforeSave();
+	}
+	
 	public function totalLieu()
 		{
 			$cmd = Yii::app()->db->createCommand();
