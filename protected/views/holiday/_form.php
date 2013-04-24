@@ -77,7 +77,7 @@
 	
 	<div class="row">
 		<?php echo $form->labelEx($model,'hours_requested'); ?>
-		<?php echo $form->dateField($model,'hours_requested'); ?>
+		<?php echo $form->numberField($model,'hours_requested'); ?>
 		<?php echo $form->error($model,'hours_requested'); ?>
 	</div>
 
