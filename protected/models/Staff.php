@@ -85,6 +85,7 @@ class Staff extends SalonActiveRecord
 			'staffRole' => array(self::BELONGS_TO, 'StaffRole', 'staff_role_id'),
 			'turnovers' => array(self::HAS_MANY, 'Turnover', 'staff_id'),
 			'wages' => array(self::HAS_MANY, 'Wage', 'staff_id'),
+			'emails' => array(self::HAS_MANY, 'Email', 'staff_id'),
 		);
 	}
 

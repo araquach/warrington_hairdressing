@@ -1,6 +1,6 @@
 <?php
 
-class EmailController extends Controller
+class ClientController extends Controller
 {
 
 	/**
@@ -57,14 +57,14 @@ class EmailController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new Email;
+		$model=new Client;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Email']))
+		if(isset($_POST['Client']))
 		{
-			$model->attributes=$_POST['Email'];
+			$model->attributes=$_POST['Client'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -86,9 +86,9 @@ class EmailController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Email']))
+		if(isset($_POST['Client']))
 		{
-			$model->attributes=$_POST['Email'];
+			$model->attributes=$_POST['Client'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -117,7 +117,7 @@ class EmailController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Email');
+		$dataProvider=new CActiveDataProvider('Client');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -128,10 +128,10 @@ class EmailController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new Email('search');
+		$model=new Client('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Email']))
-			$model->attributes=$_GET['Email'];
+		if(isset($_GET['Client']))
+			$model->attributes=$_GET['Client'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -145,7 +145,7 @@ class EmailController extends Controller
 	 */
 	public function loadModel($id)
 	{
-		$model=Email::model()->findByPk($id);
+		$model=Client::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -157,7 +157,7 @@ class EmailController extends Controller
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='email-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='client-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
