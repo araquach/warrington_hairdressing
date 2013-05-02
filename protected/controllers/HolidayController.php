@@ -144,7 +144,7 @@ class HolidayController extends Controller
 				{
 					$model->attributes=$_POST['Holiday'];
 					if($model->save()){
-					
+					/*
 						$message = new YiiMailMessage;
 						$message->view = 'holiday_approval';
 						$message->setBody(array('model'=>$model), 'text');
@@ -153,7 +153,7 @@ class HolidayController extends Controller
 						$message->from = ('enquiries@jakatasalon.co.uk');
 						
 						Yii::app()->mail->send($message);
-						
+						*/
 						
 						$this->redirect(array('staff_view','id'=>$model->id));
 					}
