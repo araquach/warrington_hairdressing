@@ -47,17 +47,23 @@
 	<?php else: ?>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'date_regarding'); ?>
-		<?php $this->widget('zii.widgets.jui.CJuiDatePicker', array(
-		    'model'=>$model, 'attribute'=>'date_regarding',
-		    'options'=>array(
-		        'dateFormat'=>'yy-mm-dd',
-		        'yearRange'=>'-5:+5',
-		        'changeYear'=>'true',
-		        'changeMonth'=>'true',
-		    ),
-		)); ?>
-		<?php echo $form->error($model,'date_regarding'); ?>
+			<?php echo $form->labelEx($model,'date_regarding'); ?>
+			<?php echo $form->hiddenField($model,'date_regarding'); ?>
+			<?php 
+			$this->widget('zii.widgets.jui.CJuiDatePicker', array(
+			    'name'=>'dateRegarding',
+			    'options'=>array(
+			    	'dateFormat'=>'dd/mm/yy',
+					'altField'=>'#'.CHtml::activeId($model, "date_regarding"),
+					'altFormat'=>'yy-mm-dd',
+					'yearRange'=>'-5:+5',
+					'changeYear'=>'true',
+					'changeMonth'=>'true',			
+			    ),	
+			    'value'=>$model->date_regarding ? $model->date_regarding:null,	   
+			));
+			?>
+			<?php echo $form->error($model,'date_regarding'); ?>
 	</div>
 	
 	<?php endif; ?>

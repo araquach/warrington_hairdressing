@@ -47,13 +47,16 @@
 			    'options'=>array(
 			    	'dateFormat'=>'dd/mm/yy',
 					'altField'=>'#'.CHtml::activeId($model, "request_date_from"),
-					'altFormat'=>'yy-mm-dd',			
+					'altFormat'=>'yy-mm-dd',
+					'yearRange'=>'-5:+5',
+					'changeYear'=>'true',
+					'changeMonth'=>'true',			
 			    ),	
 			    'value'=>$model->request_date_from ? $model->request_date_from:null,	   
 			));
 			?>
 			<?php echo $form->error($model,'request_date_from'); ?>
-		</div>
+	</div>
 	
 	
 		<?php endif; ?>
@@ -77,13 +80,16 @@
 			    'options'=>array(
 			    	'dateFormat'=>'dd/mm/yy',
 					'altField'=>'#'.CHtml::activeId($model, "request_date_to"),
-					'altFormat'=>'yy-mm-dd',			
+					'altFormat'=>'yy-mm-dd',
+					'yearRange'=>'-5:+5',
+					'changeYear'=>'true',
+					'changeMonth'=>'true',			
 			    ),	
 			    'value'=>$model->request_date_to ? $model->request_date_to:null,	   
 			));
 			?>
 			<?php echo $form->error($model,'request_date_to'); ?>
-		</div>
+	</div>
 		
 		<?php endif; ?>
 	

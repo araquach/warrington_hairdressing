@@ -35,19 +35,24 @@
 	<?php else: ?>
 	
 	<div class="row">
-		<?php echo $form->labelEx($model,'request_date_from'); ?>
-		<?php $this->widget('zii.widgets.jui.CJuiDatePicker', array(
-		    'model'=>$model, 'attribute'=>'request_date_from',
-		    'options'=>array(
-		        'dateFormat'=>'yy-mm-dd',
-		        'yearRange'=>'-3:+5',
-		        'changeYear'=>'true',
-		        'changeMonth'=>'true',
-		    ),
-		)); ?>
-		<?php echo $form->error($model,'request_date_from'); ?>
-	</div>
-	
+			<?php echo $form->labelEx($model,'request_date_from'); ?>
+			<?php echo $form->hiddenField($model,'request_date_from'); ?>
+			<?php 
+			$this->widget('zii.widgets.jui.CJuiDatePicker', array(
+			    'name'=>'requestDateFrom',
+			    'options'=>array(
+			    	'dateFormat'=>'dd/mm/yy',
+					'altField'=>'#'.CHtml::activeId($model, "request_date_from"),
+					'altFormat'=>'yy-mm-dd',
+					'yearRange'=>'-5:+5',
+					'changeYear'=>'true',
+					'changeMonth'=>'true',			
+			    ),	
+			    'value'=>$model->request_date_from ? $model->request_date_from:null,	   
+			));
+			?>
+			<?php echo $form->error($model,'request_date_from'); ?>
+	</div>	
 	<?php endif; ?>
 
 	<?php if (Yii::app()->detectMobileBrowser->showMobile): ?> 
@@ -60,18 +65,24 @@
 	<?php else: ?>
 		
 	<div class="row">
-		<?php echo $form->labelEx($model,'request_date_to'); ?>
-		<?php $this->widget('zii.widgets.jui.CJuiDatePicker', array(
-		    'model'=>$model, 'attribute'=>'request_date_to',
-		    'options'=>array(
-		        'dateFormat'=>'yy-mm-dd',
-		        'yearRange'=>'-3:+5',
-		        'changeYear'=>'true',
-		        'changeMonth'=>'true',
-		    ),
-		)); ?>
-		<?php echo $form->error($model,'request_date_to'); ?>
-	</div>	
+			<?php echo $form->labelEx($model,'request_date_to'); ?>
+			<?php echo $form->hiddenField($model,'request_date_to'); ?>
+			<?php 
+			$this->widget('zii.widgets.jui.CJuiDatePicker', array(
+			    'name'=>'requestDateTo',
+			    'options'=>array(
+			    	'dateFormat'=>'dd/mm/yy',
+					'altField'=>'#'.CHtml::activeId($model, "request_date_to"),
+					'altFormat'=>'yy-mm-dd',
+					'yearRange'=>'-5:+5',
+					'changeYear'=>'true',
+					'changeMonth'=>'true',			
+			    ),	
+			    'value'=>$model->request_date_to ? $model->request_date_to:null,	   
+			));
+			?>
+			<?php echo $form->error($model,'request_date_to'); ?>
+	</div>
 	
 	<?php endif; ?>
 	
