@@ -210,7 +210,7 @@ class HolidayController extends Controller
 			{
 				$model->attributes=$_POST['Holiday'];
 				if($model->save()){
-				
+				/*
 				$message = new YiiMailMessage;
 				$message->setBody('There is a new <strong>Holiday</strong> request.<br>From: '.$model->staff->first_name .' '. 
 				$model->staff->last_name .
@@ -223,7 +223,7 @@ class HolidayController extends Controller
 				$message->from = Yii::app()->params['adminEmail'];
 				
 				Yii::app()->mail->send($message);
-				
+				*/
 				$this->redirect(array('staff_view','id'=>$model->id));
 				}
 			}
