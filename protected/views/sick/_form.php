@@ -43,18 +43,25 @@
 		<?php echo $form->error($model,'description'); ?>
 	</div>
 
+	
 	<div class="row">
-		<?php echo $form->labelEx($model,'date_sick_from'); ?>
-		<?php $this->widget('zii.widgets.jui.CJuiDatePicker', array(
-		    'model'=>$model, 'attribute'=>'date_sick_from',
-		    'options'=>array(
-		        'dateFormat'=>'yy-mm-dd',
-		        'yearRange'=>'-5:+5',
-		        'changeYear'=>'true',
-		        'changeMonth'=>'true',
-		    ),
-		)); ?>
-		<?php echo $form->error($model,'date_sick_from'); ?>
+			<?php echo $form->labelEx($model,'date_sick_from'); ?>
+			<?php echo $form->hiddenField($model,'date_sick_from'); ?>
+			<?php 
+			$this->widget('zii.widgets.jui.CJuiDatePicker', array(
+			    'name'=>'dateSickFrom',
+			    'options'=>array(
+			    	'dateFormat'=>'dd/mm/yy',
+					'altField'=>'#'.CHtml::activeId($model, "date_sick_from"),
+					'altFormat'=>'yy-mm-dd',
+					'yearRange'=>'-5:+5',
+					'changeYear'=>'true',
+					'changeMonth'=>'true',			
+			    ),	
+			    'value'=>$model->date_sick_from ? $model->date_sick_from:null,	   
+			));
+			?>
+			<?php echo $form->error($model,'date_sick_from'); ?>
 	</div>
 	
 	<div class="row">
