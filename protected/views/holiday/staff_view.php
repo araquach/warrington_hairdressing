@@ -48,3 +48,9 @@ $this->menu=array(
 </div> <!--#holiday-->
 
 <?php echo CHtml::link('<p class="pageLink">Back to the full list</p>', array('/holiday/staff_holiday')); ?>
+
+
+
+
+
+
