@@ -48,7 +48,6 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		'id',
 		'person_id',
 		'salon_id',
-		'role_id',
 		'date',
 		array(
 			'class'=>'CButtonColumn',

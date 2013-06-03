@@ -24,7 +24,6 @@ $this->menu=array(
 		'id',
 		'person_id',
 		'salon_id',
-		'role_id',
 		'date',
 	),
 )); ?>

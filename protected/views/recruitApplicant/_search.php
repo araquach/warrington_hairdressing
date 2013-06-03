@@ -27,11 +27,6 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'role_id'); ?>
-		<?php echo $form->textField($model,'role_id'); ?>
-	</div>
-
-	<div class="row">
 		<?php echo $form->label($model,'date'); ?>
 		<?php echo $form->textField($model,'date'); ?>
 	</div>

@@ -7,7 +7,6 @@
  * @property integer $id
  * @property integer $person_id
  * @property integer $salon_id
- * @property integer $role_id
  * @property string $date
  */
 class RecruitApplicant extends CActiveRecord
@@ -38,7 +37,7 @@ class RecruitApplicant extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('person_id, salon_id, role_id, date', 'required'),
+			array('person_id, salon_id, date', 'required'),
 			array('person_id, salon_id, role_id', 'numerical', 'integerOnly'=>true),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
@@ -66,7 +65,6 @@ class RecruitApplicant extends CActiveRecord
 			'id' => 'ID',
 			'person_id' => 'Person',
 			'salon_id' => 'Salon',
-			'role_id' => 'Role',
 			'date' => 'Date',
 		);
 	}
@@ -85,7 +83,6 @@ class RecruitApplicant extends CActiveRecord
 		$criteria->compare('id',$this->id);
 		$criteria->compare('person_id',$this->person_id);
 		$criteria->compare('salon_id',$this->salon_id);
-		$criteria->compare('role_id',$this->role_id);
 		$criteria->compare('date',$this->date,true);
 
 		return new CActiveDataProvider($this, array(
