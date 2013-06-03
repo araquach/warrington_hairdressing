@@ -34,10 +34,12 @@
 		'whole_experience',
 		'end_result',
 		'extra',
+		
 		array(
 			'name'=>'Score'.':',
 			'value'=>$model->score(),
 			),
+		'allow',
 	),
 )); ?>
 </div> <!--.detail.feedback-->
