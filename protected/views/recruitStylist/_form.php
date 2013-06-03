@@ -14,11 +14,77 @@
 	<p class="note">Fields with <span class="required">*</span> are required.</p>
 
 	<?php echo $form->errorSummary($model); ?>
+	
+	<!--from Person Model-->
+	
+	<div class="row">
+		<?php echo $form->labelEx($person,'first_name'); ?>
+		<?php echo $form->textField($person,'first_name',array('size'=>60,'maxlength'=>256)); ?>
+		<?php echo $form->error($person,'first_name'); ?>
+	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'applicant_id'); ?>
-		<?php echo $form->textField($model,'applicant_id'); ?>
-		<?php echo $form->error($model,'applicant_id'); ?>
+		<?php echo $form->labelEx($person,'second_name'); ?>
+		<?php echo $form->textField($person,'second_name',array('size'=>60,'maxlength'=>256)); ?>
+		<?php echo $form->error($person,'second_name'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($person,'address1'); ?>
+		<?php echo $form->textField($person,'address1',array('size'=>60,'maxlength'=>256)); ?>
+		<?php echo $form->error($person,'address1'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($person,'address2'); ?>
+		<?php echo $form->textField($person,'address2',array('size'=>60,'maxlength'=>256)); ?>
+		<?php echo $form->error($person,'address2'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($person,'address3'); ?>
+		<?php echo $form->textField($person,'address3',array('size'=>60,'maxlength'=>256)); ?>
+		<?php echo $form->error($person,'address3'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($person,'postcode'); ?>
+		<?php echo $form->textField($person,'postcode',array('size'=>20,'maxlength'=>20)); ?>
+		<?php echo $form->error($person,'postcode'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($person,'email'); ?>
+		<?php echo $form->textField($person,'email',array('size'=>60,'maxlength'=>256)); ?>
+		<?php echo $form->error($person,'email'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($person,'phone'); ?>
+		<?php echo $form->textField($person,'phone',array('size'=>30,'maxlength'=>30)); ?>
+		<?php echo $form->error($person,'phone'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($person,'mobile'); ?>
+		<?php echo $form->textField($person,'mobile',array('size'=>30,'maxlength'=>30)); ?>
+		<?php echo $form->error($person,'mobile'); ?>
+	</div>
+
+	<!--start of recruitment form-->
+
+	<?php echo $form->hiddenField($model,'person_id'); ?>
+		
+	<div class="row">
+		<?php echo $form->labelEx($model,'salon_id'); ?>
+		<?php echo $form->textField($model,'salon_id'); ?>
+		<?php echo $form->error($model,'salon_id'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'date'); ?>
+		<?php echo $form->textField($model,'date'); ?>
+		<?php echo $form->error($model,'date'); ?>
 	</div>
 
 	<div class="row">

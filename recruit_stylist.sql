@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jun 03, 2013 at 12:33 PM
+-- Generation Time: Jun 03, 2013 at 07:54 PM
 -- Server version: 5.1.44
 -- PHP Version: 5.3.1
 
@@ -27,7 +27,9 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 
 CREATE TABLE IF NOT EXISTS `recruit_stylist` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `applicant_id` int(11) NOT NULL,
+  `person_id` int(11) NOT NULL,
+  `salon_id` int(11) NOT NULL,
+  `date` datetime NOT NULL,
   `current_emp` int(11) NOT NULL,
   `current_emp_des` varchar(50) NOT NULL,
   `qual_school` int(11) NOT NULL,
@@ -56,10 +58,20 @@ CREATE TABLE IF NOT EXISTS `recruit_stylist` (
   `why_hairdressing` text NOT NULL,
   `why_us` text NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `applicant_id` (`applicant_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+  KEY `person_id` (`person_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
 
 --
 -- Dumping data for table `recruit_stylist`
 --
 
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `recruit_stylist`
+--
+ALTER TABLE `recruit_stylist`
+  ADD CONSTRAINT `recruit_stylist_ibfk_1` FOREIGN KEY (`person_id`) REFERENCES `person` (`id`) ON UPDATE CASCADE;

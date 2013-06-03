@@ -5,7 +5,9 @@
  *
  * The followings are the available columns in table 'recruit_stylist':
  * @property integer $id
- * @property integer $applicant_id
+ * @property integer $person_id
+ * @property integer $salon_id
+ * @property string $date
  * @property integer $current_emp
  * @property string $current_emp_des
  * @property integer $qual_school
@@ -35,7 +37,7 @@
  * @property string $why_us
  *
  * The followings are the available model relations:
- * @property RecruitApplicant $applicant
+ * @property Person $person
  */
 class RecruitStylist extends CActiveRecord
 {
@@ -65,13 +67,13 @@ class RecruitStylist extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('applicant_id, current_emp, current_emp_des, qual_school, qual_non_hair, adex1, adex2, adex3, adex4, adex5, adex6, experience, current_position, client_base, qual_hair, cutting_skills, colour_knowledge, colour_skills, men, extensions_weave, extensions_other, chem_straighten, braz_blow, hair_up, awards, about_you, why_hairdressing, why_us', 'required'),
-			array('applicant_id, current_emp, qual_school, adex1, adex2, adex3, adex4, adex5, adex6, experience, current_position, client_base, qual_hair, cutting_skills, colour_knowledge, colour_skills, men, extensions_weave, extensions_other, chem_straighten, braz_blow, hair_up', 'numerical', 'integerOnly'=>true),
+			array('person_id, salon_id, date, current_emp',/* current_emp_des, qual_school, qual_non_hair, adex1, adex2, adex3, adex4, adex5, adex6, experience, current_position, client_base, qual_hair, cutting_skills, colour_knowledge, colour_skills, men, extensions_weave, extensions_other, chem_straighten, braz_blow, hair_up, awards, about_you, why_hairdressing, why_us', */'required'),
+			array('person_id, salon_id, current_emp, qual_school, adex1, adex2, adex3, adex4, adex5, adex6, experience, current_position, client_base, qual_hair, cutting_skills, colour_knowledge, colour_skills, men, extensions_weave, extensions_other, chem_straighten, braz_blow, hair_up', 'numerical', 'integerOnly'=>true),
 			array('current_emp_des', 'length', 'max'=>50),
 			array('qual_non_hair', 'length', 'max'=>120),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, applicant_id, current_emp, current_emp_des, qual_school, qual_non_hair, adex1, adex2, adex3, adex4, adex5, adex6, experience, current_position, client_base, qual_hair, cutting_skills, colour_knowledge, colour_skills, men, extensions_weave, extensions_other, chem_straighten, braz_blow, hair_up, awards, about_you, why_hairdressing, why_us', 'safe', 'on'=>'search'),
+			array('id, person_id, salon_id, date, current_emp, current_emp_des, qual_school, qual_non_hair, adex1, adex2, adex3, adex4, adex5, adex6, experience, current_position, client_base, qual_hair, cutting_skills, colour_knowledge, colour_skills, men, extensions_weave, extensions_other, chem_straighten, braz_blow, hair_up, awards, about_you, why_hairdressing, why_us', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -83,7 +85,7 @@ class RecruitStylist extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'applicant' => array(self::BELONGS_TO, 'RecruitApplicant', 'applicant_id'),
+			'person' => array(self::BELONGS_TO, 'Person', 'person_id'),
 		);
 	}
 
@@ -94,7 +96,9 @@ class RecruitStylist extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'applicant_id' => 'Applicant',
+			'person_id' => 'Person',
+			'salon_id' => 'Salon',
+			'date' => 'Date',
 			'current_emp' => 'Current Emp',
 			'current_emp_des' => 'Current Emp Des',
 			'qual_school' => 'Qual School',
@@ -137,7 +141,9 @@ class RecruitStylist extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
-		$criteria->compare('applicant_id',$this->applicant_id);
+		$criteria->compare('person_id',$this->person_id);
+		$criteria->compare('salon_id',$this->salon_id);
+		$criteria->compare('date',$this->date,true);
 		$criteria->compare('current_emp',$this->current_emp);
 		$criteria->compare('current_emp_des',$this->current_emp_des,true);
 		$criteria->compare('qual_school',$this->qual_school);
@@ -170,4 +176,7 @@ class RecruitStylist extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+	
+
+	
 }

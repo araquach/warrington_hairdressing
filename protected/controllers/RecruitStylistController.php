@@ -60,24 +60,36 @@ class RecruitStylistController extends Controller
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
+	
+	
 	public function actionCreate()
 	{
-		$model=new RecruitStylist;
-
-		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
-
-		if(isset($_POST['RecruitStylist']))
-		{
-			$model->attributes=$_POST['RecruitStylist'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
-		}
-
-		$this->render('create',array(
-			'model'=>$model,
-		));
+	    $model=new RecruitStylist;
+	    $person=new Person;
+	    if(isset($_POST['RecruitStylist'], $_POST['Person']))
+	    {
+	        // populate input data to $a and $b
+	        $model->attributes=$_POST['RecruitStylist'];
+	        $person->attributes=$_POST['Person'];
+	 
+	        
+	          
+	            $person->save(false);
+	            $model->person_id = $person->id;
+	            $model->save(false);
+	         
+	          
+	          
+	        }	    
+	 
+	    $this->render('create', array(
+	        'model'=>$model,
+	        'person'=>$person,
+	    ));
 	}
+	
+	
+	
 
 	/**
 	 * Updates a particular model.

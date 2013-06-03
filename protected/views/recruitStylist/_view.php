@@ -9,8 +9,16 @@
 	<?php echo CHtml::link(CHtml::encode($data->id), array('view', 'id'=>$data->id)); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('applicant_id')); ?>:</b>
-	<?php echo CHtml::encode($data->applicant_id); ?>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('person_id')); ?>:</b>
+	<?php echo CHtml::encode($data->person_id); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('salon_id')); ?>:</b>
+	<?php echo CHtml::encode($data->salon_id); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('date')); ?>:</b>
+	<?php echo CHtml::encode($data->date); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('current_emp')); ?>:</b>
@@ -25,6 +33,7 @@
 	<?php echo CHtml::encode($data->qual_school); ?>
 	<br />
 
+	<?php /*
 	<b><?php echo CHtml::encode($data->getAttributeLabel('qual_non_hair')); ?>:</b>
 	<?php echo CHtml::encode($data->qual_non_hair); ?>
 	<br />
@@ -33,7 +42,6 @@
 	<?php echo CHtml::encode($data->adex1); ?>
 	<br />
 
-	<?php /*
 	<b><?php echo CHtml::encode($data->getAttributeLabel('adex2')); ?>:</b>
 	<?php echo CHtml::encode($data->adex2); ?>
 	<br />

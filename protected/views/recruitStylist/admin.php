@@ -46,12 +46,14 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 	'filter'=>$model,
 	'columns'=>array(
 		'id',
-		'applicant_id',
+		'person_id',
+		'salon_id',
+		'date',
 		'current_emp',
 		'current_emp_des',
+		/*
 		'qual_school',
 		'qual_non_hair',
-		/*
 		'adex1',
 		'adex2',
 		'adex3',

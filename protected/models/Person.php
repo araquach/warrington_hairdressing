@@ -46,7 +46,7 @@ class Person extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('first_name, second_name, address1, address3, postcode, email, mobile', 'required'),
+			array('first_name, second_name',/* address1, address3, postcode, email, mobile', */'required'),
 			array('first_name, second_name, address1, address2, address3, email', 'length', 'max'=>256),
 			array('postcode', 'length', 'max'=>20),
 			array('phone, mobile', 'length', 'max'=>30),
@@ -113,4 +113,6 @@ class Person extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+	
+	
 }

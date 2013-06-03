@@ -17,8 +17,18 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'applicant_id'); ?>
-		<?php echo $form->textField($model,'applicant_id'); ?>
+		<?php echo $form->label($model,'person_id'); ?>
+		<?php echo $form->textField($model,'person_id'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'salon_id'); ?>
+		<?php echo $form->textField($model,'salon_id'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'date'); ?>
+		<?php echo $form->textField($model,'date'); ?>
 	</div>
 
 	<div class="row">

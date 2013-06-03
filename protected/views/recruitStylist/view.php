@@ -22,7 +22,9 @@ $this->menu=array(
 	'data'=>$model,
 	'attributes'=>array(
 		'id',
-		'applicant_id',
+		'person_id',
+		'salon_id',
+		'date',
 		'current_emp',
 		'current_emp_des',
 		'qual_school',
