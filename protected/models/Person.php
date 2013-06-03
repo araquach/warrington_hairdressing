@@ -14,6 +14,9 @@
  * @property string $email
  * @property string $phone
  * @property string $mobile
+ *
+ * The followings are the available model relations:
+ * @property RecruitApplicant[] $recruitApplicants
  */
 class Person extends CActiveRecord
 {
@@ -61,6 +64,7 @@ class Person extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'recruitApplicants' => array(self::HAS_MANY, 'RecruitApplicant', 'person_id'),
 		);
 	}
 

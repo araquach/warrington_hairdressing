@@ -17,7 +17,6 @@
 	<?php echo CHtml::encode($data->salon_id); ?>
 	<br />
 
-
 	<b><?php echo CHtml::encode($data->getAttributeLabel('date')); ?>:</b>
 	<?php echo CHtml::encode($data->date); ?>
 	<br />

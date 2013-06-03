@@ -33,6 +33,9 @@
  * @property string $about_you
  * @property string $why_hairdressing
  * @property string $why_us
+ *
+ * The followings are the available model relations:
+ * @property RecruitApplicant $applicant
  */
 class RecruitStylist extends CActiveRecord
 {
@@ -80,6 +83,7 @@ class RecruitStylist extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'applicant' => array(self::BELONGS_TO, 'RecruitApplicant', 'applicant_id'),
 		);
 	}
 

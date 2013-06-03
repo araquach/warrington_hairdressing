@@ -27,7 +27,6 @@
 		<?php echo $form->error($model,'salon_id'); ?>
 	</div>
 
-
 	<div class="row">
 		<?php echo $form->labelEx($model,'date'); ?>
 		<?php echo $form->textField($model,'date'); ?>

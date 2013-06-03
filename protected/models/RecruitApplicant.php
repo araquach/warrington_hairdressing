@@ -8,6 +8,11 @@
  * @property integer $person_id
  * @property integer $salon_id
  * @property string $date
+ *
+ * The followings are the available model relations:
+ * @property Person $person
+ * @property Salon $salon
+ * @property RecruitStylist[] $recruitStylists
  */
 class RecruitApplicant extends CActiveRecord
 {
@@ -38,10 +43,10 @@ class RecruitApplicant extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('person_id, salon_id, date', 'required'),
-			array('person_id, salon_id, role_id', 'numerical', 'integerOnly'=>true),
+			array('person_id, salon_id', 'numerical', 'integerOnly'=>true),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, person_id, salon_id, role_id, date', 'safe', 'on'=>'search'),
+			array('id, person_id, salon_id, date', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -53,6 +58,9 @@ class RecruitApplicant extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'person' => array(self::BELONGS_TO, 'Person', 'person_id'),
+			'salon' => array(self::BELONGS_TO, 'Salon', 'salon_id'),
+			'recruitStylists' => array(self::HAS_MANY, 'RecruitStylist', 'applicant_id'),
 		);
 	}
 
