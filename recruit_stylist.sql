@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Apr 16, 2013 at 12:39 PM
+-- Generation Time: Jun 03, 2013 at 12:33 PM
 -- Server version: 5.1.44
 -- PHP Version: 5.3.1
 
@@ -22,23 +22,12 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `role_applicant`
+-- Table structure for table `recruit_stylist`
 --
 
-CREATE TABLE IF NOT EXISTS `role_applicant` (
+CREATE TABLE IF NOT EXISTS `recruit_stylist` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `salon_id` int(11) NOT NULL,
-  `role_id` int(11) NOT NULL,
-  `date` datetime NOT NULL,
-  `first_name` varchar(256) NOT NULL,
-  `second_name` varchar(256) NOT NULL,
-  `address1` varchar(256) NOT NULL,
-  `address2` varchar(256) NOT NULL,
-  `address3` varchar(256) NOT NULL,
-  `postcode` varchar(20) NOT NULL,
-  `email` varchar(256) NOT NULL,
-  `phone` varchar(30) NOT NULL,
-  `mobile` varchar(30) NOT NULL,
+  `applicant_id` int(11) NOT NULL,
   `current_emp` int(11) NOT NULL,
   `current_emp_des` varchar(50) NOT NULL,
   `qual_school` int(11) NOT NULL,
@@ -66,12 +55,11 @@ CREATE TABLE IF NOT EXISTS `role_applicant` (
   `about_you` text NOT NULL,
   `why_hairdressing` text NOT NULL,
   `why_us` text NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+  PRIMARY KEY (`id`),
+  KEY `applicant_id` (`applicant_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 --
--- Dumping data for table `role_applicant`
+-- Dumping data for table `recruit_stylist`
 --
 
-INSERT INTO `role_applicant` (`id`, `salon_id`, `role_id`, `date`, `first_name`, `second_name`, `address1`, `address2`, `address3`, `postcode`, `email`, `phone`, `mobile`, `current_emp`, `current_emp_des`, `qual_school`, `qual_non_hair`, `adex1`, `adex2`, `adex3`, `adex4`, `adex5`, `adex6`, `experience`, `current_position`, `client_base`, `qual_hair`, `cutting_skills`, `colour_knowledge`, `colour_skills`, `men`, `extensions_weave`, `extensions_other`, `chem_straighten`, `braz_blow`, `hair_up`, `awards`, `about_you`, `why_hairdressing`, `why_us`) VALUES
-(6, 0, 0, '2013-04-16 12:15:34', 'Adam', 'Carter', '', '', '', '', '', '', '', 0, '', 0, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '', '', '');
