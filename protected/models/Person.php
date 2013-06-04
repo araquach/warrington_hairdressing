@@ -64,7 +64,7 @@ class Person extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'recruitApplicants' => array(self::HAS_MANY, 'RecruitApplicant', 'person_id'),
+			'people' => array(self::HAS_MANY, 'RecruitStylist', 'person_id'),
 		);
 	}
 

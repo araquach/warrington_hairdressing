@@ -72,14 +72,14 @@ class RecruitStylistController extends Controller
 	        $model->attributes=$_POST['RecruitStylist'];
 	        $person->attributes=$_POST['Person'];
 	 
-	        
-	          
+	        if ($person->validate()) {
+	          $person->scenario = 'errors_check';
+	          if ($model->validate()) {
 	            $person->save(false);
 	            $model->person_id = $person->id;
 	            $model->save(false);
-	         
-	          
-	          
+	          }
+	        }
 	        }	    
 	 
 	    $this->render('create', array(

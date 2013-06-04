@@ -67,7 +67,7 @@ class RecruitStylist extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('person_id, salon_id, date, current_emp',/* current_emp_des, qual_school, qual_non_hair, adex1, adex2, adex3, adex4, adex5, adex6, experience, current_position, client_base, qual_hair, cutting_skills, colour_knowledge, colour_skills, men, extensions_weave, extensions_other, chem_straighten, braz_blow, hair_up, awards, about_you, why_hairdressing, why_us', */'required'),
+			array('salon_id, date, current_emp',/* current_emp_des, qual_school, qual_non_hair, adex1, adex2, adex3, adex4, adex5, adex6, experience, current_position, client_base, qual_hair, cutting_skills, colour_knowledge, colour_skills, men, extensions_weave, extensions_other, chem_straighten, braz_blow, hair_up, awards, about_you, why_hairdressing, why_us', */'required'),
 			array('person_id, salon_id, current_emp, qual_school, adex1, adex2, adex3, adex4, adex5, adex6, experience, current_position, client_base, qual_hair, cutting_skills, colour_knowledge, colour_skills, men, extensions_weave, extensions_other, chem_straighten, braz_blow, hair_up', 'numerical', 'integerOnly'=>true),
 			array('current_emp_des', 'length', 'max'=>50),
 			array('qual_non_hair', 'length', 'max'=>120),
