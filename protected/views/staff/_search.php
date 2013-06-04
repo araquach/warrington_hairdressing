@@ -15,6 +15,11 @@
 		<?php echo $form->label($model,'id'); ?>
 		<?php echo $form->textField($model,'id'); ?>
 	</div>
+	
+	<div class="row">
+		<?php echo $form->label($model,'person_id'); ?>
+		<?php echo $form->textField($model,'person_id'); ?>
+	</div>
 
 	<div class="row">
 		<?php echo $form->label($model,'iris'); ?>
@@ -32,28 +37,8 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'first_name'); ?>
-		<?php echo $form->textField($model,'first_name',array('size'=>20,'maxlength'=>20)); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'last_name'); ?>
-		<?php echo $form->textField($model,'last_name',array('size'=>20,'maxlength'=>20)); ?>
-	</div>
-
-	<div class="row">
 		<?php echo $form->label($model,'dob'); ?>
 		<?php echo $form->textField($model,'dob',array('size'=>20,'maxlength'=>20)); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'mobile'); ?>
-		<?php echo $form->textField($model,'mobile'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'email'); ?>
-		<?php echo $form->textField($model,'email',array('size'=>20,'maxlength'=>20)); ?>
 	</div>
 
 	<div class="row">

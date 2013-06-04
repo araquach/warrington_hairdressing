@@ -14,6 +14,12 @@
 	<p class="note">Fields with <span class="required">*</span> are required.</p>
 
 	<?php echo $form->errorSummary($model); ?>
+	
+	<div class="row">
+		<?php echo $form->labelEx($model,'person_id'); ?>
+		<?php echo $form->textField($model,'person_id'); ?>
+		<?php echo $form->error($model,'person_id'); ?>
+	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'iris'); ?>
@@ -38,18 +44,6 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'first_name'); ?>
-		<?php echo $form->textField($model,'first_name',array('size'=>20,'maxlength'=>20)); ?>
-		<?php echo $form->error($model,'first_name'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'last_name'); ?>
-		<?php echo $form->textField($model,'last_name',array('size'=>20,'maxlength'=>20)); ?>
-		<?php echo $form->error($model,'last_name'); ?>
-	</div>
-
-	<div class="row">
 		<?php echo $form->labelEx($model,'dob'); ?>
 		<?php $this->widget('zii.widgets.jui.CJuiDatePicker', array(
 		    'model'=>$model, 'attribute'=>'dob',
@@ -61,19 +55,6 @@
 		    ),
 		)); ?>
 		<?php echo $form->error($model,'dob'); ?>
-	</div>
-	
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'mobile'); ?>
-		<?php echo $form->textField($model,'mobile'); ?>
-		<?php echo $form->error($model,'mobile'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'email'); ?>
-		<?php echo $form->textField($model,'email',array('size'=>20,'maxlength'=>50)); ?>
-		<?php echo $form->error($model,'email'); ?>
 	</div>
 
 	<div class="row">

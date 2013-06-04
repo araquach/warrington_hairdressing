@@ -5,14 +5,11 @@
  *
  * The followings are the available columns in table 'staff':
  * @property integer $id
+ * @property integer $person_id
  * @property integer $iris
  * @property integer $salon_id
  * @property integer $staff_role_id
- * @property string $first_name
- * @property string $last_name
  * @property string $dob
- * @property integer $mobile
- * @property string $email
  * @property string $username
  * @property string $password
  * @property integer $working_hours_week
@@ -22,6 +19,7 @@
  * @property integer $role
  *
  * The followings are the available model relations:
+ * @property Person $person
  * @property Holiday[] $holidays
  * @property Lieu[] $lieus
  * @property Sick[] $sicks
@@ -58,15 +56,15 @@ class Staff extends SalonActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('iris, salon_id, staff_role_id, first_name, last_name, dob, mobile, email, username, password, working_hours_week, holiday_entitlement, active, role', 'required'),
-			array('iris, salon_id, staff_role_id, mobile, working_hours_week, holiday_entitlement, active', 'numerical', 'integerOnly'=>true),
-			array('first_name, last_name, dob', 'length', 'max'=>20),
+			array('iris, salon_id, staff_role_id, dob, username, password, working_hours_week, holiday_entitlement, active, role', 'required'),
+			array('iris, salon_id, staff_role_id, working_hours_week, holiday_entitlement, active', 'numerical', 'integerOnly'=>true),
+			array('dob', 'length', 'max'=>20),
 			array('username', 'unique'),
 			array('username', 'length', 'max'=>22),
 			array('password', 'length', 'max'=>44),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, iris, salon_id, staff_role_id, first_name, last_name, dob, mobile, email, username, password, working_hours_week, working_hours_month, holiday_entitlement, active, role', 'safe', 'on'=>'search'),
+			array('id, iris, salon_id, staff_role_id, dob, username, password, working_hours_week, working_hours_month, holiday_entitlement, active, role', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -78,6 +76,7 @@ class Staff extends SalonActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'person' => array(self::BELONGS_TO, 'Person', 'person_id'),
 			'holidays' => array(self::HAS_MANY, 'Holiday', 'staff_id'),
 			'lieus' => array(self::HAS_MANY, 'Lieu', 'staff_id'),
 			'sicks' => array(self::HAS_MANY, 'Sick', 'staff_id'),
@@ -95,14 +94,11 @@ class Staff extends SalonActiveRecord
 	{
 		return array(
 			'id' => 'ID',
+			'person_id' => 'Person',
 			'iris' => 'Iris ID',
 			'salon_id' => 'Salon ID',
 			'staff_role_id' => 'Staff Role',
-			'first_name' => 'First Name',
-			'last_name' => 'Last Name',
 			'dob' => 'Birth Date',
-			'mobile' => 'Mobile Number',
-			'email' => 'Email Address',
 			'username' => 'Username',
 			'password' => 'Password',
 			'working_hours_week' => 'Working Hours a Week',
@@ -125,14 +121,11 @@ class Staff extends SalonActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
+		$criteria->compare('person_id',$this->person_id);
 		$criteria->compare('iris',$this->iris);
 		$criteria->compare('salon_id',$this->salon_id);
 		$criteria->compare('staff_role_id',$this->staff_role_id);
-		$criteria->compare('first_name',$this->first_name,true);
-		$criteria->compare('last_name',$this->last_name,true);
 		$criteria->compare('dob',$this->dob,true);
-		$criteria->compare('mobile',$this->mobile);
-		$criteria->compare('email',$this->email,true);
 		$criteria->compare('username',$this->username,true);
 		$criteria->compare('password',$this->password,true);
 		$criteria->compare('working_hours_week',$this->working_hours_week);
@@ -144,11 +137,6 @@ class Staff extends SalonActiveRecord
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
-	}
-	
-	public function getFullName()
-	{
-		return $this->first_name . ' ' . $this->last_name;
 	}
 	
 }
