@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jun 04, 2013 at 09:28 PM
+-- Generation Time: Jun 04, 2013 at 09:45 PM
 -- Server version: 5.1.44
 -- PHP Version: 5.3.1
 
@@ -34,6 +34,11 @@ CREATE TABLE IF NOT EXISTS `client` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
+--
+-- Dumping data for table `client`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -50,6 +55,11 @@ CREATE TABLE IF NOT EXISTS `email` (
   KEY `client_id` (`client_id`),
   KEY `staff_id_2` (`staff_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+--
+-- Dumping data for table `email`
+--
+
 
 -- --------------------------------------------------------
 
@@ -82,6 +92,11 @@ CREATE TABLE IF NOT EXISTS `feedback` (
   KEY `stylist_id` (`stylist_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=14 ;
 
+--
+-- Dumping data for table `feedback`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -102,6 +117,11 @@ CREATE TABLE IF NOT EXISTS `holiday` (
   KEY `staff_id` (`staff_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
+--
+-- Dumping data for table `holiday`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -119,6 +139,11 @@ CREATE TABLE IF NOT EXISTS `lieu` (
   PRIMARY KEY (`id`),
   KEY `staff_id` (`staff_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+
+--
+-- Dumping data for table `lieu`
+--
+
 
 -- --------------------------------------------------------
 
@@ -138,7 +163,14 @@ CREATE TABLE IF NOT EXISTS `person` (
   `phone` varchar(30) DEFAULT NULL,
   `mobile` varchar(30) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
+
+--
+-- Dumping data for table `person`
+--
+
+INSERT INTO `person` (`id`, `first_name`, `second_name`, `address1`, `address2`, `address3`, `postcode`, `email`, `phone`, `mobile`) VALUES
+(9, 'Adam', 'Carter', '27 Eastford Road', 'Walton', 'Warrington', 'WA1 2RF', 'araquach@yahoo.co.uk', '01925 242960', '07921806884');
 
 -- --------------------------------------------------------
 
@@ -181,6 +213,11 @@ CREATE TABLE IF NOT EXISTS `recruit_stylist` (
   PRIMARY KEY (`id`),
   KEY `person_id` (`person_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+--
+-- Dumping data for table `recruit_stylist`
+--
+
 
 -- --------------------------------------------------------
 
@@ -232,6 +269,11 @@ CREATE TABLE IF NOT EXISTS `role_applicant` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
+--
+-- Dumping data for table `role_applicant`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -243,6 +285,11 @@ CREATE TABLE IF NOT EXISTS `salon` (
   `salon` varchar(80) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `salon`
+--
+
 
 -- --------------------------------------------------------
 
@@ -261,6 +308,11 @@ CREATE TABLE IF NOT EXISTS `sick` (
   KEY `staff_id` (`staff_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
+--
+-- Dumping data for table `sick`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -269,6 +321,7 @@ CREATE TABLE IF NOT EXISTS `sick` (
 
 CREATE TABLE IF NOT EXISTS `staff` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `person_id` int(11) NOT NULL,
   `iris` int(11) NOT NULL,
   `salon_id` int(11) NOT NULL,
   `staff_role_id` int(11) NOT NULL,
@@ -287,8 +340,14 @@ CREATE TABLE IF NOT EXISTS `staff` (
   PRIMARY KEY (`id`),
   KEY `staff_id` (`iris`,`salon_id`,`staff_role_id`),
   KEY `salon_id` (`salon_id`),
-  KEY `staff_role_id` (`staff_role_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
+  KEY `staff_role_id` (`staff_role_id`),
+  KEY `person_id` (`person_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
+
+--
+-- Dumping data for table `staff`
+--
+
 
 -- --------------------------------------------------------
 
@@ -303,6 +362,11 @@ CREATE TABLE IF NOT EXISTS `staff_role` (
   `commision` int(11) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+
+--
+-- Dumping data for table `staff_role`
+--
+
 
 -- --------------------------------------------------------
 
@@ -321,6 +385,11 @@ CREATE TABLE IF NOT EXISTS `turnover` (
   KEY `staff_id` (`staff_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
+--
+-- Dumping data for table `turnover`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -335,6 +404,11 @@ CREATE TABLE IF NOT EXISTS `wage` (
   PRIMARY KEY (`id`),
   KEY `staff_id` (`staff_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+--
+-- Dumping data for table `wage`
+--
+
 
 --
 -- Constraints for dumped tables
@@ -382,6 +456,7 @@ ALTER TABLE `sick`
 -- Constraints for table `staff`
 --
 ALTER TABLE `staff`
+  ADD CONSTRAINT `staff_ibfk_3` FOREIGN KEY (`person_id`) REFERENCES `person` (`id`) ON UPDATE NO ACTION,
   ADD CONSTRAINT `staff_ibfk_1` FOREIGN KEY (`salon_id`) REFERENCES `salon` (`id`) ON UPDATE CASCADE,
   ADD CONSTRAINT `staff_ibfk_2` FOREIGN KEY (`staff_role_id`) REFERENCES `staff_role` (`id`) ON UPDATE CASCADE;
 
