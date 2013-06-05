@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jun 04, 2013 at 09:45 PM
+-- Generation Time: Jun 05, 2013 at 07:08 PM
 -- Server version: 5.1.44
 -- PHP Version: 5.3.1
 
@@ -115,12 +115,14 @@ CREATE TABLE IF NOT EXISTS `holiday` (
   `saturday` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `staff_id` (`staff_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
 --
 -- Dumping data for table `holiday`
 --
 
+INSERT INTO `holiday` (`id`, `staff_id`, `hours_requested`, `prebooked`, `request_date_from`, `request_date_to`, `approved`, `requested_on_date`, `saturday`) VALUES
+(6, 16, '32', 0, '2013-06-11 00:00:00', '2013-06-14 00:00:00', 0, '2013-06-05 19:29:43', 0);
 
 -- --------------------------------------------------------
 
@@ -138,12 +140,14 @@ CREATE TABLE IF NOT EXISTS `lieu` (
   `approved` tinyint(1) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `staff_id` (`staff_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 --
 -- Dumping data for table `lieu`
 --
 
+INSERT INTO `lieu` (`id`, `staff_id`, `lieu_hours`, `description`, `date_regarding`, `requested_on`, `approved`) VALUES
+(5, 16, '3', 'Going Home', '2013-06-04 00:00:00', '2013-06-05 19:52:44', 2);
 
 -- --------------------------------------------------------
 
@@ -163,14 +167,16 @@ CREATE TABLE IF NOT EXISTS `person` (
   `phone` varchar(30) DEFAULT NULL,
   `mobile` varchar(30) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
 
 --
 -- Dumping data for table `person`
 --
 
 INSERT INTO `person` (`id`, `first_name`, `second_name`, `address1`, `address2`, `address3`, `postcode`, `email`, `phone`, `mobile`) VALUES
-(9, 'Adam', 'Carter', '27 Eastford Road', 'Walton', 'Warrington', 'WA1 2RF', 'araquach@yahoo.co.uk', '01925 242960', '07921806884');
+(9, 'Adam', 'Carter', '27 Eastford Road', 'Walton', 'Warrington', 'WA1 2RF', 'araquach@yahoo.co.uk', '01925 242960', '07921806884'),
+(10, 'Jimmy', 'Sharpe', '4235 rjhrgiw', 'fsfw', 'egrqge', 'eeggergre', 'egrerg@sfdkjhfse.com', '3454353', '252434242'),
+(11, 'Isobelle', 'Lamb', '24 Blandford Road', 'wekjhfw', 'wgrgew', 'WA1 2RF', 'sfkdjhsd@skdfjh.com', '0235802', '3458534987');
 
 -- --------------------------------------------------------
 
@@ -222,61 +228,6 @@ CREATE TABLE IF NOT EXISTS `recruit_stylist` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `role_applicant`
---
-
-CREATE TABLE IF NOT EXISTS `role_applicant` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `salon_id` int(11) NOT NULL,
-  `role_id` int(11) NOT NULL,
-  `date` datetime NOT NULL,
-  `first_name` varchar(256) NOT NULL,
-  `second_name` varchar(256) NOT NULL,
-  `address1` varchar(256) NOT NULL,
-  `address2` varchar(256) NOT NULL,
-  `address3` varchar(256) NOT NULL,
-  `postcode` varchar(20) NOT NULL,
-  `email` varchar(256) NOT NULL,
-  `phone` varchar(30) NOT NULL,
-  `mobile` varchar(30) NOT NULL,
-  `current_emp` int(11) NOT NULL,
-  `current_emp_des` varchar(50) NOT NULL,
-  `qual_school` int(11) NOT NULL,
-  `qual_non_hair` varchar(120) NOT NULL,
-  `adex1` int(11) NOT NULL,
-  `adex2` int(11) NOT NULL,
-  `adex3` int(11) NOT NULL,
-  `adex4` int(11) NOT NULL,
-  `adex5` int(11) NOT NULL,
-  `adex6` int(11) NOT NULL,
-  `experience` int(11) NOT NULL,
-  `current_position` int(11) NOT NULL,
-  `client_base` int(11) NOT NULL,
-  `qual_hair` int(11) NOT NULL,
-  `cutting_skills` int(11) NOT NULL,
-  `colour_knowledge` int(11) NOT NULL,
-  `colour_skills` int(11) NOT NULL,
-  `men` int(11) NOT NULL,
-  `extensions_weave` int(11) NOT NULL,
-  `extensions_other` int(11) NOT NULL,
-  `chem_straighten` int(11) NOT NULL,
-  `braz_blow` int(11) NOT NULL,
-  `hair_up` int(11) NOT NULL,
-  `awards` text NOT NULL,
-  `about_you` text NOT NULL,
-  `why_hairdressing` text NOT NULL,
-  `why_us` text NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
-
---
--- Dumping data for table `role_applicant`
---
-
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `salon`
 --
 
@@ -290,6 +241,9 @@ CREATE TABLE IF NOT EXISTS `salon` (
 -- Dumping data for table `salon`
 --
 
+INSERT INTO `salon` (`id`, `salon`) VALUES
+(1, 'Jakata'),
+(2, 'Paul Kemp Hairdressing');
 
 -- --------------------------------------------------------
 
@@ -306,12 +260,14 @@ CREATE TABLE IF NOT EXISTS `sick` (
   `date_deducted` datetime NOT NULL,
   PRIMARY KEY (`id`),
   KEY `staff_id` (`staff_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
 -- Dumping data for table `sick`
 --
 
+INSERT INTO `sick` (`id`, `staff_id`, `sick_hours`, `description`, `date_sick_from`, `date_deducted`) VALUES
+(1, 15, '8', 'Pooing badly', '2013-06-05 00:00:00', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -325,11 +281,7 @@ CREATE TABLE IF NOT EXISTS `staff` (
   `iris` int(11) NOT NULL,
   `salon_id` int(11) NOT NULL,
   `staff_role_id` int(11) NOT NULL,
-  `first_name` varchar(20) NOT NULL,
-  `last_name` varchar(20) NOT NULL,
   `dob` datetime NOT NULL,
-  `mobile` varchar(11) NOT NULL,
-  `email` varchar(50) NOT NULL,
   `username` varchar(22) NOT NULL,
   `password` varchar(44) NOT NULL,
   `working_hours_week` enum('16','24','32','40') NOT NULL,
@@ -342,12 +294,15 @@ CREATE TABLE IF NOT EXISTS `staff` (
   KEY `salon_id` (`salon_id`),
   KEY `staff_role_id` (`staff_role_id`),
   KEY `person_id` (`person_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=19 ;
 
 --
 -- Dumping data for table `staff`
 --
 
+INSERT INTO `staff` (`id`, `person_id`, `iris`, `salon_id`, `staff_role_id`, `dob`, `username`, `password`, `working_hours_week`, `working_hours_month`, `holiday_entitlement`, `active`, `role`) VALUES
+(15, 10, 3, 2, 2, '2013-06-12 19:16:03', 'jimmy', 'jimmy123', '40', 160, 28, 1, 'admin'),
+(16, 9, 3, 1, 2, '2013-06-28 19:28:04', 'adamcarter', 'blonde123', '40', 160, 28, 1, 'admin');
 
 -- --------------------------------------------------------
 
@@ -367,6 +322,9 @@ CREATE TABLE IF NOT EXISTS `staff_role` (
 -- Dumping data for table `staff_role`
 --
 
+INSERT INTO `staff_role` (`id`, `job_description`, `target`, `commision`) VALUES
+(1, 'Junior', 100, 5),
+(2, 'Stylist', 500, 10);
 
 -- --------------------------------------------------------
 
@@ -456,7 +414,7 @@ ALTER TABLE `sick`
 -- Constraints for table `staff`
 --
 ALTER TABLE `staff`
-  ADD CONSTRAINT `staff_ibfk_3` FOREIGN KEY (`person_id`) REFERENCES `person` (`id`) ON UPDATE NO ACTION,
+  ADD CONSTRAINT `staff_ibfk_3` FOREIGN KEY (`person_id`) REFERENCES `person` (`id`) ON UPDATE CASCADE,
   ADD CONSTRAINT `staff_ibfk_1` FOREIGN KEY (`salon_id`) REFERENCES `salon` (`id`) ON UPDATE CASCADE,
   ADD CONSTRAINT `staff_ibfk_2` FOREIGN KEY (`staff_role_id`) REFERENCES `staff_role` (`id`) ON UPDATE CASCADE;
 
