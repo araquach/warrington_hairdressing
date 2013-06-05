@@ -13,7 +13,7 @@
 	<?php echo CHtml::link(CHtml::encode($data->id), array('view', 'id'=>$data->id));  ?>
 
 	
-	<strong><?php echo CHtml::encode($data->staff->getFullName()); ?></strong>
+	<strong><?php echo CHtml::encode($data->staff->person->getFullName()); ?></strong>
 	
 	<br />
 

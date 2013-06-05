@@ -18,7 +18,7 @@
 	<div class="row">
 		<?php echo $form->labelEx($model,'staff_id'); ?>
 		<?php echo $form->dropDownList($model, 'staff_id', CHtml::listData(
-		Staff::model()->findAll(), 'id', 'fullName'),
+		Staff::model()->with('person')->findAll(), 'id', 'role'),
 		array('prompt' => 'Select Staff Member')); ?>
 		<?php echo $form->error($model,'staff_id'); ?>
 	</div>

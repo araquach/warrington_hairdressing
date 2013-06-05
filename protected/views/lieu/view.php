@@ -15,7 +15,7 @@
 	'attributes'=>array(
 		array(
 			'name'=>'Staff Member',
-			'value'=>$model->staff->getFullName(),
+			'value'=>$model->staff->person->getFullName(),
 			),
 		'lieu_hours',
 		'description',

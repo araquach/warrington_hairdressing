@@ -16,7 +16,7 @@
 	'attributes'=>array(
 		array(
 			'name'=>'Staff'.':',
-			'value'=>$model->staff->getFullName(),
+			'value'=>$model->staff->person->getFullName(),
 			),
 		array(
 			'name'=>'Day\'s'.':',
