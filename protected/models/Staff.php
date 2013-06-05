@@ -28,7 +28,7 @@
  * @property Turnover[] $turnovers
  * @property Wage[] $wages
  */
-class Staff extends SalonActiveRecord
+class Staff extends CActiveRecord
 {
 	/**
 	 * Returns the static model of the specified AR class.
