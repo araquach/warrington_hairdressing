@@ -30,13 +30,13 @@
 	<br />
 	
 	<?php if (CHtml::encode($data->saturday) == 1) {
-		echo CHtml::image('images/icons/icons_1xsat.png');
+		echo CHtml::image(Yii::app()->request->baseUrl.'/images/icons/icons_1xsat.png');
 		} elseif (CHtml::encode($data->saturday) == 2) {
-			echo CHtml::image('images/icons/icons_2xsat.png');
+			echo CHtml::image(Yii::app()->request->baseUrl.'/images/icons/icons_2xsat.png');
 		}?>
 	
 	<?php if (CHtml::encode($data->prebooked) == 1) {
-		echo CHtml::image('images/icons/pb-11.png');
+		echo CHtml::image(Yii::app()->request->baseUrl.'/images/icons/pb-11.png');
 		} ?>
 	
 
