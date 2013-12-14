@@ -23,9 +23,10 @@ $this->menu=array(
 	'cssFile'=>'false',
 	'attributes'=>array(
 		'id',
-		'person_id',
+		'person.first_name',
+		'person.second_name',
 		'iris',
-		'salon_id',
+		'salon.salon',
 		'staff_role_id',
 		'dob',
 		'username',
