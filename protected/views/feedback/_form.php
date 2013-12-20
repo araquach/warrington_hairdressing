@@ -40,7 +40,7 @@
 	<div class="row">
 		<?php echo $form->labelEx($model,'stylist_id'); ?>
 		<?php echo $form->dropDownList($model, 'stylist_id', CHtml::listData(
-		FeedbackStylist::model()->findAll(), 'id', 'stylist'),
+		Staff::model()->findAll(), 'id', 'stylist'),
 		array('prompt' => 'Select your Stylist')
 		); ?>
 		<?php echo $form->error($model,'stylist_id'); ?>

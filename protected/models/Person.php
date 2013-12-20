@@ -114,5 +114,10 @@ class Person extends CActiveRecord
 		));
 	}
 	
+	public function getFullName()
+	{
+		return $this->first_name . ' ' . $this->second_name;
+	}
+	
 	
 }

@@ -3,7 +3,11 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
+<<<<<<< HEAD
 -- Generation Time: Jun 04, 2013 at 09:26 PM
+=======
+-- Generation Time: Jun 05, 2013 at 07:08 PM
+>>>>>>> staff-person-link
 -- Server version: 5.1.44
 -- PHP Version: 5.3.1
 
@@ -38,10 +42,13 @@ CREATE TABLE IF NOT EXISTS `client` (
 -- Dumping data for table `client`
 --
 
+<<<<<<< HEAD
 INSERT INTO `client` (`id`, `first_name`, `second_name`, `mobile`, `email`) VALUES
 (1, 'Test Client 1', 'Test client1', 2147483647, 'araquach@yahoo.co.uk'),
 (2, 'Test Client 2', 'Test Client 2', 2147483647, 'adamcarter@jakatasalon.co.uk'),
 (3, 'Test Client 3', 'Test Client 3', 2147483647, 'adam@paulkemphairdressing.com');
+=======
+>>>>>>> staff-person-link
 
 -- --------------------------------------------------------
 
@@ -100,12 +107,15 @@ CREATE TABLE IF NOT EXISTS `feedback` (
 -- Dumping data for table `feedback`
 --
 
+<<<<<<< HEAD
 INSERT INTO `feedback` (`id`, `salon_id`, `stylist_id`, `date`, `client_first`, `client_second`, `mobile`, `intro`, `consultation`, `styling_area`, `stylist_appearance`, `prod_advice`, `styling_advice`, `internal_marketing`, `value_for_money`, `whole_experience`, `end_result`, `extra`, `allow`) VALUES
 (9, 1, 2, '2013-04-16 19:05:31', 'Adam', 'Carter', '239587', 2, 1, 3, 2, 3, 1, 1, 2, 1, 6, 'WIckeeeeeeeeeed', 0),
 (10, 1, 1, '2013-04-16 22:52:58', 'Izzy', 'Lamb', '0583202', 3, 3, 3, 3, 3, 3, 2, 3, 3, 6, 'Adam was the most awesome stylist I ever had!!', 0),
 (11, 1, 5, '2013-05-27 17:44:13', 'Jerry', 'Slobob', '9879', -2, -2, -2, -2, -2, -2, -2, -2, -2, -6, 'hgkj', 0),
 (12, 1, 2, '2013-05-27 18:04:02', 'dg', 'dfgg', '453', 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 'fds', 0),
 (13, 2, 6, '2013-05-27 18:06:41', 'dkh', 'dsfd', '3443', -2, 3, 1, 2, -1, 3, 1, 1, 1, 1, 'rrsff', 1);
+=======
+>>>>>>> staff-person-link
 
 -- --------------------------------------------------------
 
@@ -125,18 +135,26 @@ CREATE TABLE IF NOT EXISTS `holiday` (
   `saturday` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `staff_id` (`staff_id`)
+<<<<<<< HEAD
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+=======
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+>>>>>>> staff-person-link
 
 --
 -- Dumping data for table `holiday`
 --
 
 INSERT INTO `holiday` (`id`, `staff_id`, `hours_requested`, `prebooked`, `request_date_from`, `request_date_to`, `approved`, `requested_on_date`, `saturday`) VALUES
+<<<<<<< HEAD
 (1, 1, '16', 0, '2013-05-09 00:00:00', '2013-05-10 00:00:00', 2, '2013-05-08 22:34:52', 0),
 (2, 1, '40', 0, '2013-05-11 00:00:00', '2013-05-18 00:00:00', 2, '2013-05-08 22:35:25', 2),
 (3, 5, '8', 0, '2013-05-15 00:00:00', '2013-05-16 00:00:00', 2, '2013-05-08 22:38:59', 0),
 (4, 6, '24', 0, '2013-05-09 00:00:00', '2013-05-11 00:00:00', 2, '2013-05-08 22:51:00', 1),
 (5, 7, '16', 1, '2013-05-24 00:00:00', '2013-05-25 00:00:00', 2, '2013-05-08 22:53:15', 1);
+=======
+(6, 16, '32', 0, '2013-06-11 00:00:00', '2013-06-14 00:00:00', 0, '2013-06-05 19:29:43', 0);
+>>>>>>> staff-person-link
 
 -- --------------------------------------------------------
 
@@ -154,17 +172,25 @@ CREATE TABLE IF NOT EXISTS `lieu` (
   `approved` tinyint(1) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `staff_id` (`staff_id`)
+<<<<<<< HEAD
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+=======
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+>>>>>>> staff-person-link
 
 --
 -- Dumping data for table `lieu`
 --
 
 INSERT INTO `lieu` (`id`, `staff_id`, `lieu_hours`, `description`, `date_regarding`, `requested_on`, `approved`) VALUES
+<<<<<<< HEAD
 (1, 4, '2', 'lm,', '2013-05-07 00:00:00', '2013-05-08 22:55:03', 2),
 (2, 1, '3', 'm,n,', '2013-05-06 00:00:00', '2013-05-08 22:56:00', 2),
 (3, 1, '2', 'kjhfsa', '2013-05-02 00:00:00', '2013-05-08 22:57:34', 2),
 (4, 3, '2', 'kh,mn', '2013-05-02 00:00:00', '2013-05-08 22:58:44', 2);
+=======
+(5, 16, '3', 'Going Home', '2013-06-04 00:00:00', '2013-06-05 19:52:44', 2);
+>>>>>>> staff-person-link
 
 -- --------------------------------------------------------
 
@@ -184,13 +210,18 @@ CREATE TABLE IF NOT EXISTS `person` (
   `phone` varchar(30) DEFAULT NULL,
   `mobile` varchar(30) NOT NULL,
   PRIMARY KEY (`id`)
+<<<<<<< HEAD
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
+=======
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
+>>>>>>> staff-person-link
 
 --
 -- Dumping data for table `person`
 --
 
 INSERT INTO `person` (`id`, `first_name`, `second_name`, `address1`, `address2`, `address3`, `postcode`, `email`, `phone`, `mobile`) VALUES
+<<<<<<< HEAD
 (1, 'Adam', 'Cater', '', '', '', '', '', '', ''),
 (2, 'Adam', 'Cater', '', '', '', '', '', '', ''),
 (3, 'ad', 'sd', '', '', '', '', '', '', ''),
@@ -199,6 +230,11 @@ INSERT INTO `person` (`id`, `first_name`, `second_name`, `address1`, `address2`,
 (6, 'ADam', 'Carter', '', '', '', '', '', '', ''),
 (7, 'idfds', 'sfssdf', '', '', '', '', '', '', ''),
 (8, 'gdsdg', 'gsg', '', '', '', '', '', '', '');
+=======
+(9, 'Adam', 'Carter', '27 Eastford Road', 'Walton', 'Warrington', 'WA1 2RF', 'araquach@yahoo.co.uk', '01925 242960', '07921806884'),
+(10, 'Jimmy', 'Sharpe', '4235 rjhrgiw', 'fsfw', 'egrqge', 'eeggergre', 'egrerg@sfdkjhfse.com', '3454353', '252434242'),
+(11, 'Isobelle', 'Lamb', '24 Blandford Road', 'wekjhfw', 'wgrgew', 'WA1 2RF', 'sfkdjhsd@skdfjh.com', '0235802', '3458534987');
+>>>>>>> staff-person-link
 
 -- --------------------------------------------------------
 
@@ -250,6 +286,7 @@ CREATE TABLE IF NOT EXISTS `recruit_stylist` (
 -- --------------------------------------------------------
 
 --
+<<<<<<< HEAD
 -- Table structure for table `role_applicant`
 --
 
@@ -308,6 +345,8 @@ INSERT INTO `role_applicant` (`id`, `salon_id`, `role_id`, `date`, `first_name`,
 -- --------------------------------------------------------
 
 --
+=======
+>>>>>>> staff-person-link
 -- Table structure for table `salon`
 --
 
@@ -340,12 +379,21 @@ CREATE TABLE IF NOT EXISTS `sick` (
   `date_deducted` datetime NOT NULL,
   PRIMARY KEY (`id`),
   KEY `staff_id` (`staff_id`)
+<<<<<<< HEAD
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+=======
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+>>>>>>> staff-person-link
 
 --
 -- Dumping data for table `sick`
 --
 
+<<<<<<< HEAD
+=======
+INSERT INTO `sick` (`id`, `staff_id`, `sick_hours`, `description`, `date_sick_from`, `date_deducted`) VALUES
+(1, 15, '8', 'Pooing badly', '2013-06-05 00:00:00', '0000-00-00 00:00:00');
+>>>>>>> staff-person-link
 
 -- --------------------------------------------------------
 
@@ -355,6 +403,7 @@ CREATE TABLE IF NOT EXISTS `sick` (
 
 CREATE TABLE IF NOT EXISTS `staff` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+<<<<<<< HEAD
   `iris` int(11) NOT NULL,
   `salon_id` int(11) NOT NULL,
   `staff_role_id` int(11) NOT NULL,
@@ -363,6 +412,13 @@ CREATE TABLE IF NOT EXISTS `staff` (
   `dob` datetime NOT NULL,
   `mobile` varchar(11) NOT NULL,
   `email` varchar(50) NOT NULL,
+=======
+  `person_id` int(11) NOT NULL,
+  `iris` int(11) NOT NULL,
+  `salon_id` int(11) NOT NULL,
+  `staff_role_id` int(11) NOT NULL,
+  `dob` datetime NOT NULL,
+>>>>>>> staff-person-link
   `username` varchar(22) NOT NULL,
   `password` varchar(44) NOT NULL,
   `working_hours_week` enum('16','24','32','40') NOT NULL,
@@ -373,13 +429,20 @@ CREATE TABLE IF NOT EXISTS `staff` (
   PRIMARY KEY (`id`),
   KEY `staff_id` (`iris`,`salon_id`,`staff_role_id`),
   KEY `salon_id` (`salon_id`),
+<<<<<<< HEAD
   KEY `staff_role_id` (`staff_role_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
+=======
+  KEY `staff_role_id` (`staff_role_id`),
+  KEY `person_id` (`person_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=19 ;
+>>>>>>> staff-person-link
 
 --
 -- Dumping data for table `staff`
 --
 
+<<<<<<< HEAD
 INSERT INTO `staff` (`id`, `iris`, `salon_id`, `staff_role_id`, `first_name`, `last_name`, `dob`, `mobile`, `email`, `username`, `password`, `working_hours_week`, `working_hours_month`, `holiday_entitlement`, `active`, `role`) VALUES
 (1, 101, 1, 5, 'Adam', 'Carter', '2012-02-16 00:00:00', '07921806884', 'aarter@jaklon.co.uk', 'adamcarter', 'blonde123', '40', 0, 26, 1, 'admin'),
 (2, 119, 1, 5, 'Jimmy', 'Sharpe', '0000-00-00 00:00:00', '07363632732', 'jimmy@jakatasalon.co.uk', 'jimmy', 'jimmy123', '40', 0, 26, 1, 'admin'),
@@ -390,6 +453,11 @@ INSERT INTO `staff` (`id`, `iris`, `salon_id`, `staff_role_id`, `first_name`, `l
 (7, 158, 1, 5, 'Maisie', 'Thompson', '2012-12-26 00:00:00', '329875389', 'maisie@dfsjhfe.com', 'maisie', 'maisie123', '40', 0, 28, 1, 'staff'),
 (8, 106, 1, 5, 'Michelle', 'Ash', '2012-12-27 00:00:00', '02437093', 'michelle@ksdjhfs.com', 'michelle', 'michell123', '40', 0, 28, 1, 'staff'),
 (9, 151, 1, 3, 'Mikala', 'Sutcliffe', '2012-12-04 00:00:00', '20983750937', 'mikala@dskjhs.com', 'mikala', 'mikala123', '40', 0, 28, 1, 'staff');
+=======
+INSERT INTO `staff` (`id`, `person_id`, `iris`, `salon_id`, `staff_role_id`, `dob`, `username`, `password`, `working_hours_week`, `working_hours_month`, `holiday_entitlement`, `active`, `role`) VALUES
+(15, 10, 3, 2, 2, '2013-06-12 19:16:03', 'jimmy', 'jimmy123', '40', 160, 28, 1, 'admin'),
+(16, 9, 3, 1, 2, '2013-06-28 19:28:04', 'adamcarter', 'blonde123', '40', 160, 28, 1, 'admin');
+>>>>>>> staff-person-link
 
 -- --------------------------------------------------------
 
@@ -410,11 +478,16 @@ CREATE TABLE IF NOT EXISTS `staff_role` (
 --
 
 INSERT INTO `staff_role` (`id`, `job_description`, `target`, `commision`) VALUES
+<<<<<<< HEAD
 (1, 'Junior', 600, 0),
 (2, 'Junior Stylist', 1800, 5),
 (3, 'Graduate Stylist', 2600, 25),
 (4, 'Stylist', 3200, 25),
 (5, 'Senior Stylist', 4000, 25);
+=======
+(1, 'Junior', 100, 5),
+(2, 'Stylist', 500, 10);
+>>>>>>> staff-person-link
 
 -- --------------------------------------------------------
 
@@ -504,6 +577,10 @@ ALTER TABLE `sick`
 -- Constraints for table `staff`
 --
 ALTER TABLE `staff`
+<<<<<<< HEAD
+=======
+  ADD CONSTRAINT `staff_ibfk_3` FOREIGN KEY (`person_id`) REFERENCES `person` (`id`) ON UPDATE CASCADE,
+>>>>>>> staff-person-link
   ADD CONSTRAINT `staff_ibfk_1` FOREIGN KEY (`salon_id`) REFERENCES `salon` (`id`) ON UPDATE CASCADE,
   ADD CONSTRAINT `staff_ibfk_2` FOREIGN KEY (`staff_role_id`) REFERENCES `staff_role` (`id`) ON UPDATE CASCADE;
 

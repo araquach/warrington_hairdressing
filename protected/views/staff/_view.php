@@ -6,9 +6,9 @@
 <div class="view">
 
 	<?php echo CHtml::link(CHtml::encode($data->id), array('view', 'id'=>$data->id)); ?>
-
-	<strong><?php echo CHtml::encode($data->getFullName()); ?></strong>
-	<br />
+	
+	<?php echo CHtml::encode($data->person->getFullName()); ?>
+	<br>
 	
 	<?php echo CHtml::encode($data->staffRole->job_description); ?>
 	<br />
@@ -17,10 +17,6 @@
 	<?php echo CHtml::encode(Yii::app()->dateFormatter->formatDateTime($data->dob, "medium","")); ?>
 	<br />
 
-	
-	<b><?php echo CHtml::encode($data->getAttributeLabel('mobile')); ?>:</b>
-	<?php echo CHtml::encode($data->mobile); ?>
-	<br />
 	<?php /*
 	<b><?php echo CHtml::encode($data->getAttributeLabel('email')); ?>:</b>
 	<?php echo CHtml::encode($data->email); ?>

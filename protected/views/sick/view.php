@@ -12,7 +12,7 @@
 		'id',
 		array(
 			'name'=>'Staff'.':',
-			'value'=>$model->staff->getFullName(),
+			'value'=>$model->staff->person->getFullName(),
 			),
 		array(
 			'name'=>'sick_hours',

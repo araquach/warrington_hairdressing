@@ -199,8 +199,7 @@ class HolidayController extends Controller
 		{
 			$model=new Holiday;
 	
-			// Uncomment the following line if AJAX validation is needed
-			// $this->performAjaxValidation($model);
+			$this->performAjaxValidation($model);
 	
 			if(isset($_POST['Holiday']))
 			{
